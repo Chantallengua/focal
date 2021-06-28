@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+.roboto {font-family: 'Roboto', sans-serif;}
+.majormono {font-family: 'Major Mono Display', monospace;}
+
+body{ height:100vh; margin:0; }
+div {display: block;}
+
+.footer {
+    position: absolute;
+	display: block;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: rgba(0,0,0,0.5);
+	font-family: 'Major Mono Display', monospace;
+    max-height: 65px;
+}
+
+.container {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+}
+.container {
+}
+@media (min-width: 1200px)
+.container {
+    max-width: 1140px;
+}
+@media (min-width: 992px)
+.container {
+    max-width: 960px;
+}
+@media (min-width: 768px)
+.container {
+    max-width: 720px;
+}
+@media (min-width: 576px)
+.container {
+    max-width: 540px;
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+	
+
+.navbar {
+    background-color: rgba(0,0,0,0.5) !important;
+    max-height: 65px;
+	font-family: 'Major Mono Display', monospace;
+}
+
+
+
