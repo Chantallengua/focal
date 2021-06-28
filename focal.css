@@ -104,3 +104,52 @@ div {display: block;}
 }
 
 .container2 {max-width:87% !important;}
+
+ul {list-style-type: circle;}
+.li {list-style-type: none;}
+.a {
+  background-color: #D0EDF7;
+  color: black;
+}
+.b {
+	background-color: #E5FBF1;
+	color:black;
+}
+
+/*Floating Back-To-Top Button*/
+    #myBtn {
+        position: fixed;
+        bottom: 1.5%;
+        float: right;
+        right: 13%;
+        left: 87%;
+        max-width: 120px;
+        width: 100%;
+        font-size: 14px;
+        border-color: rgba(220,220,220,0.7);
+        background-color: rgba(255,255,255,0.7);
+        padding: 7px;
+        border-radius: 3px;
+		z-index: 3;
+    }
+	
+	@media only screen and (max-width: 600px) {
+  #myBtn {
+    left: 2% !important;
+  }
+}
+	
+/*On Hover Color Change*/
+    #myBtn:hover {
+        background-color: rgba(0,0,0,0.8);
+		  border-color: black;
+		  color: white !important;
+    }
+	
+#myBtnletters {
+color: black; 
+}
+
+#myBtnletters:hover {
+color: white; 
+}

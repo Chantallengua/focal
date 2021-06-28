@@ -23,7 +23,7 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  
 
   <!-- Custom styles for this template -->
-  <link href="focal.css" rel="stylesheet">
+  <link href="../../focal.css" rel="stylesheet">
     
   <!-- Reference for Ajax -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -47,6 +47,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
 
+<!-- molto importante -->
+<link rel="stylesheet" type="text/css" href="../build/jquery.mapify.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
 <head>
 
 <style>
@@ -56,13 +61,16 @@ body {
   background-position: center;
   background-size: cover;
 }
+
+	
+
 </style>
 </head>
 <body>
   
 <nav class="navbar navbar-expand-lg py-3 navbar-dark  shadow-sm">
  
-    <a href="index.html" class="navbar-brand">
+    <a href="../../index.html" class="navbar-brand">
       <!-- Logo Image -->
       <img src="img/logo.png" width="45" alt="" class="d-inline-block align-middle mr-2">
       <!-- Logo Text -->
@@ -73,29 +81,30 @@ body {
 
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a href="#" class="nav-link" style="text-decoration:underline;"><b>H</b>ome <span class="sr-only">(current)</span></a></li>
+        <li class="nav-item"><a href="../../home.html" class="nav-link" ><b>H</b>ome </a></li>
         
 		<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a style="text-decoration:underline;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Ontology
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="classes.html">ClAsses</a>
-          <a class="dropdown-item" href="properties.html">PRopeRties</a>
-		  <a class="dropdown-item" href="individuals.html">IndiViduAls</a>
+          <a class="dropdown-item" href="../../classes.html">ClAsses</a>
+          <a class="dropdown-item" href="../../properties.html">PRopeRties</a>
+		  <a class="dropdown-item" href="../../individuals.html">IndiViduAls</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="SVGG/example/examples.html"><b>V</b>isual EXAmples</a>
+          <a class="dropdown-item active" style="text-decoration:underline;" href="#"><b>V</b>isual EXAmples<span class="sr-only">(current)</span></a>
         </div>
       </li>
 	  
-        <li class="nav-item"><a href="queries.html" class="nav-link">QueRies</a></li>
-        <li class="nav-item"><a href="contact.html" class="nav-link">ContAct</a></li>
+        <li class="nav-item"><a href="../../queries.html" class="nav-link">QueRies</a></li>
+        <li class="nav-item"><a href="../../contact.html" class="nav-link">ContAct</a></li>
       </ul>
     </div>
   
 </nav>
-
-	
+<div>
+<button id="myBtn" class="animated fadeInUp" style="animation-delay: 9s;"><a href="#top" id="myBtnletters" class="roboto"><i class="fas fa-long-arrow-alt-up"></i> Back to top</a></button>
+	</div>
 	<!--
   <div class="section page-section">
       <div class="index" style="position:absolute; margin-left:auto; margin-right: auto;">
@@ -147,6 +156,159 @@ Ut et ullamcorper metus. Maecenas tincidunt congue tempus. Duis hendrerit quis l
 Nulla sapien urna, dictum eu purus quis, tempor interdum quam. Nullam quis arcu at enim pretium pharetra. Curabitur dignissim sapien at tempus vulputate. Vivamus eget mattis ligula, nec tristique erat. Fusce convallis dignissim purus, quis semper odio sodales auctor. Praesent venenatis, lacus eu tincidunt porta, sapien enim egestas lectus, ac ornare leo tellus vel leo. Duis sit amet mollis odio, sed euismod ante. Praesent suscipit ipsum vitae suscipit euismod. Vivamus eu ultrices libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed nec lacus finibus, blandit neque quis, commodo quam. Fusce sit amet lacinia diam.
 </p>
       </div>
+	  </div>
+	  
+	  	<div style="margin-left:auto; margin-right: auto;">
+     	<div class="roboto" style="padding:10px;">
+        
+		<p>
+		This project bla bla bla 
+		</p>
+
+<img class="img-fluid mb-3 mb-lg-0 rounded" src="img1.jpg" alt="">
+
+      </div>
+	  </div>
+	  
+	  
+	  
+	  
+
+
+<div>
+<p class="mb-3" align="center" >
+						Pass your mouse <b>over</b> the rooms and the corridors of the map of <i>ViRS</i> Museum <br> 
+						 to get a preview of their main features. And if you really can't wait to get all <br> the details, <b>click</b> on them to jump to their sections.
+					</p>
+
+
+<img name="ciao" src="cartinabella.svg" id="ciao" width="665px" height="618px" border="0" usemap="#Map" />
+<map name="Map" id="Map" >
+  <area data-description="With ticket office and wardrobe." alt="Entrance" title="Entrance" href="#entrance" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
+   289,20,
+   289,96, 
+  
+   477,96,
+   477,20" />
+     <area data-description="Loop-projection of the Captain of the ship and his beloved." alt="Corridor 1" title="Corridor (1): <br> The Protagonists" href="#presentation" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
+   480,18,
+   480,153,
+   
+   537,153,
+   537,18" />   
+     <area data-description="Projections and real artifacts in the atmosphere of a Roman-like port." alt="Room#1" title="Room (2): <br> Ship building" href="#building" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
+   480,153,
+   480,287,
+   
+   591,287,
+   591,153" />
+   <area data-description="Ship completed, the Captain and his beloved must say goodbye." alt="Corridor#2" title="Corridor (3): <br>The Farewell" href="#farewell" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
+   480,287,
+   480,345,
+   
+   591,345,
+   591,287" />
+     <area data-description="Walkable 1:2 scale reproduction of the ship + projections with sensors on the walls." alt="Room#2" title="Room (4): <br> Navigation" href="#navigation" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
+  480,345,
+  480,614,
+  
+  650,614,
+  650,538,
+  
+  593,538,
+  593,420,
+  
+  650,420,
+  650,345
+  " />   
+     <area data-description="Darker and tempestuous projections prepare the visitors for the huge storm." alt="Corridor#3" title="Corridor (5): <br>Rain and waves" href="#rain" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
+   346,538,
+   346,614,
+	
+   477,614,
+   477,538" />
+     <area data-description="A waiting room for the real attraction (in Room 5), with artifacts, benches and AR activities." alt="Room#4" title="Room (6): <br>Storm is coming" href="#storm" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
+   346,441, 
+   346,538,  
+  
+   477,538,
+   477,441" />      
+   <area data-description="A 10-minutes-immersive experience on a glass observation bridge in a 360° projection theater." data-group-id="group-1" alt="Room#5" title="Room (7): <br> The Sinking" href="#sinking" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
+   346,154,  
+   346,441, 
+  
+   477,441,
+   477,154" />
+      <area data-description="To enjoy experience without fear, with sounds and braille panels." alt="Corridor#4" title="Corridor (7b): <br> Alternative Sinking path" href="#alternative" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
+   287,152,
+   287,497,
+  
+   344,497,
+   344,152" />   
+      <area data-description="A corridor with no activities, that leads to the underwater room." alt="Corridor#5" title="Corridor (8): Going Underwater" href="#goingunderwater" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
+    289,96,
+	289,152, 
+  
+    477,152,
+    477,96" />
+     <area data-description="Virtual activities: fish-making, motion sensors and VR treasure-hunt." alt="Room#6" title="Room (9): <br>Underwater Shipwreck" href="#underwater" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
+  80,96,
+  80,323,
+  
+  288,323,
+  288,96" />
+    <area data-description="Artifacts and projection of the Captain's beloved home, waiting for his return." alt="Room#7" title="Room (10): <br> The Captain's beloved" href="#beloved" shape="poly" id="dynamicClassChange" data-hover-class="customHover"  coords="
+  190,323,
+  190,398,
+  
+  287,398,
+  287,323" />	  
+	  <area data-description="Panels show the deterioration of the underwater ship." alt="Corridor#6" title="Corridor (11): <br>From 100BC to 2000AD" href="#100bc-2000ad" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
+   37,323,
+   37,493,
+   
+   74,493,
+   74,400,
+   
+   190,400,
+   190,323" />
+	<area data-description="Artifacts, panels and underwater archaeological excavation game for kids." alt="Room#8" title="Room (12): <br> Recovering the Shipwreck" href="#recovering" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
+   74,400,
+   74,493,
+   
+   209,493,
+   209,400" />
+     <area data-description="And shop." alt="exit and shop" title="Exit" href="#exit" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
+  210,400,
+  210,552,
+ 
+  346,552,
+  346,497,
+  
+  287,497,
+  287,400
+  " />
+	</map>
+	</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
+<script type="text/javascript" src="../build/jquery.mapify.js"></script> 
+<script>
+$("img[usemap]").mapify({
+	popOver: {
+		content: function(zone){ 
+			return "<strong>"+zone.attr("data-title")+"</strong>"+zone.attr("data-description");
+		},
+		delay: 0.7,
+		margin: "15px",
+		height: "180px",
+		width: "260px"
+	}
+});
+</script>
+<script>
+document.getElementByName("ciao").style.opacity = "0.5";
+</script>       
 
     </main>
 
