@@ -9,7 +9,7 @@
   <meta name="author" content="">
 
   <title>focal</title>
-  <link rel='icon' href='img/logo.ico'/>
+  <link rel='icon' href='../../img/logo.ico'/>
 
   <!-- FontAwesome -->  
   <script src="https://kit.fontawesome.com/26e52bfea1.js"></script>
@@ -62,6 +62,40 @@ body {
   background-size: cover;
 }
 
+
+/* Mapify custom popOver example: il testo del popOver */
+.mapify-popOver strong {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1em;
+  display: block;
+  margin-bottom: 10px;
+  color: #000;
+}
+.mapify-popOver {
+  color: #999;
+  font-size: 16px;
+  height: 130px;
+}
+.mapify-popOver-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+.mapify-popOver.customPopOver { background: #09f; }
+
+.mapify-hover {
+  fill: rgba(0,0,0,0.15);
+  stroke: #fff;
+  stroke-width: 2;
+}
+.customHover {
+  fill: #1e2430;
+  stroke: #fff;
+  stroke-width: 2;
+    opacity: 0.7;
+}
 	
 
 </style>
@@ -137,159 +171,53 @@ Nulla sapien urna, dictum eu purus quis, tempor interdum quam. Nullam quis arcu 
 		</p>
 		<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada ultricies erat et sodales. Nullam molestie et magna sed vestibulum. Curabitur sem sem, faucibus et efficitur at, porttitor quis mi. Phasellus lacinia in tellus eget ornare. Fusce nisi tortor, molestie a lacus vitae, malesuada commodo tellus. Duis ac lobortis mi. Proin eu erat mauris. Aliquam hendrerit tellus id massa semper commodo. Quisque tincidunt nisi a turpis vehicula, faucibus feugiat enim varius. In sit amet commodo ante.
-</p>
-<p>
-
-Ut et ullamcorper metus. Maecenas tincidunt congue tempus. Duis hendrerit quis leo cursus vehicula. Ut pulvinar at nunc nec facilisis. Ut auctor convallis bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In sit amet congue elit.
-<p>
-</p>
-Nulla sapien urna, dictum eu purus quis, tempor interdum quam. Nullam quis arcu at enim pretium pharetra. Curabitur dignissim sapien at tempus vulputate. Vivamus eget mattis ligula, nec tristique erat. Fusce convallis dignissim purus, quis semper odio sodales auctor. Praesent venenatis, lacus eu tincidunt porta, sapien enim egestas lectus, ac ornare leo tellus vel leo. Duis sit amet mollis odio, sed euismod ante. Praesent suscipit ipsum vitae suscipit euismod. Vivamus eu ultrices libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed nec lacus finibus, blandit neque quis, commodo quam. Fusce sit amet lacinia diam.
-</p>
-<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada ultricies erat et sodales. Nullam molestie et magna sed vestibulum. Curabitur sem sem, faucibus et efficitur at, porttitor quis mi. Phasellus lacinia in tellus eget ornare. Fusce nisi tortor, molestie a lacus vitae, malesuada commodo tellus. Duis ac lobortis mi. Proin eu erat mauris. Aliquam hendrerit tellus id massa semper commodo. Quisque tincidunt nisi a turpis vehicula, faucibus feugiat enim varius. In sit amet commodo ante.
-</p>
-<p>
-
-Ut et ullamcorper metus. Maecenas tincidunt congue tempus. Duis hendrerit quis leo cursus vehicula. Ut pulvinar at nunc nec facilisis. Ut auctor convallis bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In sit amet congue elit.
-<p>
-</p>
-Nulla sapien urna, dictum eu purus quis, tempor interdum quam. Nullam quis arcu at enim pretium pharetra. Curabitur dignissim sapien at tempus vulputate. Vivamus eget mattis ligula, nec tristique erat. Fusce convallis dignissim purus, quis semper odio sodales auctor. Praesent venenatis, lacus eu tincidunt porta, sapien enim egestas lectus, ac ornare leo tellus vel leo. Duis sit amet mollis odio, sed euismod ante. Praesent suscipit ipsum vitae suscipit euismod. Vivamus eu ultrices libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed nec lacus finibus, blandit neque quis, commodo quam. Fusce sit amet lacinia diam.
-</p>
-      </div>
-	  </div>
-	  
-	  	<div style="margin-left:auto; margin-right: auto;">
-     	<div class="roboto" style="padding:10px;">
-        
-		<p>
-		This project bla bla bla 
 		</p>
+		<p>
+		Ut et ullamcorper metus. Maecenas tincidunt congue tempus. Duis hendrerit quis leo cursus vehicula. Ut pulvinar at nunc nec facilisis. Ut auctor convallis bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In sit amet congue elit.
+		<p>
+		</p>
+		Nulla sapien urna, dictum eu purus quis, tempor interdum quam. Nullam quis arcu at enim pretium pharetra. Curabitur dignissim sapien at tempus vulputate. Vivamus eget mattis ligula, nec tristique erat. Fusce convallis dignissim purus, quis semper odio sodales auctor. Praesent venenatis, lacus eu tincidunt porta, sapien enim egestas lectus, ac ornare leo tellus vel leo. Duis sit amet mollis odio, sed euismod ante. Praesent suscipit ipsum vitae suscipit euismod. Vivamus eu ultrices libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed nec lacus finibus, blandit neque quis, commodo quam. Fusce sit amet lacinia diam.
+		</p>
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada ultricies erat et sodales. Nullam molestie et magna sed vestibulum. Curabitur sem sem, faucibus et efficitur at, porttitor quis mi. Phasellus lacinia in tellus eget ornare. Fusce nisi tortor, molestie a lacus vitae, malesuada commodo tellus. Duis ac lobortis mi. Proin eu erat mauris. Aliquam hendrerit tellus id massa semper commodo. Quisque tincidunt nisi a turpis vehicula, faucibus feugiat enim varius. In sit amet commodo ante.
+		</p>
+		<p>
+		Ut et ullamcorper metus. Maecenas tincidunt congue tempus. Duis hendrerit quis leo cursus vehicula. Ut pulvinar at nunc nec facilisis. Ut auctor convallis bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In sit amet congue elit.
+		<p>
+		</p>
+		Nulla sapien urna, dictum eu purus quis, tempor interdum quam. Nullam quis arcu at enim pretium pharetra. Curabitur dignissim sapien at tempus vulputate. Vivamus eget mattis ligula, nec tristique erat. Fusce convallis dignissim purus, quis semper odio sodales auctor. Praesent venenatis, lacus eu tincidunt porta, sapien enim egestas lectus, ac ornare leo tellus vel leo. Duis sit amet mollis odio, sed euismod ante. Praesent suscipit ipsum vitae suscipit euismod. Vivamus eu ultrices libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed nec lacus finibus, blandit neque quis, commodo quam. Fusce sit amet lacinia diam.
+		</p>
+		</div>
+	</div>
+</main>
 
-<img class="img-fluid mb-3 mb-lg-0 rounded" src="img1.jpg" alt="">
+
+<div class="container2" style="margin-left:auto; margin-right: auto;">
+	<div class="roboto" style="padding:10px;">
+		<div class="image-map-container" style="text-align: center">
+			<img src="img1.jpg" height="410px" width="780px" alt="" usemap="#image-map" />
+		<div class="map-selector">
+
+</div>
+</div>
+
+<map name="image-map" id="image-map">
+    <area 
+		alt="" title="" href="#" shape="rect" coords="54,36,66,49" />
+    <area alt="" title="" href="#" shape="rect" coords="72,38,83,48" />
+    <area alt="" title="" href="#" shape="rect" coords="56,4,80,28" />
+    <area alt="" title="" href="#" shape="rect" coords="7,7,45,46" />
+    <area alt="" title="" href="#" shape="rect" coords="10,59,76,125" />
+    <area data-description="With ticket office and wardrobe." alt="Entrance" title="Entrance" href="#entrance" id="dynamicClassChange" data-hover-class="customHover"
+	shape="rect" coords="293,24,629,272" />
+</map>
 
       </div>
 	  </div>
-	  
-	  
-	  
-	  
+	   
 
 
-<div>
-<p class="mb-3" align="center" >
-						Pass your mouse <b>over</b> the rooms and the corridors of the map of <i>ViRS</i> Museum <br> 
-						 to get a preview of their main features. And if you really can't wait to get all <br> the details, <b>click</b> on them to jump to their sections.
-					</p>
 
-
-<img name="ciao" src="cartinabella.svg" id="ciao" width="665px" height="618px" border="0" usemap="#Map" />
-<map name="Map" id="Map" >
-  <area data-description="With ticket office and wardrobe." alt="Entrance" title="Entrance" href="#entrance" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
-   289,20,
-   289,96, 
-  
-   477,96,
-   477,20" />
-     <area data-description="Loop-projection of the Captain of the ship and his beloved." alt="Corridor 1" title="Corridor (1): <br> The Protagonists" href="#presentation" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
-   480,18,
-   480,153,
-   
-   537,153,
-   537,18" />   
-     <area data-description="Projections and real artifacts in the atmosphere of a Roman-like port." alt="Room#1" title="Room (2): <br> Ship building" href="#building" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
-   480,153,
-   480,287,
-   
-   591,287,
-   591,153" />
-   <area data-description="Ship completed, the Captain and his beloved must say goodbye." alt="Corridor#2" title="Corridor (3): <br>The Farewell" href="#farewell" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
-   480,287,
-   480,345,
-   
-   591,345,
-   591,287" />
-     <area data-description="Walkable 1:2 scale reproduction of the ship + projections with sensors on the walls." alt="Room#2" title="Room (4): <br> Navigation" href="#navigation" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
-  480,345,
-  480,614,
-  
-  650,614,
-  650,538,
-  
-  593,538,
-  593,420,
-  
-  650,420,
-  650,345
-  " />   
-     <area data-description="Darker and tempestuous projections prepare the visitors for the huge storm." alt="Corridor#3" title="Corridor (5): <br>Rain and waves" href="#rain" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
-   346,538,
-   346,614,
-	
-   477,614,
-   477,538" />
-     <area data-description="A waiting room for the real attraction (in Room 5), with artifacts, benches and AR activities." alt="Room#4" title="Room (6): <br>Storm is coming" href="#storm" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
-   346,441, 
-   346,538,  
-  
-   477,538,
-   477,441" />      
-   <area data-description="A 10-minutes-immersive experience on a glass observation bridge in a 360° projection theater." data-group-id="group-1" alt="Room#5" title="Room (7): <br> The Sinking" href="#sinking" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
-   346,154,  
-   346,441, 
-  
-   477,441,
-   477,154" />
-      <area data-description="To enjoy experience without fear, with sounds and braille panels." alt="Corridor#4" title="Corridor (7b): <br> Alternative Sinking path" href="#alternative" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
-   287,152,
-   287,497,
-  
-   344,497,
-   344,152" />   
-      <area data-description="A corridor with no activities, that leads to the underwater room." alt="Corridor#5" title="Corridor (8): Going Underwater" href="#goingunderwater" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
-    289,96,
-	289,152, 
-  
-    477,152,
-    477,96" />
-     <area data-description="Virtual activities: fish-making, motion sensors and VR treasure-hunt." alt="Room#6" title="Room (9): <br>Underwater Shipwreck" href="#underwater" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
-  80,96,
-  80,323,
-  
-  288,323,
-  288,96" />
-    <area data-description="Artifacts and projection of the Captain's beloved home, waiting for his return." alt="Room#7" title="Room (10): <br> The Captain's beloved" href="#beloved" shape="poly" id="dynamicClassChange" data-hover-class="customHover"  coords="
-  190,323,
-  190,398,
-  
-  287,398,
-  287,323" />	  
-	  <area data-description="Panels show the deterioration of the underwater ship." alt="Corridor#6" title="Corridor (11): <br>From 100BC to 2000AD" href="#100bc-2000ad" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
-   37,323,
-   37,493,
-   
-   74,493,
-   74,400,
-   
-   190,400,
-   190,323" />
-	<area data-description="Artifacts, panels and underwater archaeological excavation game for kids." alt="Room#8" title="Room (12): <br> Recovering the Shipwreck" href="#recovering" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
-   74,400,
-   74,493,
-   
-   209,493,
-   209,400" />
-     <area data-description="And shop." alt="exit and shop" title="Exit" href="#exit" shape="poly" id="dynamicClassChange" data-hover-class="customHover" coords="
-  210,400,
-  210,552,
- 
-  346,552,
-  346,497,
-  
-  287,497,
-  287,400
-  " />
-	</map>
-	</div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
 <script type="text/javascript" src="../build/jquery.mapify.js"></script> 
@@ -301,7 +229,7 @@ $("img[usemap]").mapify({
 		},
 		delay: 0.7,
 		margin: "15px",
-		height: "180px",
+		height: "100px",
 		width: "260px"
 	}
 });

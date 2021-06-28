@@ -153,3 +153,37 @@ color: black;
 #myBtnletters:hover {
 color: white; 
 }
+
+/* Mapify custom popOver example: il testo del popOver */
+.mapify-popOver strong {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1em;
+  display: block;
+  margin-bottom: 10px;
+  color: #000;
+}
+.mapify-popOver {
+  color: #999;
+  font-size: 16px;
+  height: 130px;
+}
+.mapify-popOver-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+.mapify-popOver.customPopOver { background: #09f; }
+
+.mapify-hover {
+  fill: rgba(0,0,0,0.15);
+  stroke: #fff;
+  stroke-width: 2;
+}
+.customHover {
+  fill: #1e2430;
+  stroke: #fff;
+  stroke-width: 2;
+    opacity: 0.7;
+}
