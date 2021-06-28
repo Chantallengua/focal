@@ -42,9 +42,6 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
 body{ height:100vh; margin:0; }
 
 
@@ -101,7 +98,7 @@ footer{
 
 body {
   font-family: 'Lora';
-  background: url("images/focal1.png");
+  background-image: url("images/focal1.png");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -124,6 +121,77 @@ font-family: 'Major Mono Display', monospace;
 }
 
 
+
+
+
+
+
+.center-con {
+    display: flex;
+    height: 50px;
+    justify-content: start;
+}
+
+
+
+.round {
+    position: absolute;
+    border: 2px solid #fff;
+    width: 40px;
+    height: 40px;
+    border-color: white;
+    
+}
+
+#cta{
+    width:100%; 
+    cursor: pointer; 
+    position: absolute;
+}
+
+    
+#cta .arrow{left: 30%;}
+.arrow {position: absolute; bottom: 0;  margin-left:0px; width: 12px; height: 12px; background-size: contain; top:15px;}
+.segunda{margin-left: 8px;}
+.next {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
+}
+
+@keyframes bounceAlpha {
+  0% {opacity: 1; transform: translateX(0px) scale(1);}
+  25%{opacity: 0; transform:translateX(10px) scale(0.9);}
+  26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+  55% {opacity: 1; transform: translateX(0px) scale(1);}
+}
+
+.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.arrow.primera.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.round .arrow{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.round .arrow.primera{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
 </style>
 </head>
 <body>
@@ -141,10 +209,10 @@ font-family: 'Major Mono Display', monospace;
 
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
+        <li class="nav-item active"><a href="home.html" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
         <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="queries.html" class="nav-link">Queries</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
       </ul>
     </div>
   
@@ -152,10 +220,19 @@ font-family: 'Major Mono Display', monospace;
 	
 	
   <div class="container">
-      <div class="index" style="position:absolute; top: 42%; left: 10%; color:white">
-        <p style="font-size: 50px"> FOCAL  </p>
+      <div class="index" style="position:absolute; top: 38%; left: 10%; color:white">
+        <p style="font-size: 80px"> FOCAL  </p>
+		<hr style="border:1px solid white; ">
 		<p> FOrmal Cinem<b>A</b>tics ontoLogy</p>
-
+<div class="center-con" style="margin-top: 20px;">
+    <div class="round">
+        <div id="cta"><a href="home.html">
+            <span class="arrow primera next "></span>
+            <span class="arrow segunda next "></span>
+            </a>
+        </div>
+    </div>
+</div>
     </div>
   </div>
 
