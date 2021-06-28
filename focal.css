@@ -102,3 +102,5 @@ div {display: block;}
 	font-family: 'Major Mono Display', monospace;
     max-height: 65px;
 }
+
+.container2 {max-width:87% !important;}
