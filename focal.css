@@ -45,6 +45,18 @@ div {display: block;}
 	font-family: 'Major Mono Display', monospace;
 }
 
+@media (max-width: 1000px) {
+
+      .navbar {
+            max-height: 1000px;
+       }
+
+}
+
+.navbar-collapse:active {
+	background-color: rgba(0,0,0,0.8);
+}
+
 
 .footer {
 	display: block;
