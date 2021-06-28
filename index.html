@@ -36,15 +36,21 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
+
+ <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
 
 <head>
 
 <style>
 body {
-  font-family: 'Lora';
   background-image: url("images/focal1.png");
   background-attachment: fixed;
   background-position: center;
@@ -136,17 +142,30 @@ body {
       <!-- Logo Image -->
       <img src="images/logo.png" width="45" alt="" class="d-inline-block align-middle mr-2">
       <!-- Logo Text -->
-      <span>FOCAL</span>
+      <span style="text-decoration:underline;" class="active">FOCAL<span class="sr-only">(current)</span></span>
     </a>
 
     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
 
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a href="home.html" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        <li class="nav-item "><a href="home.html" class="nav-link"><b>H</b>ome </a></li>
+        
+		<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ontology
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Classes</a>
+          <a class="dropdown-item" href="#">Properties</a>
+		  <a class="dropdown-item" href="#">Individuals</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#"><b>V</b>isual Examples</a>
+        </div>
+      </li>
+	  
         <li class="nav-item"><a href="queries.html" class="nav-link">Queries</a></li>
-        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
     </div>
   
