@@ -1,3 +1,12 @@
+#containersfondo {
+  font-family: 'Lora';
+  background: url("images/focal.jpg");
+  background: url("images/focal.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
 @font-face 
 {font-family: Roboto-Regular;
 src: url('font/Roboto-Regular.ttf') format('truetype');}
@@ -140,6 +149,8 @@ src: url('font/Raleway-Light.ttf') format('truetype');}
             padding-bottom: 3px;
             height: auto !important; 
                 }
+				
+
           
 
           /*loghi del footer*/
@@ -189,6 +200,15 @@ src: url('font/Raleway-Light.ttf') format('truetype');}
           }
 		  
 		  
+		  				.footer {
+    clear: both;
+    position: relative;
+    height: 200px !important;
+    margin-top: -200px;
+}
+
+body{ min-height:100vh; margin:0; }
+
 /*TEAM*/
 #title-team{
 	font-size:40px;
@@ -401,7 +421,7 @@ width:100%;
 #title{
 	font-family:Graduate-Regular;
 	font-size:13vw;
-  position: absolute;
+    position: absolute;
 	top: 65%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -623,7 +643,7 @@ color:black;}
 
 
 
-/* The circles on the timeline */
+/* The circles on the timeline
 .container::after {
   content: '';
   position: absolute;
@@ -634,7 +654,7 @@ color:black;}
   top: 20px;
   border-radius: 50%;
   z-index: 1;
-}
+} */
 
 /* Place the container to the left */
 .left {
