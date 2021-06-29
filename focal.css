@@ -37,7 +37,7 @@ div {display: block;}
     margin-right: auto;
     margin-left: auto;
 }
-	
+
 
 .navbar {
     background-color: rgba(0,0,0,0.8) !important;
@@ -103,7 +103,7 @@ div {display: block;}
     max-height: 65px;
 }
 
-.container2 {max-width:87% !important;}
+.container2 {max-width:95% !important;}
 
 ul {list-style-type: circle;}
 .li {list-style-type: none;}
@@ -111,10 +111,27 @@ ul {list-style-type: circle;}
   background-color: #D0EDF7;
   color: black;
 }
+.au {
+  background-color: #D0EDF7;
+  color: black;
+  text-decoration: underline;
+}
+.ay {
+  background-color: #F2F3E2;
+  color: black;
+  text-decoration: underline;
+}
+.ared {
+  background-color: #FBE5EF;
+  color: black;
+  text-decoration: underline;
+}
 .b {
 	background-color: #E5FBF1;
 	color:black;
 }
+
+p, li {text-align: justify;}
 
 /*Floating Back-To-Top Button*/
     #myBtn {
@@ -155,3 +172,90 @@ color: white;
 }
 
 
+	
+
+.slider {
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slides::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.slides::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+.slides::-webkit-scrollbar-track {
+  background: transparent;
+}
+.slides > div {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 100%;
+  min-height: fit-content;
+  margin-right: 50px;
+  border-radius: 10px;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+  display: flex;
+}
+.slides > div:target {
+/*   transform: scale(0.8); */
+}
+.slider > a {
+    display: inline-flex;
+	background-color: rgba(0,0,0,0.7) !important;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    border-radius: 2.5px;
+    margin: 1rem 0.2rem 1.5rem 0.2rem;
+    position: relative;
+    padding: 10px;
+    font-family: 'Roboto';
+    color: white;
+}
+.slider > a:hover {
+    background: #8fd4ec !important;
+	color:black !important;
+}
+.slider > a:active {
+  top: 1px;
+}
+.slider > a:focus {
+  background: #15617b;
+  color:white;
+}
+.classy {
+padding: 10px 0px 10px 0px;
+background-color: #F8F9FA !important;
+text-decoration: underline;
+color: black;
+font-size:32px !important;
+font-weight: 200;
+
+}
+
+.classy:hover {
+	background-color: #D0EDF7 !important;
+	color: black !important;
+	font-weight: normal;
+}
+
+/* Don't need button navigation */
+@supports (scroll-snap-type) {
+  .slider > a {
+    display: none;
+  }
+}
