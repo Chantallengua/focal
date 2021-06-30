@@ -84,9 +84,9 @@ body {
           Ontology
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item active" style="text-decoration:underline;" href="#">ClAsses<span class="sr-only">(current)</span></a>
+          <a class="dropdown-item " href="classes.html">ClAsses</a>
           <a class="dropdown-item" href="properties.html">PRopeRties</a>
-		  <a class="dropdown-item" href="individuals.html">IndiViduAls</a>
+		  <a class="dropdown-item active" href="individuals.html" style="text-decoration:underline;">IndiViduAls <span class="sr-only">(current)</span></a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="SVGG/example/examples.html"><b>V</b>isual EXAmples</a>
         </div>
@@ -118,7 +118,7 @@ body {
 
 <main role="main" class="container" style="margin-top: 10px !important; margin-bottom:20px !important">
 	<div class="majormono" style="margin-left:auto; margin-right: auto;">
-        <h1 style="font-size: 50px; padding:10px; margin.bottom:0px; margin-top:10px">ClASses</h1>
+        <h1 style="font-size: 50px; padding:10px; margin.bottom:0px; margin-top:10px">IndiViDuAls</h1>
 		<hr style="border:0.1px solid hsl(0, 0%, 35%);">
 		<div class="roboto" style="padding:10px;">      
 		<p>
@@ -134,17 +134,17 @@ body {
 <div class="container2" style="margin-left:auto; margin-right: auto;">
 
 <hr style="margin: 0px !important; margin-bottom:5px !important;">
-<div class="slider">
+<div class="slider sliderindividual">
   
-  <a href="#slide-1">Memento</a>
-  <a href="#slide-2">Sequence, Scene, Shot</a>
-  <a href="#slide-3">Character</a>
-  <a href="#slide-4">Screenplay</a>
-  <a href="#slide-5">Setting</a>
-  <a href="#slide-6">Significant Thing</a>
-  <a href="#slide-7">Action</a>
-  <a href="#slide-8">Emotion</a>
-  <a href="#slide-9">Sound</a>
+  <a href="#slide-1">&diams; Memento</a>
+  <a href="#slide-2">&diams; Sequence, Scene, Shot</a>
+  <a href="#slide-3">&diams; Character</a>
+  <a href="#slide-4">&diams; Screenplay</a>
+  <a href="#slide-5">&diams; Setting</a>
+  <a href="#slide-6">&diams; Significant Thing</a>
+  <a href="#slide-7">&diams; Action</a>
+  <a href="#slide-8">&diams; Emotion</a>
+  <a href="#slide-9">&diams; Sound</a>
 
 <hr style="margin-top: 0px; margin-bottom: 25px !important;">
 
@@ -165,7 +165,7 @@ body {
 				</div>
 				<div class="col">
 					<div class="roboto" style="padding:10px; padding-top:0px;">
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 25px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); padding: 25px; padding-bottom:35px; border-top-left-radius: 5px; border-radius: 5px;">
 						<p><a class="au classy" href="#movie" id="movie" style="margin: 0px !important;"><b>Movie</b></a>						</p>
 							<div style="padding:15px; border: solid 1px hsl(0, 0%, 80%); width:fit-content;">
 								<p style="margin: 0px !important;">
@@ -174,9 +174,14 @@ body {
 								<p style="text-indent:50px; margin: 0px !important">
 									<a class="au" href="#movie"><b>Movie</b></a>
 								</p>
+								<p style="text-indent:50px; margin: 0px !important">
+									&diams; <a class="i" href="#memento"><b>Memento</b></a>
+								</p>
 									
 							</div>						
-						<p style="margin:15px 0 0 0;">
+						
+
+							<p style="margin:15px 0 0 0;">
 						<b>Object properties include:</b> <a target="_blank" href="https://schema.org/genre" class="ay">skos:genre</a>, 
 							<a target="_blank" href="https://schema.org/productionCompany" class="ay">skos:productionCompany</a>, 
 							<a target="_blank" href="https://schema.org/actor" class="ay">skos:actor</a>, 
@@ -198,152 +203,73 @@ body {
 						<a target="_blank" href="https://schema.org/runtime" class="ay">skos:runtime</a>, 
 						<a target="_blank" href="https://schema.org/releasedate" class="ay">skos:releasedate</a>, 
 						<a class="au" href="#imdb_rating">imdb_rating</a>.
-						</p>
+						</p>		
+
+
 						<p style="margin:15px 0 0 0;">
-						<b>Has subclass</b>: <a class="au" href="#action">Action</a>, <a class="au" href="#character">Character</a>, <a class="au" href="#emotion">Emotion</a>, 
-							<a class="au" href="#screenplay">Screenplay</a>, <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#setting">Setting</a>, 
-							<a class="au" href="#thing">Significant_Thing</a>, <a class="au" href="#sound">Sound</a>.
-						</p>						
-						</div>
+						&lt;<a class="au" href="#movie">Movie</a> rdf:resource="#Memento"&gt;
+						</p>
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a target="_blank" href="https://schema.org/genre" class="ay">skos:genre</a> rdf:resource="#Giacomo_Puccini"/&gt;
+						</p>
+						<p style="margin:0px; text-indent: 10px;">  
+						  &lt;<a target="_blank" href="https://schema.org/productionCompany" class="ay">skos:productionCompany</a> rdf:resource="#Victorien_Sardou"/&gt;
+						</p>
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a target="_blank" href="https://schema.org/actor" class="ay">skos:actor</a> rdf:resource="#Giuseppe_Giacosa"/&gt;
+						</p>
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a target="_blank" href="https://schema.org/director" class="ay">skos:director</a> rdf:resource="#Luigi_Illica"/&gt;
+						</p>
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a target="_blank" href="https://schema.org/musicBy" class="ay">skos:musicBy</a> rdf:resource="#Luigi_Illica"/&gt;
+						</p>		
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a target="_blank" href="https://schema.org/countryOfOrigin" class="ay">skos:countryOfOrigin</a> rdf:resource="#Roma"/&gt;
+						</p>
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a class="au" id="screenplay_by">screenplay_by</a> rdf:resource="#Roma"/&gt;
+						</p>
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a target="_blank" href="https://schema.org/award" class="ay">skos:award</a> rdf:resource="#Roma"/&gt;
+						</p>
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a class="au" id="nomination">nomination</a> rdf:resource="#Roma"/&gt;
+						</p>
 						
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 25px">
-							<p>
-								<span style="margin: 0px !important; font-size:20px; text-decoration: underline;">
-									<b>Object Properties:</b>
-								</span>
-							</p>
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/genre" class="ay"><b>skos:genre</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its genre."</i></li>
-							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: every value of this property is a <a target="_blank" href="https://dbpedia.org/page/Genre" class="ared">dbo:Genre</a>.</li>
-							</ul>
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/productionCompany" class="ay"><b>skos:productionCompany</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its production company."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Production_Company" class="ared">dbo:Production_Company</a>.</li>
-							</ul>
-												
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/actor" class="ay"><b>skos:actor</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its actors."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Actor" class="ared">dbo:Actor</a>.</li>
-							</ul>
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/director" class="ay"><b>skos:director</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its director."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Film_director" class="ared">dbo:FilmDirector</a>.</li>
-							</ul>
-
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/musicBy" class="ay"><b>skos:musicBy</b></a></li>
-							<li class="li"><i>"This object property relates a movie to the composer of its soundtrack."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Musical_Artist" class="ared">dbo:Musical_Artist</a>.</li>
-							</ul>						
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/countryOfOrigin" class="ay"><b>skos:countryOfOrigin</b></a></li>
-							<li class="li"><i>"The link to the country of the principal offices of the production company or individual responsible for the movie."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Country" class="ared">dbo:Country</a>.</li>
-							</ul>
-							
-							<ul>
-							<li><a class="au" id="screenplay_by"><b>screenplay_by</b></a></li>
-							<li class="li"><i>"This object property relates a movie to the writer of its screenplay."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Writer" class="ared">dbo:Writer</a>.</li>
-							</ul>						
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/award" class="ay"><b>skos:award</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its awards."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a class="a">Award</a>.</li>
-							</ul>
-							
-							<ul>
-							<li><a class="au" id="nomination"><b>nomination</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its nominations."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a class="a">Award</a>.</li>
-							</ul>
-						</div>
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 25px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
-							<p>
-								<span style="margin: 0px !important; font-size:20px; text-decoration: underline;">
-									<b>Data Properties:</b>
-								</span>
-							</p>
-							<ul>
-							<li><a class="au" id="title"><b>title</b></a></li>
-							<li class="li"><i>"This data property connects the movie to its title."</i></li>
-							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:string</span>.</li>
-							</ul>
-
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/isBasedOn" class="ay"><b>skos:isBasedOn</b></a></li>
-							<li class="li"><i>"A resource from which this movie is derived."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
-							</ul>
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a id="is_inspired_by" class="au"><b>is_inspired_by</b></a></li>
-							<li class="li"><i>"A resource by which this movie is inspired."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
-							</ul>							
-							
-							<ul>
-							<li><a class="au" id="box_office"><b>box_office</b></a></li>
-							<li class="li"><i>"The revenue of a movie due to the number of tickets sold (in dollars)."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:integer</span>.</li>
-							</ul>
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a class="au" id="title">title</a> rdf:datatype="<a class="b">&xsd;string</a>"&gt;1900-01-14&lt;/<a class="au" id="title">title</a>&gt;
+						</p>
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a target="_blank" href="https://schema.org/isBasedOn" class="ay">skos:isBasedOn</a> rdf:datatype="<a class="b">&xsd;string</a>"&gt;3&lt;/<a target="_blank" href="https://schema.org/isBasedOn" class="ay">skos:isBasedOn</a>&gt; 
+						</p>
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a id="is_inspired_by" class="au">is_inspired_by</a> rdf:datatype="<a class="b">&xsd;string</a>"&gt;1900-01-14&lt;/<a id="is_inspired_by" class="au">is_inspired_by</a>&gt;
+						</p>	
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a class="au" id="box_office">box_office</a> rdf:datatype="<a class="b">&xsd;integer</a>"&gt;1900-01-14&lt;/<a class="au" id="box_office">box_office</a>&gt;
+						</p>
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a target="_blank" href="https://schema.org/keywords" class="ay">skos:keywords</a> rdf:datatype="<a class="b">&xsd;string</a>"&gt;1900-01-14&lt;/<a target="_blank" href="https://schema.org/keywords" class="ay">skos:keywords</a>&gt;
+						</p>
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a target="_blank" href="https://schema.org/about" class="ay">skos:about</a> rdf:datatype="<a class="b">&xsd;string</a>"&gt;1900-01-14&lt;/<a target="_blank" href="https://schema.org/about" class="ay">skos:about</a>&gt;
+						</p>	
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a target="_blank" href="https://schema.org/runtime" class="ay">skos:runtime</a> rdf:datatype="<a class="b">&xsd;integer</a>"&gt;1900-01-14&lt;/<a target="_blank" href="https://schema.org/runtime" class="ay">skos:runtime</a>&gt;
+						</p>
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a target="_blank" href="https://schema.org/releasedate" class="ay">skos:releasedate</a> rdf:date="<a class="b">&xsd;integer</a>"&gt;1900-01-14&lt;/<a target="_blank" href="https://schema.org/releasedate" class="ay">skos:releasedate</a>&gt;
+						</p>
+						<p style="margin:0px; text-indent: 10px;">
+						  &lt;<a class="au" id="imdb_rating">imdb_rating</a> rdf:datatype="<a class="b">&xsd;double</a>"&gt;1900-01-14&lt;/<a class="au" id="imdb_rating">imdb_rating</a>&gt;
+						</p>
+						<p style="margin:0px;">
+						&lt;/<a class="au" href="#movie">Movie</a>&gt; 
+						</p>
 						
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/keywords" class="ay"><b>skos:keywords</b></a></li>
-							<li class="li"><i>"Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
-							</ul>
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/about" class="ay"><b>skos:about</b></a></li>
-							<li class="li"><i>"The subject matter of the content."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
-							</ul>
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/runtime" class="ay"><b>skos:runtime</b></a></li>
-							<li class="li"><i>"The runtime of the movie."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:integer</span>.</li>
-							</ul>
-
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/releasedate" class="ay"><b>skos:releasedate</b></a></li>
-							<li class="li"><i>"The release date of the movie, expressed in dd/mm/yyyy."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:date</span>.</li>
-							</ul>
-							
-							<ul>
-							<li><a class="au" id="imdb_rating"><b>imdb_rating</b></a></li>
-							<li class="li"><i>"The IMDB rating of the movie."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:double</span>.</li>
-							</ul>	
-						</div>	
+						</div>
+	
 					</div>
 				</div>
 			</div>
@@ -367,7 +293,7 @@ body {
 				</div>
 				<div class="col">
 					<div class="roboto" style="padding:10px; padding-top:0px;">
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 25px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 15px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
 						<p><a class="au classy" href="#sequence" id="sequence" style="margin: 0px !important; font-size:28px;"><b>Sequence</b></a>,
 							<a class="au classy" href="#sequence" style="margin: 0px !important; font-size:28px;"><b>Scene</b></a>,
 							<a class="au classy" href="#sequence" style="margin: 0px !important; font-size:28px;"><b>Shot</b></a>
@@ -420,7 +346,7 @@ body {
 						</p>					
 						</div>
 						
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 25px">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 15px">
 							<p>
 								<span style="margin: 0px !important; font-size:20px;">
 									<b>Object Properties:</b>
@@ -485,7 +411,7 @@ body {
 
 
 						</div>
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 25px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 15px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
 							<p>
 								<span style="margin: 0px !important; font-size:20px;">
 									<b>Data Properties:</b>
@@ -629,7 +555,7 @@ body {
 				</div>
 				<div class="col">
 					<div class="roboto" style="padding:10px; padding-top:0px;">
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 25px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 15px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
 						<p><a class="au classy" href="#character" id="character" style="margin: 0px !important; font-size:28px;"><b>Character</b></a>						</p>
 							<div style="padding:15px; border: solid 1px hsl(0, 0%, 80%); width:fit-content;">
 								<p style="margin: 0px !important;">
@@ -710,7 +636,7 @@ body {
 						</p>						
 						</div>
 						
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 25px">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 15px">
 							<p>
 								<span style="margin: 0px !important; font-size:20px;">
 									<b>Object Properties:</b>
@@ -869,7 +795,7 @@ body {
 							</ul>							
 							
 						</div>
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 25px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 15px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
 							<p>
 								<span style="margin: 0px !important; font-size:20px;">
 									<b>Data Properties:</b>
@@ -973,7 +899,7 @@ body {
 				</div>
 				<div class="col">
 					<div class="roboto" style="padding:10px; padding-top:0px;">
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 25px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 15px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
 						<p><a class="au classy" href="#screenplay" id="screenplay" style="margin: 0px !important; font-size:28px;"><b>Screenplay</b></a>						</p>
 							<div style="padding:15px; border: solid 1px hsl(0, 0%, 80%); width:fit-content;">
 								<p style="margin: 0px !important;">
@@ -1009,7 +935,7 @@ body {
 												
 						</div>
 						
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 25px">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 15px">
 							<p>
 								<span style="margin: 0px !important; font-size:20px;">
 									<b>Object Properties:</b>
@@ -1048,7 +974,7 @@ body {
 												
 							
 						</div>
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 25px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 15px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
 							<p>
 								<span style="margin: 0px !important; font-size:20px;">
 									<b>Data Properties:</b>
@@ -1128,7 +1054,7 @@ body {
 				</div>
 				<div class="col">
 					<div class="roboto" style="padding:10px; padding-top:0px;">
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 25px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 15px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
 						<p><a class="au classy" href="#setting" id="setting" style="margin: 0px !important; font-size:28px;"><b>Setting</b></a>						</p>
 							<div style="padding:15px; border: solid 1px hsl(0, 0%, 80%); width:fit-content;">
 								<p style="margin: 0px !important;">
@@ -1155,7 +1081,7 @@ body {
 						</p>					
 						</div>
 						
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 25px">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 15px">
 							<p>
 								<span style="margin: 0px !important; font-size:20px;">
 									<b>Object Properties:</b>
@@ -1180,7 +1106,7 @@ body {
 												
 							
 						</div>
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 25px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 15px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
 							<p>
 								<span style="margin: 0px !important; font-size:20px;">
 									<b>Data Properties:</b>
@@ -1231,7 +1157,7 @@ body {
 				</div>
 				<div class="col">
 					<div class="roboto" style="padding:10px; padding-top:0px;">
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 25px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 15px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
 						<p><a class="au classy" href="#thing" id="thing" style="margin: 0px !important; font-size:28px;"><b>Significant Thing</b></a>						</p>
 							<div style="padding:15px; border: solid 1px hsl(0, 0%, 80%); width:fit-content;">
 								<p style="margin: 0px !important;">
@@ -1267,7 +1193,7 @@ body {
 						</p>					
 						</div>
 						
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 25px">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 15px">
 							<p>
 								<span style="margin: 0px !important; font-size:20px;">
 									<b>Object Properties:</b>
@@ -1337,7 +1263,7 @@ body {
 							</ul>
 							
 						</div>
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 25px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 15px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
 							<p>
 								<span style="margin: 0px !important; font-size:20px;">
 									<b>Data Properties:</b>
@@ -1381,7 +1307,7 @@ body {
 				</div>
 				<div class="col">
 					<div class="roboto" style="padding:10px; padding-top:0px;">
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 25px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 15px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
 						<p><a class="au classy" href="#action" id="action" style="margin: 0px !important; font-size:28px;"><b>Action</b></a>						</p>
 							<div style="padding:15px; border: solid 1px hsl(0, 0%, 80%); width:fit-content;">
 								<p style="margin: 0px !important;">
@@ -1409,7 +1335,7 @@ body {
 						
 						</div>
 						
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 25px">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 15px">
 							<p>
 								<span style="margin: 0px !important; font-size:20px; text-decoration: underline;">
 									<b>Object Properties:</b>
@@ -1440,7 +1366,7 @@ body {
 							</ul>
 
 						</div>
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 25px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 15px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
 							<p>
 								<span style="margin: 0px !important; font-size:20px; text-decoration: underline;">
 									<b>Data Properties:</b>
@@ -1478,7 +1404,7 @@ body {
 				</div>
 				<div class="col">
 					<div class="roboto" style="padding:10px; padding-top:0px;">
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 25px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 15px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
 						<p><a class="au classy" href="#emotion" id="emotion" style="margin: 0px !important; font-size:28px;"><b>Emotion</b></a>						</p>
 							<div style="padding:15px; border: solid 1px hsl(0, 0%, 80%); width:fit-content;">
 								<p style="margin: 0px !important;">
@@ -1520,7 +1446,7 @@ body {
 						</p>						
 						</div>
 						
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 25px">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 15px">
 							<p>
 								<span style="margin: 0px !important; font-size:20px;">
 									<b>Object Properties:</b>
@@ -1560,7 +1486,7 @@ body {
 							
 							
 						</div>
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 25px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 15px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
 							<p>
 								<span style="margin: 0px !important; font-size:20px;">
 									<b>Data Properties:</b>
@@ -1598,7 +1524,7 @@ body {
 				</div>
 				<div class="col">
 					<div class="roboto" style="padding:10px; padding-top:0px;">
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 25px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 15px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
 						<p><a class="au classy" href="#sound" id="sound" style="margin: 0px !important; font-size:28px;"><b>Sound</b></a>						</p>
 							<div style="padding:15px; border: solid 1px hsl(0, 0%, 80%); width:fit-content;">
 								<p style="margin: 0px !important;">
@@ -1636,7 +1562,7 @@ body {
 						</p>						
 						</div>
 						
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 25px">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 15px">
 							<p>
 								<span style="margin: 0px !important; font-size:20px;">
 									<b>Object Properties:</b>
@@ -1658,7 +1584,7 @@ body {
 							</ul>
 							
 						</div>
-						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 25px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 15px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
 							<p>
 								<span style="margin: 0px !important; font-size:20px;">
 									<b>Data Properties:</b>

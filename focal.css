@@ -105,6 +105,8 @@ div {display: block;}
 
 .container2 {max-width:95% !important;}
 
+main {margin-top:20px;}
+
 .container3 {
 	max-width:75% !important;
     padding-right: 15px;
@@ -135,6 +137,10 @@ ul {list-style-type: circle;}
 .b {
 	background-color: #E5FBF1;
 	color:black;
+}
+.i {
+  background-color: #bac9f3;
+  color: black;
 }
 
 p, li {text-align: justify;}
@@ -243,6 +249,30 @@ color: white;
   background: #15617b;
   color:white;
 }
+
+.sliderindividual > a {
+    display: inline-flex;
+	background-color: #bac9f3 !important;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    border-radius: 2.5px;
+    margin: 1rem 0.2rem 1.5rem 0.2rem;
+    position: relative;
+    padding: 10px;
+    font-family: 'Roboto';
+    color: black;
+}
+.sliderindividual > a:hover {
+    background: #1a3b97 !important;
+	color:white !important;
+}
+.sliderindividual > a:active {
+  top: 1px;
+}
+.sliderindividual > a:focus {
+  background: #15617b;
+  color:white !important;
+}
+
 .classy {
 padding: 10px 0px 10px 0px;
 background-color: #F8F9FA !important;
