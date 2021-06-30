@@ -136,7 +136,7 @@ body {
 <hr style="margin: 0px !important; margin-bottom:5px !important;">
 <div class="slider">
   
-  <a href="#slide-1">Memento</a>
+  <a href="#slide-1">Movie</a>
   <a href="#slide-2">Sequence, Scene, Shot</a>
   <a href="#slide-3">Character</a>
   <a href="#slide-4">Screenplay</a>
@@ -177,7 +177,11 @@ body {
 									
 							</div>						
 						<p style="margin:15px 0 0 0;">
-						<b>Object properties include:</b> <a target="_blank" href="https://schema.org/genre" class="ay">skos:genre</a>, 
+						<b>Object properties include:</b> 
+						<a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av">ma:title</a>,
+						<a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av">ma:identifier</a>,
+						<a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av">ma:language</a>,
+						<a target="_blank" href="https://schema.org/genre" class="ay">skos:genre</a>, 
 							<a target="_blank" href="https://schema.org/productionCompany" class="ay">skos:productionCompany</a>, 
 							<a target="_blank" href="https://schema.org/actor" class="ay">skos:actor</a>, 
 							<a target="_blank" href="https://schema.org/director" class="ay">skos:director</a>, 
@@ -197,7 +201,8 @@ body {
 						<a target="_blank" href="https://schema.org/about" class="ay">skos:about</a>, 
 						<a target="_blank" href="https://schema.org/runtime" class="ay">skos:runtime</a>, 
 						<a target="_blank" href="https://schema.org/releasedate" class="ay">skos:releasedate</a>, 
-						<a class="au" href="#imdb_rating">imdb_rating</a>.
+						<a class="au" href="#imdb_rating">imdb_rating</a>,
+						<a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av">ma:frameSize</a>.
 						</p>
 						<p style="margin:15px 0 0 0;">
 						<b>Has subclass</b>: <a class="au" href="#action">Action</a>, <a class="au" href="#character">Character</a>, <a class="au" href="#emotion">Emotion</a>, 
@@ -217,7 +222,7 @@ body {
 							<li class="li"><i>"This object property relates a movie to its genre."</i></li>
 							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#movie">Movie</a>.</li>
 							<li class="li"><b>Range</b>: every value of this property is a <a target="_blank" href="https://dbpedia.org/page/Genre" class="ared">dbo:Genre</a>.</li>
-							</ul>
+							</ul>							
 							
 							<ul>
 							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/productionCompany" class="ay"><b>skos:productionCompany</b></a></li>
@@ -282,14 +287,28 @@ body {
 								</span>
 							</p>
 							<ul>
-							<li><a class="au" id="title"><b>title</b></a></li>
+							<li><a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av"><b>ma:title</b></a></li>
 							<li class="li"><i>"This data property connects the movie to its title."</i></li>
 							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#movie">Movie</a>.</li>
 							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:string</span>.</li>
 							</ul>
+							
+							<ul>
+							<li><a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av"><b>ma:identifier</b></a></li>
+							<li class="li"><i>"A URI identifying a media resource."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:anyURI</span>.</li>
+							</ul>		
 
 							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/isBasedOn" class="ay"><b>skos:isBasedOn</b></a></li>
+							<li><a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av"><b>ma:language</b></a></li>
+							<li class="li"><i>"The language used in the movie."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>								
+
+							<ul>
+							<li><a target="_blank" href="https://schema.org/isBasedOn" class="ay"><b>skos:isBasedOn</b></a></li>
 							<li class="li"><i>"A resource from which this movie is derived."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
 							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
@@ -331,7 +350,7 @@ body {
 							</ul>
 
 							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/releasedate" class="ay"><b>skos:releasedate</b></a></li>
+							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/releaseDate" class="ay"><b>skos:releaseDate</b></a></li>
 							<li class="li"><i>"The release date of the movie, expressed in dd/mm/yyyy."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
 							<li class="li"><b>Range</b>: <span class="b">xsd:date</span>.</li>
@@ -343,6 +362,13 @@ body {
 							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
 							<li class="li"><b>Range</b>: <span class="b">xsd:double</span>.</li>
 							</ul>	
+							
+							<ul>
+							<li><a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av"><b>ma:frameSize</b></a></li>
+							<li class="li"><i>"It defines the frame size of the resource (e.g., width and height of 720 and 480 units, respectively). "</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>							
 						</div>	
 					</div>
 				</div>
@@ -391,8 +417,8 @@ body {
 									
 							</div>						
 						<p style="margin:15px 0 0 0;">
-						<b>Object properties include:</b> 
-						    <a class="au" href="#contains_character">contains_character</a>,
+						<b>Object properties include:</b> 						    
+							<a class="au" href="#contains_character">contains_character</a>,
 							<a class="au" href="#contains_line">contains_line</a>,
 							<a class="au" href="#contains_emotion">contains_emotion</a>,
 							<a class="au" href="#contains_action">contains_action</a>,
@@ -403,7 +429,9 @@ body {
 						<p style="margin:15px 0 0 0;">
 						<b>Data properties include:</b> 
 						<a class="au" href="#starts_at">starts_at</a>,
-						<a class="au" href="#ends_at">ends_at</a>, 
+						<a class="au" href="#ends_at">ends_at</a>,
+						<a class="au" href="#fabula">fabula</a>,
+						<a class="av" href="http://purl.org/dc/terms">dc:identifier</a>,						
 						<a class="au" href="#diegetic_level">diegetic_level</a>, 
 						<a class="au" href="#flashback">flashback</a>, 
 						<a class="au" href="#flashforward">flashforward</a>,
@@ -414,6 +442,7 @@ body {
 						<a class="au" href="#type">type</a>,
 						<a class="au" href="#sets_during">sets_during</a>,
 						<a class="au" href="#weather">weather</a>,
+						<a class="au" href="#mood">mood</a>,
 						<a class="au" href="#framing">framing</a>,
 						<a class="au" href="#size">size</a>,
 						<a class="au" href="#transition">transition</a>.
@@ -506,6 +535,13 @@ body {
 							</ul>
 
 							<ul>
+							<li><a class="av" href="http://purl.org/dc/terms"><b>dc:identifier</b></a></li>
+							<li class="li"><i>"This object property relates a movie to its production company."</i></li>
+							<li class="li"><b>Domain</b>: <a class="a">owl:Thing</a>.</li>
+							<li class="li"><b>Range</b>: xsd:anyURI</a>.</li>
+							</ul>
+							
+							<ul>
 							<li><a class="au" id="fabula"><b>fabula</b></a></li>
 							<li class="li"><i>"It associates the Scene to an integer > 0, according to its chronological position in the order the movie."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#sequence">Scene</a>.</li>
@@ -585,6 +621,13 @@ body {
 							<li class="li"><b>Range</b>: <a class="b">{"cloudy" , "rainy" , "snowy" , "stormy" , "sunny" , "windy"}</a>.</li>
 							</ul>	
 
+							<ul>
+							<li><a class="au" id="mood"><b>mood</b></a></li>
+							<li class="li"><i>"It describes a Scene in a subjective manner (e.g. scary, funny)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#scene">Scene</a>.</li>
+							<li class="li"><b>Range</b>: <a class="b">xsd:string</a>.</li>
+							</ul>
+							
 							<ul>
 							<li><a class="au" id="framing"><b>framing</b></a></li>
 							<li class="li"><i>"It is the placement and position of the subjects in a Shot."</i></li>
@@ -696,6 +739,7 @@ body {
 						<b>Data properties include:</b> 
 						<a class="au" href="#deceased">deceased</a>
 						<a class="au" href="#alive">alive</a>,
+						<a class="av" href="http://purl.org/dc/terms">dc:identifier</a>,
 						<a target="_blank" href="https://schema.org/alternateName" class="ay">foaf:skos:alternateName</a>,
 						<a class="au" href="#has_goal">has_goal</a>,
 						<a class="au" href="#is_main_protagonist">is_main_protagonist</a>,
@@ -717,11 +761,11 @@ body {
 								</span>
 							</p>
 							<ul>
-							<li><a class="au" id="#character_appears_in"><b>character_appears_in</b></a></li>
+							<li><a class="au" id="character_appears_in"><b>character_appears_in</b></a></li>
 							<li class="li"><i>"This object property relates a Character to the Sequence, Scene or Shot in which he appears."</i></li>
 							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#character">Character</a>.</li>
 							<li class="li"><b>Range</b>: every value of this property is a <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
-							<li class="li">> <b>Inverse Property of:</b> <a class="a" href="#contains_character">contains_character</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#contains_character">contains_character</a>.</li>
 							</ul>
 							
 							<ul>
@@ -891,6 +935,13 @@ body {
 							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
 							</ul>
 
+							<ul>
+							<li><a class="av" href="http://purl.org/dc/terms"><b>dc:identifier</b></a></li>
+							<li class="li"><i>"This object property relates a movie to its production company."</i></li>
+							<li class="li"><b>Domain</b>: <a class="a">owl:Thing</a>.</li>
+							<li class="li"><b>Range</b>: xsd:anyURI</a>.</li>
+							</ul>
+							
 							<ul>
 							<li><a target="_blank" href="https://schema.org/alternateName" class="ay"><b>skos:alternateName</b></a></li>
 							<li class="li"><i>"An alias for the Character."</i></li>
@@ -1150,6 +1201,7 @@ body {
 						<p style="margin:15px 0 0 0;">
 						<b>Data properties include:</b> 
 						<a class="au" href="#int_setting">int_setting</a>,
+						<a class="av" href="http://purl.org/dc/terms">dc:identifier</a>,
 						<a class="au" href="#fict_setting">fict_setting</a>,
 						<a class="au" href="#nat_setting">nat_setting</a>.
 						</p>					
@@ -1191,6 +1243,13 @@ body {
 							<li class="li"><i>"If true, this data property indicates if the Setting is an interior location (e.g. room); if false, if it is an exterior one (e.g. garden)."</i></li>
 							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#setting">Setting</a>.</li>
 							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="av" href="http://purl.org/dc/terms"><b>dc:identifier</b></a></li>
+							<li class="li"><i>"This object property relates a movie to its production company."</i></li>
+							<li class="li"><b>Domain</b>: <a class="a">owl:Thing</a>.</li>
+							<li class="li"><b>Range</b>: xsd:anyURI</a>.</li>
 							</ul>
 							
 							<ul>
@@ -1263,6 +1322,7 @@ body {
 						<p style="margin:15px 0 0 0;">
 						<b>Data properties include:</b> 
 						<a class="au" href="#has_written_on_it">has_written_on_it</a>,
+						<a class="av" href="http://purl.org/dc/terms">dc:identifier</a>,
 						<a class="au" href="#filled_with">filled_with</a>.
 						</p>					
 						</div>
@@ -1349,6 +1409,13 @@ body {
 							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#thing">Significant Thing</a>.</li>
 							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:string</span>.</li>
 							</ul>
+
+							<ul>
+							<li><a class="av" href="http://purl.org/dc/terms"><b>dc:identifier</b></a></li>
+							<li class="li"><i>"This object property relates a movie to its production company."</i></li>
+							<li class="li"><b>Domain</b>: <a class="a">owl:Thing</a>.</li>
+							<li class="li"><b>Range</b>: xsd:anyURI</a>.</li>
+							</ul>							
 							
 							<ul>
 							<li><a class="a" id="filled_with"><b>filled_with</b></a></li>
@@ -1510,7 +1577,8 @@ body {
 						</p>
 						<p style="margin:15px 0 0 0;">
 						<b>Data properties include:</b> 
-						<a class="au" href="#intensity2">intensity</a>.
+						<a class="au" href="#intensity2">intensity</a>,
+						<a class="av" href="http://purl.org/dc/terms">dc:identifier</a>.
 						</p>
 						<p style="margin:15px 0 0 0;">
 						<b>Has subclass</b>: 
@@ -1572,6 +1640,13 @@ body {
 							<li class="li"><b>Domain</b>: having this property implies being a  <a class="au">owl:Thing</a>.</li>
 							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:double</span>.</li>
 							</ul>
+							
+							<ul>
+							<li><a class="av" href="http://purl.org/dc/terms"><b>dc:identifier</b></a></li>
+							<li class="li"><i>"This object property relates a movie to its production company."</i></li>
+							<li class="li"><b>Domain</b>: <a class="a">owl:Thing</a>.</li>
+							<li class="li"><b>Range</b>: xsd:anyURI</a>.</li>
+							</ul>							
 							
 						</div>	
 					</div>

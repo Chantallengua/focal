@@ -118,7 +118,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada u
 	  
 <div class="container3" style="margin-left:auto; margin-right: auto;">
 	<div class="row">
-		<div class="col" style="border: 1px solid; border-color: transparent  hsl(0, 0%, 89%) transparent transparent;" >
+		<div class="col">
 			<div style="margin-left:auto; margin-right: auto;">
 				<h1 class="majormono" style="font-size: 30px; padding:10px; margin.bottom:0px; margin-top:10px">Object PRopeRties  </h1>
 				<hr>
@@ -246,11 +246,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada u
 
 
 <ul>
-							<li><a class="au" id="#character_appears_in"><b>character_appears_in</b></a></li>
+							<li><a class="au" id="character_appears_in"><b>character_appears_in</b></a></li>
 							<li class="li"><i>"This object property relates a Character to the Sequence, Scene or Shot in which he appears."</i></li>
 							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="classes.html#character">Character</a>.</li>
 							<li class="li"><b>Range</b>: every value of this property is a <a class="au" href="classes.html#sequence">Sequence</a>, <a class="au" href="classes.html#sequence">Scene</a>, <a class="au" href="classes.html#sequence">Shot</a>.</li>
-							<li class="li">> <b>Inverse Property of:</b> <a class="a" href="#contains_character">contains_character</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#contains_character">contains_character</a>.</li>
 							</ul>
 							
 							<ul>
@@ -569,16 +569,31 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada u
 		</diV>
 		
 		<div class="col" >
-			<div style="margin-left:auto; margin-right: auto;">
+			<div style="margin-left:auto; margin-right: auto; text-align: left;">
 				<h1 class="majormono" style="font-size: 30px; padding:10px; margin.bottom:0px; margin-top:10px">Data PRopeRties  </h1>
 				<hr>
 			</div>
 			<ul>
-							<li><a class="au" id="title"><b>title</b></a></li>
+							<ul>
+							<li><a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av"><b>ma:title</b></a></li>
 							<li class="li"><i>"This data property connects the movie to its title."</i></li>
-							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="classes.html#movie">Movie</a>.</li>
+							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#movie">Movie</a>.</li>
 							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:string</span>.</li>
 							</ul>
+							
+							<ul>
+							<li><a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av"><b>ma:identifier</b></a></li>
+							<li class="li"><i>"A URI identifying a media resource."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:anyURI</span>.</li>
+							</ul>		
+
+							<ul>
+							<li><a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av"><b>ma:language</b></a></li>
+							<li class="li"><i>"The language used in the movie."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>							
 
 							<ul>
 							<li><a target="_blank" href="https://schema.org/isBasedOn" class="ay"><b>skos:isBasedOn</b></a></li>
@@ -623,7 +638,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada u
 							</ul>
 
 							<ul>
-							<li><a target="_blank" href="https://schema.org/releasedate" class="ay"><b>skos:releasedate</b></a></li>
+							<li><a target="_blank" href="https://schema.org/releaseDate" class="ay"><b>skos:releaseDate</b></a></li>
 							<li class="li"><i>"The release date of the movie, expressed in dd/mm/yyyy."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="classes.html#movie">Movie</a>.</li>
 							<li class="li"><b>Range</b>: <span class="b">xsd:date</span>.</li>
@@ -635,9 +650,22 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada u
 							<li class="li"><b>Domain</b>: <a class="au" href="classes.html#movie">Movie</a>.</li>
 							<li class="li"><b>Range</b>: <span class="b">xsd:double</span>.</li>
 							</ul>	
+							
+							<ul>
+							<li><a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av"><b>ma:frameSize</b></a></li>
+							<li class="li"><i>"It defines the frame size of the resource (e.g., width and height of 720 and 480 units, respectively). "</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>							
 
+							<ul>
+							<li><a target="_blank" href="http://purl.org/dc/terms" class="av"><b>dc:identifier</b></a></li>
+							<li class="li"><i>"An unambiguous reference to the resource within a given context."</i></li>
+							<li class="li"><b>Domain</b>: <a class="a">owl:Thing</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:anyURI</span>.</li>
+							</ul>
 
-<ul>
+							<ul>
 							<li><a class="au" id="starts_at"><b>starts_at</b></a></li>
 							<li class="li"><i>"It defines the starting time ('hh:mm:ss') of a Scene, Sequence or Shot."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="classes.html#movie">Movie</a>.</li>
@@ -729,7 +757,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada u
 							<li class="li"><i>"It relates the Sequence, Scene or Shot to its weather."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="classes.html#sequence">Sequence</a>, <a class="au" href="classes.html#sequence">Scene</a>, <a class="au" href="classes.html#sequence">Shot</a>.</li>
 							<li class="li"><b>Range</b>: <a class="b">{"cloudy" , "rainy" , "snowy" , "stormy" , "sunny" , "windy"}</a>.</li>
-							</ul>	
+							</ul>
+
+							<ul>
+							<li><a class="au" id="mood"><b>mood</b></a></li>
+							<li class="li"><i>"It describes a Scene in a subjective manner (e.g. scary, funny)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#scene">Scene</a>.</li>
+							<li class="li"><b>Range</b>: <a class="b">xsd:string</a>.</li>
+							</ul>							
 
 							<ul>
 							<li><a class="au" id="framing"><b>framing</b></a></li>
