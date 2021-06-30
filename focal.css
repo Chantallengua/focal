@@ -105,6 +105,12 @@ div {display: block;}
 
 .container2 {max-width:95% !important;}
 
+.container3 {
+	max-width:75% !important;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
 ul {list-style-type: circle;}
 .li {list-style-type: none;}
 .a {
