@@ -378,13 +378,13 @@ body {
 							</div>						
 						<p style="margin:15px 0 0 0;">
 						<b>Object properties include:</b> 
-						    <a class="au" href="#characters">characters</a>,
-							<a class="au" href="#lines">lines</a>,
-							<a class="au" href="#emotions">emotions</a>,
-							<a class="au" href="#actions">actions</a>,
-							<a class="au" href="#contains_things">contains_things</a>,
-							<a class="au" href="#sounds">sounds</a>,
-							<a class="au" href="#sets">sets</a>.					
+						    <a class="au" href="#contains_character">contains_character</a>,
+							<a class="au" href="#contains_line">contains_line</a>,
+							<a class="au" href="#contains_emotion">contains_emotion</a>,
+							<a class="au" href="#contains_action">contains_action</a>,
+							<a class="au" href="#contains_thing">contains_thing</a>,
+							<a class="au" href="#contains_sound">contains_sound</a>,
+							<a class="au" href="#has_setting">has_setting</a>.					
 						</p>
 						<p style="margin:15px 0 0 0;">
 						<b>Data properties include:</b> 
@@ -413,54 +413,60 @@ body {
 								</span>
 							</p>						
 							<ul>
-							<li><a class="au" id="characters"><b>characters</b></a></li>
+							<li><a class="au" id="contains_character"><b>contains_character</b></a></li>
 							<li class="li"><i>"This object property relates a Sequence, Scene or Shot to the characters who appear in it."</i></li>
 							<li class="li"><b>Domain</b>: having this property implies being a 
 							<a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
-							<li class="li"><b>Range</b>: every value of this property is a <a class="au" href="#character">Character</a>.</li>
-							<li class="li">Simmetric Property</li>
+							<li class="li"><b>Range</b>: every value of this property is a <a class="au" href="#character">Character</a>.</li>							
+							<li class="li">> <b>Inverse Property of:</b> <a class="a" id="character_appears_in">character_appears_in</a>.</li>
 							</ul>
 							
 							<ul>
-							<li><a class="au" id="lines"><b>lines</b></a></li>
+							<li><a class="au" id="contains_line"><b>contains_line</b></a></li>
 							<li class="li"><i>"It relates a Scene to the Screenplay lines spoken in it."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#sequence">Scene</a>.</li>
-							<li class="li"><b>Range</b>: <a class="au" href="#screenplay">Screenplay</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#screenplay">Screenplay</a>.</li>							
+							<li class="li">> <b>Inverse Property of:</b> <a class="a" id="line_contained_in">line_said_in</a>.</li>
 							</ul>
 							
 							<ul>
-							<li><a class="au" id="emotions"><b>emotions</b></a></li>
+							<li><a class="au" id="contains_emotion"><b>contains_emotion</b></a></li>
 							<li class="li"><i>"It relates a Sequence, Scene or Shot to the Characters' emotions shown in it."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
-							<li class="li"><b>Range</b>: <a class="au" href="#emotion">Emotion</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#emotion">Emotion</a>.</li>							
+							<li class="li">> <b>Inverse Property of:</b> <a class="a" id="emotion_expressed_in">emotion_expressed_in</a>.</li>
 							</ul>	
 							
 							<ul>
-							<li><a class="au" id="actions"><b>actions</b></a></li>
+							<li><a class="au" id="contains_action"><b>contains_action</b></a></li>
 							<li class="li"><i>"It relates a Sequence, Scene or Shot to an action that happens in it (e.g. 'murder', 'car crash')."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#action">Action</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="a" id="action_happens_in">action_happens_in</a>.</li>
 							</ul>
 							
 							<ul>
-							<li><a class="au" id="contains_things"><b>contains_things</b></a></li>
+							<li><a class="au" id="contains_thing"><b>contains_thing</b></a></li>
 							<li class="li"><i>"It relates a Sequence, Scene or Shot to the significant things who appear in it."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#thing">Significant Thing</a>.</li>
+							<li class="li">> <b>Inverse of:</b> <a class="au" id="thing_shown_in"><b>thing_shown_in</b></a></li>
 							</ul>
 
 							<ul>
-							<li><a class="au" id="sounds"><b>sounds</b></a></li>
+							<li><a class="au" id="contains_sound"><b>contains_sound</b></a></li>
 							<li class="li"><i>""It relates a Sequence, Scene or Shot to its sounds, music, tracks."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#sound">Sound</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="a" id="sound_contained_in">sound_contained_in</a>.</li>
 							</ul>
 
 							<ul>
-							<li><a class="au" id="sets"><b>sets</b></a></li>
+							<li><a class="au" id="has_setting"><b>has_setting</b></a></li>
 							<li class="li"><i>"It relates a Sequence, Scene or Shot to its Setting."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="a" id="is_setting_of">is_setting_of</a>.</li>
 							</ul>
 
 
@@ -631,7 +637,7 @@ body {
 							</div>						
 						<p style="margin:15px 0 0 0;">
 						<b>Object properties include:</b> 						
-						<a class="au" href="#characters">characters</a>,
+						<a class="au" href="#character_appears_in">character_appears_in</a>,
 						<a class="au" href="#starred_by">starred_by</a>,
 						<a class="au" href="#feels">feels</a>,
 						<a class="au" href="#says">says</a>,
@@ -665,6 +671,7 @@ body {
 						<a class="au" href="#miscellaneous3">reads</a>,
 						<a class="au" href="#miscellaneous3">uses</a>,
 						<a class="au" href="#miscellaneous3">wears</a>,
+						<a class="au" href="#miscellaneous3">burns</a>,
 						<a class="au" href="#miscellaneous3">throws</a>,
 						<a class="au" href="#miscellaneous3">shoots with</a>,
 						<a class="au" href="#miscellaneous3">drives</a>,
@@ -696,11 +703,11 @@ body {
 								</span>
 							</p>
 							<ul>
-							<li><a class="au" id="#characters"><b>characters</b></a></li>
+							<li><a class="au" id="#character_appears_in"><b>character_appears_in</b></a></li>
 							<li class="li"><i>"This object property relates a Character to the Sequence, Scene or Shot in which he appears."</i></li>
 							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#character">Character</a>.</li>
 							<li class="li"><b>Range</b>: every value of this property is a <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
-							<li class="li">> <b>Symmetric Property</b>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="a" id="contains_character">contains_character</a>.</li>
 							</ul>
 							
 							<ul>
@@ -708,7 +715,7 @@ body {
 							<li class="li"><i>"It relates a Character to the Actor who stars him/her."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#character">Character</a>.</li>
 							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Actor" class="ared">dbo:Actor</a>.</li>
-							<li class="li">> <b>Inverse of:</b> <a class="a">stars</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="a">stars</a>.</li>
 							</ul>
 							
 							<ul>
@@ -716,7 +723,7 @@ body {
 							<li class="li"><i>"It relates a Character to the emotion s/he is feeling in a given moment."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#character">Character</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#emotion">Emotion</a>.</li>
-							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#felt_by">felt_by</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#felt_by">felt_by</li></a>
 							</ul>	
 
 							<ul>
@@ -724,7 +731,7 @@ body {
 							<li class="li"><i>"It relates a Character to lines of the Screenplay s/he says."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#character">Character</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#screenplay">Screenplay</a>.</li>
-							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#is_said_by">is_said_by</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#is_said_by">is_said_by</li></a>
 							</ul>	
 
 							<ul>
@@ -743,7 +750,7 @@ body {
 
 							<ul>
 							<li><a target="_blank" href="http://xmlns.com/foaf/spec/#term_maker" class="ared">foaf:maker</a></li>
-							<li class="li"><i>"It relates a Character to a Significant Thing s/he created."</i></li>
+							<li class="li"><i>"It relates a Character to a Significant Thing s/he made."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#character">Character</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#thing">Significant Thing</a>.</li>
 							<li class="li">> <b>Inverse Property of:</b> <a target="_blank" href="http://xmlns.com/foaf/spec/#term_made" class="ared">foaf:made</a></li>
@@ -751,10 +758,10 @@ body {
 
 							<ul>
 							<li><a class="au" id="is_agent"><b>is_agent</b></a></li>
-							<li class="li"><i>"It relates a Character to a significant action (e.g. murder, chasing, throwing) s/he makes."</i></li>
+							<li class="li"><i>"It relates a Character to a significant action (e.g. murder, chasing, throwing) s/he does."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#character">Character</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#action">Action</a>.</li>
-							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#has_agent">has_agent</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#has_agent">has_agent</li></a>
 							</ul>	
 							
 							<ul>
@@ -762,7 +769,7 @@ body {
 							<li class="li"><i>"It relates a Character to a significant action (e.g. murder, chasing, throwing) s/he suffers."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#character">Character</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#action">Action</a>.</li>
-							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#has_patient">has_patient</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#has_patient">has_patient</li></a>
 							</ul>		
 
 							<ul>
@@ -770,7 +777,7 @@ body {
 							<li class="li"><i>"It relates a Character to a significant thing s/he owns."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#character">Character</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#thing">Significant Thing</a>.</li>
-							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#is_owned_by">is_owned_by</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#is_owned_by">is_owned_by</li></a>
 							</ul>		
 
 							<ul>
@@ -804,7 +811,7 @@ body {
 								</b>
 								</li>
 							<li class="li"><i>"These are simple relationships between Characters. The last two (<a class="au">'imagines'</a>
-							and <a class="au">'is_imagined_by'</a>) are symmetric and relate a Character to another Character s/he is seeing, remembering
+							and <a class="au">'is_imagined_by'</a>) are Inverse the one to the other, and relate a Character to another Character s/he is seeing, remembering
 							or imagining as a ghost, illusion, wrong memory."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#character">Character</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#character">Character</a>.</li>							
@@ -823,13 +830,20 @@ body {
 								<a class="au">wears</a>,
 								<a class="au">burns</a>,
 								<a class="au">throws</a>,
-								<a class="au">shoots with</a>,
+								<a class="au">shoots_with</a>,
 								<a class="au">drives</a>
 								</b>
 								</li>
 							<li class="li"><i>"These are simple relationships between a Character and a Significant Thing."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#character">Character</a>.</li>
-							<li class="li"><b>Range</b>: <a class="au" href="#thing">Significant Thing</a>.</li>							
+							<li class="li"><b>Range</b>: <a class="au" href="#thing">Significant Thing</a>.</li>		
+							<li class="li">> <b>Inverse Properties of:</b> <a class="au" href="#miscellaneous3b">is_read_by</a>,
+							<a class="au" href="#miscellaneous3b">is_used_by</a>,
+							<a class="au" href="#miscellaneous3b">is_worn_by</a>,
+							<a class="au" href="#miscellaneous3b">is_burnt_by</a>,
+							<a class="au" href="#miscellaneous3b">is_thrown_by</a>,
+							<a class="au" href="#miscellaneous3b">is_shot_with</a>,
+							<a class="au" href="#miscellaneous3b">is_driven_by</a></li>							
 							</ul>	
 
 							<ul>
@@ -837,7 +851,7 @@ body {
 							<li class="li"><i>"It relates a Character to a Setting s/he administrates (e.g. an hotel, a house)."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#character">Character</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#setting">Setting</a>.</li>
-							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#is_administrated_by">is_administrated_by</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#is_administrated_by">is_administrated_by</a></li>
 							</ul>							
 							
 						</div>
@@ -939,7 +953,7 @@ body {
 					<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/Scene.png" alt="">
 					</p>	
 					<p>
-					Qui ci metto spiegazioni e motivazioni di certe scelte. Sopra l'immagine deve essere molto più allungata.
+					Screenplay. Qui ci metto spiegazioni e motivazioni di certe scelte. Sopra l'immagine deve essere molto più allungata.
 					</p>
 					</div>
 				</div>
@@ -961,17 +975,23 @@ body {
 									
 							</div>						
 						<p style="margin:15px 0 0 0;">
-						<b>Object properties include:</b> 
-						<a target="_blank" href="https://schema.org/genre" class="ay">skos:genre</a>, 						
-							<a class="au" href="#"></a>, 
+						<b>Object properties include:</b> 						
+							<a class="au" href="#is_said_by">is_said_by</a>, 
+							<a class="au" href="#is_said_to">is_said_to</a>, 
+							<a class="au" href="#line_said_in">line_said_in</a>, 
+							<a class="au" href="#conveys_emotion">conveys_emotion</a>.		
 					
-						.</p>
+						</p>
 						<p style="margin:15px 0 0 0;">
 						<b>Data properties include:</b> 
-						<a target="_blank" href="https://schema.org/genre" class="ay">skos:genre</a>, 						
-							<a class="au" href="#"></a>, 
-					
-						.</p>						
+						<a class="au" href="#dialog_style">dialog_style</a>,
+						<a class="au" href="#is_a_joke">is_a_joke</a>,
+						<a class="au" href="#is_a_lie">is_a_lie</a>,
+						<a class="au" href="#is_ironic">is_ironic</a>,
+						<a class="au" href="#is_metaphor_for">is_metaphor_for</a>,
+						<a class="au" href="#intensity">intensity</a>,
+						<a class="au" href="#contains_swearword">contains_swearword</a>.			
+						</p>						
 												
 						</div>
 						
@@ -982,18 +1002,35 @@ body {
 								</span>
 							</p>
 							<ul>
-							<li><a class="a"><b>screenplay_by</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its genre."</i></li>
+							<li><a class="au" id="is_said_by"><b>is_said_by</b></a></li>
+							<li class="li"><i>"This object property relates a Screenplay line to the Character who says it."</i></li>
 							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#screenplay">Screenplay</a>.</li>
-							<li class="li"><b>Range</b>: every value of this property is a <a target="_blank" href="https://dbpedia.org/page/Genre" class="ared">dbo:Genre</a>.</li>
+							<li class="li"><b>Range</b>: every value of this property is a <a class="au" href="#character">Character</a>.</li>
+							<li class="li"><b>Inverse of:</b> <a class="au" id="says"><b>says</b></a></li>
 							</ul>
 							
 							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/productionCompany" class="ay"><b>skos:productionCompany</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its production company."</i></li>
+							<li><a class="au" id="is_said_to"><b>is_said_to</b></a></li>
+							<li class="li"><i>"This object property relates a Screenplay line to the Character to whom a sentence is directed."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#screenplay">Screenplay</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Production_Company" class="ared">dbo:Production_Company</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#character">Character</a>.</li>
 							</ul>
+							
+							<ul>
+							<li><a class="au" id="line_said_in"><b>line_said_in</b></a></li>
+							<li class="li"><i>"It relates the Screenplay lines to the Scene in which they are spoken."</i></li>
+							<li class="li"><b>Domain</b>:  <a class="au" href="#screenplay">Screenplay</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#sequence">Scene</a>.</li>
+							<li class="li"><b>Inverse Property of:</b> <a class="au" id="contains_line"><b>contains_line</b></a></li>
+							</ul>				
+
+							<ul>
+							<li><a class="au" id="conveys_emotion"><b>conveys_emotion</b></a></li>
+							<li class="li"><i>"It relates the Screenplay lines to the Emotion they convey."</i></li>
+							<li class="li"><b>Domain</b>:  <a class="au" href="#screenplay">Screenplay</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#emotion">Emotion</a>.</li>
+							<li class="li"><b>Inverse Property of:</b> <a class="au" id="emotion_conveyed_by_lines"><b>emotion_conveyed_by_lines</b></a></li>
+							</ul>							
 												
 							
 						</div>
@@ -1004,10 +1041,52 @@ body {
 								</span>
 							</p>
 							<ul>
-							<li><a class="a"><b>title</b></a></li>
-							<li class="li"><i>"This data property connects the movie to its title."</i></li>
+							<li><a class="au" id="dialog_style"><b>dialog_style</b></a></li>
+							<li class="li"><i>"This data property indicates the style of the dialogue, in relation to the character (e.g. "off screen" is used when the character is in the scene location, but not currently on screen, "voice over" is used when the speaker is not physically in the scene)."</i></li>
 							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#screenplay">Screenplay</a>.</li>
-							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:string</span>.</li>
+							<li class="li"><b>Range</b>: every value of this property shall be within this range: <span class="b">{"at the phone" , "inner thought" , "normal" , "on TV" , "on radio" , "off screen" , "pre lap" , "voice over"}</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="is_a_joke"><b>is_a_joke</b></a></li>
+							<li class="li"><i>"If the value is true, it indicates that the Screenplay line is a joke."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#screenplay">Screenplay</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+
+							<ul>
+							<li><a class="au" id="is_a_lie"><b>is_a_lie</b></a></li>
+							<li class="li"><i>"If the value is true, it indicates that the Screenplay line is a lie."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#screenplay">Screenplay</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>							
+							
+							<ul>
+							<li><a class="au" id="is_ironic"><b>is_ironic</b></a></li>
+							<li class="li"><i>"If the value is true, it indicates that the Screenplay line is ironic."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#screenplay">Screenplay</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="is_metaphor_for"><b>is_metaphor_for</b></a></li>
+							<li class="li"><i>"It indicates the metaphorical meaning of the Screenplay line."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#screenplay">Screenplay</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="intensity"><b>intensity</b></a></li>
+							<li class="li"><i>"This data property allows you to define the intensity of something (e.g. an Action or a spoken dialogue of the Movie) from 0 to 10."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au">owl:Thing</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:double</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="contains_swearword"><b>contains_swearword</b></a></li>
+							<li class="li"><i>"It indicates how many swearwords are contained in the Screenplay line (if any)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#screenplay">Screenplay</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:integer</span>.</li>
 							</ul>
 							
 							
@@ -1029,14 +1108,14 @@ body {
 					<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/Scene.png" alt="">
 					</p>	
 					<p>
-					Qui ci metto spiegazioni e motivazioni di certe scelte. Sopra l'immagine deve essere molto più allungata.
+					Setting. Qui ci metto spiegazioni e motivazioni di certe scelte. Sopra l'immagine deve essere molto più allungata.
 					</p>
 					</div>
 				</div>
 				<div class="col">
 					<div class="roboto" style="padding:10px; padding-top:0px;">
 						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 15px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
-						<p><a class="au classy" href="#movie" id="movie" style="margin: 0px !important; font-size:28px;"><b>Movie</b></a>						</p>
+						<p><a class="au classy" href="#setting" id="setting" style="margin: 0px !important; font-size:28px;"><b>Setting</b></a>						</p>
 							<div style="padding:15px; border: solid 1px hsl(0, 0%, 80%); width:fit-content;">
 								<p style="margin: 0px !important;">
 									owl:Thing
@@ -1044,33 +1123,22 @@ body {
 								<p style="text-indent:50px; margin: 0px !important">
 									<a class="au" href="#movie"><b>Movie</b></a>
 								</p>
+								<p style="text-indent:100px; margin: 0px !important">
+									<a class="au" href="#setting"><b>Setting</b></a>
+								</p>
 									
 							</div>						
 						<p style="margin:15px 0 0 0;">
-						<b>Object properties include:</b> <a target="_blank" href="https://schema.org/genre" class="ay">skos:genre</a>, 
-							<a target="_blank" href="https://schema.org/productionCompany" class="ay">skos:productionCompany</a>, 
-							<a target="_blank" href="https://schema.org/actor" class="ay">skos:actor</a>, 
-							<a target="_blank" href="https://schema.org/director" class="ay">skos:director</a>, 
-							<a target="_blank" href="https://schema.org/musicBy" class="ay">skos:musicBy</a>, 
-							<a target="_blank" href="https://schema.org/countryOfOrigin" class="ay">skos:countryOfOrigin</a>,
-							<a class="a">screenplay_by</a>, 
-							<a target="_blank" href="https://schema.org/award" class="ay">skos:award</a>, 
-							<a class="a">nomination</a>.					
+						<b>Object properties include:</b> 
+						<a class="au" href="#is_setting_of">is_setting_of</a>,
+						<a class="au" href="#is_administrated_by1">is_administrated_by</a>.					
 						</p>
 						<p style="margin:15px 0 0 0;">
 						<b>Data properties include:</b> 
-						<a class="a">title</a>, <a class="a">box_office</a>, 
-						<a target="_blank" href="https://schema.org/keywords" class="ay">skos:keywords</a>, 
-						<a target="_blank" href="https://schema.org/about" class="ay">skos:about</a>, 
-						<a target="_blank" href="https://schema.org/runtime" class="ay">skos:runtime</a>, 
-						<a target="_blank" href="https://schema.org/releasedate" class="ay">skos:releasedate</a>, 
-						<a class="a">imdb_rating</a>.
-						</p>
-						<p style="margin:15px 0 0 0;">
-						<b>Has subclass</b>: <a class="au" href="#action">Action</a>, <a class="au" href="#character">Character</a>, <a class="au" href="#emotion">Emotion</a>, 
-							<a class="au" href="#screenplay">Screenplay</a>, <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#setting">Setting</a>, 
-							<a class="au" href="#thing">Significant_Thing</a>, <a class="au" href="#sound">Sound</a>.
-						</p>						
+						<a class="au" href="#int_setting">int_setting</a>,
+						<a class="au" href="#fict_setting">fict_setting</a>,
+						<a class="au" href="#nat_setting">nat_setting</a>.
+						</p>					
 						</div>
 						
 						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 15px">
@@ -1079,68 +1147,24 @@ body {
 									<b>Object Properties:</b>
 								</span>
 							</p>
+							
 							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/genre" class="ay"><b>skos:genre</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its genre."</i></li>
-							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: every value of this property is a <a target="_blank" href="https://dbpedia.org/page/Genre" class="ared">dbo:Genre</a>.</li>
+							<li><a class="au" id="is_setting_of"><b>is_setting_of</b></a></li>
+							<li class="li"><i>"It relates a Setting to its Sequence, Scene or Shot."</i></li>
+							<li class="li"><b>Domain</b>: having this property implies being a  <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: every value of this property is a <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#contains_setting">contains_setting</li></a>
 							</ul>
 							
 							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/productionCompany" class="ay"><b>skos:productionCompany</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its production company."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Production_Company" class="ared">dbo:Production_Company</a>.</li>
+							<li><a class="au" id="is_administrated_by1"><b>is_administrated_by</b></a></li>
+							<li class="li"><i>"It relates a Setting to the Character who administrates it (e.g. a hotel, a house)."</i></li>
+							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: every value of this property is a <a class="au" href="#character">Character</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#administrates">administrates </li></a>
 							</ul>
 												
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/actor" class="ay"><b>skos:actor</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its actors."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Actor" class="ared">dbo:Actor</a>.</li>
-							</ul>
 							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/director" class="ay"><b>skos:director</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its director."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Film_director" class="ared">dbo:FilmDirector</a>.</li>
-							</ul>
-
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/musicBy" class="ay"><b>skos:musicBy</b></a></li>
-							<li class="li"><i>"This object property relates a movie to the composer of its soundtrack."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Musical_Artist" class="ared">dbo:Musical_Artist</a>.</li>
-							</ul>						
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/countryOfOrigin" class="ay"><b>skos:countryOfOrigin</b></a></li>
-							<li class="li"><i>"The link to the country of the principal offices of the production company or individual responsible for the movie."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Country" class="ared">dbo:Country</a>.</li>
-							</ul>
-							
-							<ul>
-							<li><a class="a"><b>screenplay_by</b></a></li>
-							<li class="li"><i>"This object property relates a movie to the writer of its screenplay."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Writer" class="ared">dbo:Writer</a>.</li>
-							</ul>						
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/award" class="ay"><b>skos:award</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its awards."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a class="a">Award</a>.</li>
-							</ul>
-							
-							<ul>
-							<li><a class="a"><b>nomination</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its nominations."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a class="a">Award</a>.</li>
-							</ul>
 						</div>
 						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 15px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
 							<p>
@@ -1149,53 +1173,26 @@ body {
 								</span>
 							</p>
 							<ul>
-							<li><a class="a"><b>title</b></a></li>
-							<li class="li"><i>"This data property connects the movie to its title."</i></li>
-							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:string</span>.</li>
+							<li><a class="au" id="int_setting"><b>int_setting</b></a></li>
+							<li class="li"><i>"If true, this data property indicates if the Setting is an interior location (e.g. room); if false, if it is an exterior one (e.g. garden)."</i></li>
+							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:boolean</span>.</li>
 							</ul>
 							
 							<ul>
-							<li><a class="a"><b>box_office</b></a></li>
-							<li class="li"><i>"The revenue of a movie due to the number of tickets sold (in dollars)."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:integer</span>.</li>
-							</ul>
-						
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/keywords" class="ay"><b>skos:keywords</b></a></li>
-							<li class="li"><i>"Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							<li><a class="au" id="fict_setting"><b>fict_setting</b></a></li>
+							<li class="li"><i>"If true, this data property indicates if the Setting is a fictional location (e.g. parallel world, dreamt location, virtual reality)"</i></li>
+							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:boolean</span>.</li>
 							</ul>
 							
 							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/about" class="ay"><b>skos:about</b></a></li>
-							<li class="li"><i>"The subject matter of the content."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							<li><a class="au" id="nat_setting"><b>nat_setting</b></a></li>
+							<li class="li"><i>"If true, this data property indicates if the Setting is part of nature (e.g. garden, waterfalls); if false, if it is an artificial one (e.g. street, room)."</i></li>
+							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:boolean</span>.</li>
 							</ul>
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/runtime" class="ay"><b>skos:runtime</b></a></li>
-							<li class="li"><i>"The runtime of the movie."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:integer</span>.</li>
-							</ul>
-
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/releasedate" class="ay"><b>skos:releasedate</b></a></li>
-							<li class="li"><i>"The release date of the movie, expressed in dd/mm/yyyy."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:date</span>.</li>
-							</ul>
-							
-							<ul>
-							<li><a class="a"><b>imdb_rating</b></a></li>
-							<li class="li"><i>"The IMDB rating of the movie."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:double</span>.</li>
-							</ul>	
+	
 						</div>	
 					</div>
 				</div>
@@ -1214,14 +1211,14 @@ body {
 					<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/Scene.png" alt="">
 					</p>	
 					<p>
-					Qui ci metto spiegazioni e motivazioni di certe scelte. Sopra l'immagine deve essere molto più allungata.
+					Significant Thing. Qui ci metto spiegazioni e motivazioni di certe scelte. Sopra l'immagine deve essere molto più allungata.
 					</p>
 					</div>
 				</div>
 				<div class="col">
 					<div class="roboto" style="padding:10px; padding-top:0px;">
 						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 15px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
-						<p><a class="au classy" href="#movie" id="movie" style="margin: 0px !important; font-size:28px;"><b>Movie</b></a>						</p>
+						<p><a class="au classy" href="#thing" id="thing" style="margin: 0px !important; font-size:28px;"><b>Significant Thing</b></a>						</p>
 							<div style="padding:15px; border: solid 1px hsl(0, 0%, 80%); width:fit-content;">
 								<p style="margin: 0px !important;">
 									owl:Thing
@@ -1229,33 +1226,30 @@ body {
 								<p style="text-indent:50px; margin: 0px !important">
 									<a class="au" href="#movie"><b>Movie</b></a>
 								</p>
+								<p style="text-indent:100px; margin: 0px !important">
+									<a class="au" href="#thing"><b>Significant Thing</b></a>
+								</p>
 									
 							</div>						
 						<p style="margin:15px 0 0 0;">
-						<b>Object properties include:</b> <a target="_blank" href="https://schema.org/genre" class="ay">skos:genre</a>, 
-							<a target="_blank" href="https://schema.org/productionCompany" class="ay">skos:productionCompany</a>, 
-							<a target="_blank" href="https://schema.org/actor" class="ay">skos:actor</a>, 
-							<a target="_blank" href="https://schema.org/director" class="ay">skos:director</a>, 
-							<a target="_blank" href="https://schema.org/musicBy" class="ay">skos:musicBy</a>, 
-							<a target="_blank" href="https://schema.org/countryOfOrigin" class="ay">skos:countryOfOrigin</a>,
-							<a class="a">screenplay_by</a>, 
-							<a target="_blank" href="https://schema.org/award" class="ay">skos:award</a>, 
-							<a class="a">nomination</a>.					
+						<b>Object properties include:</b> 
+						<a class="au" href="#thing_shown_in1">thing_shown_in</a>,
+						<a class="au" href="#is_owned_by">is_owned_by</a>,
+						<a target="_blank" href="http://xmlns.com/foaf/spec/#term_depiction" class="ared">foaf:depiction</a>,
+						<a target="_blank" href="http://xmlns.com/foaf/spec/#term_made" class="ared">foaf:made</a>,
+						<a class="au" href="#miscellaneous3b">is_read_by</a>,
+						<a class="au" href="#miscellaneous3b">is_used_by</a>,
+						<a class="au" href="#miscellaneous3b">is_worn_by</a>,
+						<a class="au" href="#miscellaneous3b">is_burnt_by</a>,
+						<a class="au" href="#miscellaneous3b">is_thrown_by</a>,
+						<a class="au" href="#miscellaneous3b">is_shot_with</a>,
+						<a class="au" href="#miscellaneous3b">is_driven_by</a>.					
 						</p>
 						<p style="margin:15px 0 0 0;">
 						<b>Data properties include:</b> 
-						<a class="a">title</a>, <a class="a">box_office</a>, 
-						<a target="_blank" href="https://schema.org/keywords" class="ay">skos:keywords</a>, 
-						<a target="_blank" href="https://schema.org/about" class="ay">skos:about</a>, 
-						<a target="_blank" href="https://schema.org/runtime" class="ay">skos:runtime</a>, 
-						<a target="_blank" href="https://schema.org/releasedate" class="ay">skos:releasedate</a>, 
-						<a class="a">imdb_rating</a>.
-						</p>
-						<p style="margin:15px 0 0 0;">
-						<b>Has subclass</b>: <a class="au" href="#action">Action</a>, <a class="au" href="#character">Character</a>, <a class="au" href="#emotion">Emotion</a>, 
-							<a class="au" href="#screenplay">Screenplay</a>, <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#setting">Setting</a>, 
-							<a class="au" href="#thing">Significant_Thing</a>, <a class="au" href="#sound">Sound</a>.
-						</p>						
+						<a class="au" href="#has_written_on_it">has_written_on_it</a>,
+						<a class="au" href="#filled_with">filled_with</a>.
+						</p>					
 						</div>
 						
 						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 15px">
@@ -1264,68 +1258,61 @@ body {
 									<b>Object Properties:</b>
 								</span>
 							</p>
+							
 							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/genre" class="ay"><b>skos:genre</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its genre."</i></li>
-							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: every value of this property is a <a target="_blank" href="https://dbpedia.org/page/Genre" class="ared">dbo:Genre</a>.</li>
+							<li><a class="au" id="thing_shown_in1"><b>thing_shown_in</b></a></li>
+							<li class="li"><i>"It relates a Significant Thing to a Sequence, Scene or Shot in which it appears."</i></li>
+							<li class="li"><b>Domain</b>: having this property implies being a  <a class="au" href="#thing">Significant Thing</a>.</li>
+							<li class="li"><b>Range</b>: every value of this property is a <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
+							<li class="li">> <b>Inverse of:</b> <a class="au" id="contains_thing"><b>contains_thing</b></a></li>
 							</ul>
 							
 							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/productionCompany" class="ay"><b>skos:productionCompany</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its production company."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Production_Company" class="ared">dbo:Production_Company</a>.</li>
-							</ul>
-												
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/actor" class="ay"><b>skos:actor</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its actors."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Actor" class="ared">dbo:Actor</a>.</li>
+							<li><a class="au" id="is_owned_by"><b>is_owned_by</b></a></li>
+							<li class="li"><i>"It relates a Significant Thing to a Character who owns it."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant Thing</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#character">Character</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#owns">owns</li></a>
 							</ul>
 							
 							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/director" class="ay"><b>skos:director</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its director."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Film_director" class="ared">dbo:FilmDirector</a>.</li>
-							</ul>
-
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/musicBy" class="ay"><b>skos:musicBy</b></a></li>
-							<li class="li"><i>"This object property relates a movie to the composer of its soundtrack."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Musical_Artist" class="ared">dbo:Musical_Artist</a>.</li>
-							</ul>						
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/countryOfOrigin" class="ay"><b>skos:countryOfOrigin</b></a></li>
-							<li class="li"><i>"The link to the country of the principal offices of the production company or individual responsible for the movie."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Country" class="ared">dbo:Country</a>.</li>
+							<li><a target="_blank" href="http://xmlns.com/foaf/spec/#term_depiction" class="ared">foaf:depiction</a></li>
+							<li class="li"><i>"It relates a Character to a Significant Thing s/he created."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#character">Character</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#thing">Significant Thing</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a target="_blank" href="http://xmlns.com/foaf/spec/#term_made" class="ared">foaf:made</a></li>
 							</ul>
 							
 							<ul>
-							<li><a class="a"><b>screenplay_by</b></a></li>
-							<li class="li"><i>"This object property relates a movie to the writer of its screenplay."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Writer" class="ared">dbo:Writer</a>.</li>
-							</ul>						
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/award" class="ay"><b>skos:award</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its awards."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a class="a">Award</a>.</li>
+							<li><a target="_blank" href="http://xmlns.com/foaf/spec/#term_made" class="ared">foaf:made</a></li>
+							<li class="li"><i>"It relates a Significant Thing to the Character who made it."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant Thing</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#character">Character</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a target="_blank" href="http://xmlns.com/foaf/spec/#term_maker" class="ared">foaf:maker</a></li>
 							</ul>
 							
 							<ul>
-							<li><a class="a"><b>nomination</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its nominations."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a class="a">Award</a>.</li>
+							<li><a class="au" id="miscellaneous3b"><b>is_read_by</a>,
+								<a class="au">is_used_by</a>,
+								<a class="au">is_worn_by</a>,
+								<a class="au">is_burnt_by</a>,
+								<a class="au">is_thrown_by</a>,
+								<a class="au">is_shot_with</a>,
+								<a class="au">is_driven_by</a>
+								</b>
+								</li>
+							<li class="li"><i>"These are simple relationships between a Significant Thing and a Character."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant Thing</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#character">Character</a>.</li>		
+							<li class="li">> <b>Inverse Properties of:</b> <a class="au" href="#miscellaneous3">reads</a>,
+							<a class="au" href="#miscellaneous3">uses</a>,
+							<a class="au" href="#miscellaneous3">wears</a>,
+							<a class="au" href="#miscellaneous3">burns</a>,
+							<a class="au" href="#miscellaneous3">throws</a>,
+							<a class="au" href="#miscellaneous3">shoots_with</a>,
+							<a class="au" href="#miscellaneous3">drives</a></li>						
 							</ul>
+							
 						</div>
 						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 15px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
 							<p>
@@ -1334,53 +1321,19 @@ body {
 								</span>
 							</p>
 							<ul>
-							<li><a class="a"><b>title</b></a></li>
-							<li class="li"><i>"This data property connects the movie to its title."</i></li>
-							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#movie">Movie</a>.</li>
+							<li><a class="a" id="has_written_on_it"><b>has_written_on_it</b></a></li>
+							<li class="li"><i>"This data property connects the Significant Thing to letters, words or sentences written on it."</i></li>
+							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#thing">Significant Thing</a>.</li>
 							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:string</span>.</li>
 							</ul>
 							
 							<ul>
-							<li><a class="a"><b>box_office</b></a></li>
-							<li class="li"><i>"The revenue of a movie due to the number of tickets sold (in dollars)."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:integer</span>.</li>
-							</ul>
-						
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/keywords" class="ay"><b>skos:keywords</b></a></li>
-							<li class="li"><i>"Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
+							<li><a class="a" id="filled_with"><b>filled_with</b></a></li>
+							<li class="li"><i>"The liquid with which a Significant Thing (e.g. a syringe) is filled."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant Thing</a>.</li>
 							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
 							</ul>
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/about" class="ay"><b>skos:about</b></a></li>
-							<li class="li"><i>"The subject matter of the content."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
-							</ul>
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/runtime" class="ay"><b>skos:runtime</b></a></li>
-							<li class="li"><i>"The runtime of the movie."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:integer</span>.</li>
-							</ul>
-
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/releasedate" class="ay"><b>skos:releasedate</b></a></li>
-							<li class="li"><i>"The release date of the movie, expressed in dd/mm/yyyy."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:date</span>.</li>
-							</ul>
-							
-							<ul>
-							<li><a class="a"><b>imdb_rating</b></a></li>
-							<li class="li"><i>"The IMDB rating of the movie."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:double</span>.</li>
-							</ul>	
+													
 						</div>	
 					</div>
 				</div>
@@ -1399,14 +1352,14 @@ body {
 					<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/Scene.png" alt="">
 					</p>	
 					<p>
-					Qui ci metto spiegazioni e motivazioni di certe scelte. Sopra l'immagine deve essere molto più allungata.
+					Action. Qui ci metto spiegazioni e motivazioni di certe scelte. Sopra l'immagine deve essere molto più allungata.
 					</p>
 					</div>
 				</div>
 				<div class="col">
 					<div class="roboto" style="padding:10px; padding-top:0px;">
 						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 15px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
-						<p><a class="au classy" href="#movie" id="movie" style="margin: 0px !important; font-size:28px;"><b>Movie</b></a>						</p>
+						<p><a class="au classy" href="#action" id="action" style="margin: 0px !important; font-size:28px;"><b>Action</b></a>						</p>
 							<div style="padding:15px; border: solid 1px hsl(0, 0%, 80%); width:fit-content;">
 								<p style="margin: 0px !important;">
 									owl:Thing
@@ -1414,33 +1367,23 @@ body {
 								<p style="text-indent:50px; margin: 0px !important">
 									<a class="au" href="#movie"><b>Movie</b></a>
 								</p>
+								<p style="text-indent:100px; margin: 0px !important">
+									<a class="au" href="#action"><b>Action</b></a>
+								</p>
 									
 							</div>						
 						<p style="margin:15px 0 0 0;">
-						<b>Object properties include:</b> <a target="_blank" href="https://schema.org/genre" class="ay">skos:genre</a>, 
-							<a target="_blank" href="https://schema.org/productionCompany" class="ay">skos:productionCompany</a>, 
-							<a target="_blank" href="https://schema.org/actor" class="ay">skos:actor</a>, 
-							<a target="_blank" href="https://schema.org/director" class="ay">skos:director</a>, 
-							<a target="_blank" href="https://schema.org/musicBy" class="ay">skos:musicBy</a>, 
-							<a target="_blank" href="https://schema.org/countryOfOrigin" class="ay">skos:countryOfOrigin</a>,
-							<a class="a">screenplay_by</a>, 
-							<a target="_blank" href="https://schema.org/award" class="ay">skos:award</a>, 
-							<a class="a">nomination</a>.					
+						<b>Object properties include:</b> 
+							<a class="au" href="#action_happens_in1">action_happens_in</a>, 							
+							<a class="au" href="#has_agent1">has_agent</a>,
+							<a class="au" href="#has_patient1">has_patient</a>.					
 						</p>
 						<p style="margin:15px 0 0 0;">
 						<b>Data properties include:</b> 
-						<a class="a">title</a>, <a class="a">box_office</a>, 
-						<a target="_blank" href="https://schema.org/keywords" class="ay">skos:keywords</a>, 
-						<a target="_blank" href="https://schema.org/about" class="ay">skos:about</a>, 
-						<a target="_blank" href="https://schema.org/runtime" class="ay">skos:runtime</a>, 
-						<a target="_blank" href="https://schema.org/releasedate" class="ay">skos:releasedate</a>, 
-						<a class="a">imdb_rating</a>.
+							<a class="au" href="#intensity1">intensity</a>.	
 						</p>
-						<p style="margin:15px 0 0 0;">
-						<b>Has subclass</b>: <a class="au" href="#action">Action</a>, <a class="au" href="#character">Character</a>, <a class="au" href="#emotion">Emotion</a>, 
-							<a class="au" href="#screenplay">Screenplay</a>, <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#setting">Setting</a>, 
-							<a class="au" href="#thing">Significant_Thing</a>, <a class="au" href="#sound">Sound</a>.
-						</p>						
+
+						
 						</div>
 						
 						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 15px">
@@ -1450,67 +1393,29 @@ body {
 								</span>
 							</p>
 							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/genre" class="ay"><b>skos:genre</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its genre."</i></li>
-							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: every value of this property is a <a target="_blank" href="https://dbpedia.org/page/Genre" class="ared">dbo:Genre</a>.</li>
-							</ul>
+							<li><a class="au" id="action_happens_in1"><b>action_happens_in</b></a></li>
+							<li class="li"><i>"It relates an Action to the Sequence, Scene or Shot in which it happens."</i></li>
+							<li class="li"><b>Domain</b>: having this property implies being a  <a class="au" href="#action">Action</a>.</li>
+							<li class="li"><b>Range</b>: every value of this property is a <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
+							<li class="li">> <b>Inverse of:</b> <a class="au" id="contains_action"><b>contains_action</b></a></li>
+							</ul>					
 							
 							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/productionCompany" class="ay"><b>skos:productionCompany</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its production company."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Production_Company" class="ared">dbo:Production_Company</a>.</li>
-							</ul>
-												
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/actor" class="ay"><b>skos:actor</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its actors."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Actor" class="ared">dbo:Actor</a>.</li>
-							</ul>
+							<li><a class="au" id="has_agent1"><b>has_agent</b></a></li>
+							<li class="li"><i>"It relates an Action (e.g. murder, chasing, throwing an object) to the Character who does it."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#action">Action</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#character">Character</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#is_agent">is_agent</li></a>
+							</ul>	
 							
 							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/director" class="ay"><b>skos:director</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its director."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Film_director" class="ared">dbo:FilmDirector</a>.</li>
+							<li><a class="au" id="has_patient1"><b>has_patient</b></a></li>
+							<li class="li"><i>"It relates an Action (e.g. murder, chasing, throwing an object) to the Character who suffers it."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#action">Action</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#character">Character</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#is_patient">is_patient</li></a>
 							</ul>
 
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/musicBy" class="ay"><b>skos:musicBy</b></a></li>
-							<li class="li"><i>"This object property relates a movie to the composer of its soundtrack."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Musical_Artist" class="ared">dbo:Musical_Artist</a>.</li>
-							</ul>						
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/countryOfOrigin" class="ay"><b>skos:countryOfOrigin</b></a></li>
-							<li class="li"><i>"The link to the country of the principal offices of the production company or individual responsible for the movie."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Country" class="ared">dbo:Country</a>.</li>
-							</ul>
-							
-							<ul>
-							<li><a class="a"><b>screenplay_by</b></a></li>
-							<li class="li"><i>"This object property relates a movie to the writer of its screenplay."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Writer" class="ared">dbo:Writer</a>.</li>
-							</ul>						
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/award" class="ay"><b>skos:award</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its awards."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a class="a">Award</a>.</li>
-							</ul>
-							
-							<ul>
-							<li><a class="a"><b>nomination</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its nominations."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a class="a">Award</a>.</li>
-							</ul>
 						</div>
 						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 15px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
 							<p>
@@ -1518,54 +1423,14 @@ body {
 									<b>Data Properties:</b>
 								</span>
 							</p>
-							<ul>
-							<li><a class="a"><b>title</b></a></li>
-							<li class="li"><i>"This data property connects the movie to its title."</i></li>
-							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:string</span>.</li>
-							</ul>
 							
 							<ul>
-							<li><a class="a"><b>box_office</b></a></li>
-							<li class="li"><i>"The revenue of a movie due to the number of tickets sold (in dollars)."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:integer</span>.</li>
+							<li><a class="au" id="intensity1"><b>intensity</b></a></li>
+							<li class="li"><i>"This data property allows you to define the intensity of something (e.g. an Action or a spoken dialogue of the Movie) from 0 to 10."</i></li>
+							<li class="li"><b>Domain</b>: having this property implies being a  <a class="au">owl:Thing</a>.</li>
+							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:double</span>.</li>
 							</ul>
-						
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/keywords" class="ay"><b>skos:keywords</b></a></li>
-							<li class="li"><i>"Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
-							</ul>
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/about" class="ay"><b>skos:about</b></a></li>
-							<li class="li"><i>"The subject matter of the content."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
-							</ul>
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/runtime" class="ay"><b>skos:runtime</b></a></li>
-							<li class="li"><i>"The runtime of the movie."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:integer</span>.</li>
-							</ul>
-
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/releasedate" class="ay"><b>skos:releasedate</b></a></li>
-							<li class="li"><i>"The release date of the movie, expressed in dd/mm/yyyy."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:date</span>.</li>
-							</ul>
-							
-							<ul>
-							<li><a class="a"><b>imdb_rating</b></a></li>
-							<li class="li"><i>"The IMDB rating of the movie."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:double</span>.</li>
-							</ul>	
+								
 						</div>	
 					</div>
 				</div>
@@ -1584,14 +1449,14 @@ body {
 					<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/Scene.png" alt="">
 					</p>	
 					<p>
-					Qui ci metto spiegazioni e motivazioni di certe scelte. Sopra l'immagine deve essere molto più allungata.
+					Emotion. Qui ci metto spiegazioni e motivazioni di certe scelte. Sopra l'immagine deve essere molto più allungata.
 					</p>
 					</div>
 				</div>
 				<div class="col">
 					<div class="roboto" style="padding:10px; padding-top:0px;">
 						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 15px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
-						<p><a class="au classy" href="#movie" id="movie" style="margin: 0px !important; font-size:28px;"><b>Movie</b></a>						</p>
+						<p><a class="au classy" href="#emotion" id="emotion" style="margin: 0px !important; font-size:28px;"><b>Emotion</b></a>						</p>
 							<div style="padding:15px; border: solid 1px hsl(0, 0%, 80%); width:fit-content;">
 								<p style="margin: 0px !important;">
 									owl:Thing
@@ -1599,32 +1464,152 @@ body {
 								<p style="text-indent:50px; margin: 0px !important">
 									<a class="au" href="#movie"><b>Movie</b></a>
 								</p>
+								<p style="text-indent:100px; margin: 0px !important">
+									<a class="au" href="#emotion"><b>Emotion</b></a>
+								</p>
+								<p style="text-indent:150px; margin: 0px !important">
+									<a class="au" href="#emotion"><b>Basic_Emotion</b></a>
+								</p>
+								<p style="text-indent:150px; margin: 0px !important">
+									<a class="au" href="#emotion"><b>Mild_Emotion</b></a>
+								</p>
+								<p style="text-indent:150px; margin: 0px !important">
+									<a class="au" href="#emotion"><b>Intense_Emotion</b></a>
+								</p>								
 									
 							</div>						
 						<p style="margin:15px 0 0 0;">
-						<b>Object properties include:</b> <a target="_blank" href="https://schema.org/genre" class="ay">skos:genre</a>, 
-							<a target="_blank" href="https://schema.org/productionCompany" class="ay">skos:productionCompany</a>, 
-							<a target="_blank" href="https://schema.org/actor" class="ay">skos:actor</a>, 
-							<a target="_blank" href="https://schema.org/director" class="ay">skos:director</a>, 
-							<a target="_blank" href="https://schema.org/musicBy" class="ay">skos:musicBy</a>, 
-							<a target="_blank" href="https://schema.org/countryOfOrigin" class="ay">skos:countryOfOrigin</a>,
-							<a class="a">screenplay_by</a>, 
-							<a target="_blank" href="https://schema.org/award" class="ay">skos:award</a>, 
-							<a class="a">nomination</a>.					
+						<b>Object properties include:</b> 
+							<a class="ared" href="https://www.gsi.upm.es/ontologies/onyx/#extractedFrom" target="_blank"><b>onyx:extractedFrom</b></a>,							
+							<a class="au" href="#emotion_expressed_in1">emotion_expressed_in</a>,
+							<a class="au" href="#felt_by1">felt_by</a>,
+							<a class="au" href="#opposite_of">opposite_of</a>.
 						</p>
 						<p style="margin:15px 0 0 0;">
 						<b>Data properties include:</b> 
-						<a class="a">title</a>, <a class="a">box_office</a>, 
-						<a target="_blank" href="https://schema.org/keywords" class="ay">skos:keywords</a>, 
-						<a target="_blank" href="https://schema.org/about" class="ay">skos:about</a>, 
-						<a target="_blank" href="https://schema.org/runtime" class="ay">skos:runtime</a>, 
-						<a target="_blank" href="https://schema.org/releasedate" class="ay">skos:releasedate</a>, 
-						<a class="a">imdb_rating</a>.
+						<a class="au" href="#intensity2">intensity</a>.
 						</p>
 						<p style="margin:15px 0 0 0;">
-						<b>Has subclass</b>: <a class="au" href="#action">Action</a>, <a class="au" href="#character">Character</a>, <a class="au" href="#emotion">Emotion</a>, 
-							<a class="au" href="#screenplay">Screenplay</a>, <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#setting">Setting</a>, 
-							<a class="au" href="#thing">Significant_Thing</a>, <a class="au" href="#sound">Sound</a>.
+						<b>Has subclass</b>: 
+						<a class="au" href="#emotion">Basic_Emotion</a>,
+						<a class="au" href="#emotion">Mild_Emotion</a>,
+						<a class="au" href="#emotion">Intense_Emotion</a>.
+						</p>						
+						</div>
+						
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); border-bottom: transparent; padding: 15px">
+							<p>
+								<span style="margin: 0px !important; font-size:20px;">
+									<b>Object Properties:</b>
+								</span>
+							</p>
+							
+							<ul>
+							<li><a class="ared" href="https://www.gsi.upm.es/ontologies/onyx/#extractedFrom" target="_blank"><b>onyx:extractedFrom</b></a></li>
+							<li class="li"><i>"Indicates the text (Screenplay line) from which an Emotion has been extracted."</i></li>
+							<li class="li"><b>Domain</b>:  having this property implies being a <a class="au" href="#emotion">Emotion</a>.</li>
+							<li class="li"><b>Range</b>: every value of this property is a <a class="au" href="#screenplay">Screenplay</a>.</li>
+							<li class="li"><b>Inverse Property of:</b> <a class="au" href="#conveys_emotion">conveys_emotion</a></li>
+							</ul>						
+							
+							<ul>
+							<li><a class="au" id="emotion_expressed_in1"><b>emotion_expressed_in</b></a></li>
+							<li class="li"><i>"It relates an Emotion to the Sequence, Scene or Shot in which it is expressed by a Character."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#emotion">Emotion</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>							
+							<li class="li">> <b>Inverse Property of:</b> <a class="a" id="contains_emotion">contains_emotion</a>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="felt_by1"><b>felt_by</b></a></li>
+							<li class="li"><i>"It relates an Emotion to the Character who feels it in a given moment."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#emotion">Emotion</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#character">Character</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#feels">feels</li></a>
+							</ul>	
+							
+							<ul>
+							<li><a class="au" id="opposite_of"><b>opposite_of</b></a></li>
+							<li class="li"><i>"It relates an Emotion to its opposite (e.g. joy versus sadness)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#emotion">Emotion</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#emotion">Emotion</a>.</li>
+							</ul>							
+							
+							
+						</div>
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 15px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+							<p>
+								<span style="margin: 0px !important; font-size:20px;">
+									<b>Data Properties:</b>
+								</span>
+							</p>
+							<ul>
+							<li><a class="au" id="intensity2"><b>intensity</b></a></li>
+							<li class="li"><i>"This data property allows you to define the intensity of something (e.g. an Action or a spoken dialogue of the Movie) from 0 to 10."</i></li>
+							<li class="li"><b>Domain</b>: having this property implies being a  <a class="au">owl:Thing</a>.</li>
+							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:double</span>.</li>
+							</ul>
+							
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	<!-- chiusa slide8-->
+	
+
+	<div id="slide-9">
+      
+
+		<div class="container2" style="margin-left:auto; margin-right: auto;">
+			<div class="row">
+				<div class="col" style="border: 1px solid; border-color: transparent  hsl(0, 0%, 70%) transparent transparent;" >
+					<div class="roboto" style="padding:10px;">
+					<p>
+					<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/Scene.png" alt="">
+					</p>	
+					<p>
+					Sound. Qui ci metto spiegazioni e motivazioni di certe scelte. Sopra l'immagine deve essere molto più allungata.
+					</p>
+					</div>
+				</div>
+				<div class="col">
+					<div class="roboto" style="padding:10px; padding-top:0px;">
+						<div style="border: solid 1px hsl(0, 0%, 70%); border-bottom:transparent; padding: 15px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+						<p><a class="au classy" href="#sound" id="sound" style="margin: 0px !important; font-size:28px;"><b>Sound</b></a>						</p>
+							<div style="padding:15px; border: solid 1px hsl(0, 0%, 80%); width:fit-content;">
+								<p style="margin: 0px !important;">
+									owl:Thing
+								</p>
+								<p style="text-indent:50px; margin: 0px !important">
+									<a class="au" href="#movie"><b>Movie</b></a>
+								</p>
+								<p style="text-indent:100px; margin: 0px !important">
+									<a class="au" href="#sound"><b>Sound</b></a>
+								</p>
+								<p style="text-indent:150px; margin: 0px !important">
+									<a class="au" href="#sound"><b>Music</b></a>
+								</p>
+								<p style="text-indent:150px; margin: 0px !important">
+									<a class="au" href="#sound"><b>Soundscape</b></a>
+								</p>					
+									
+							</div>						
+						<p style="margin:15px 0 0 0;">
+						<b>Object properties include:</b> 
+							<a class="a" href="#"></a>, 
+							<a class="a" href="#"></a>,
+							<a class="a" href="#"></a>.
+						</p>
+						<p style="margin:15px 0 0 0;">
+						<b>Data properties include:</b> 
+						<a class="a" href="#"></a>,
+						<a class="a" href="#"></a>.
+						</p>
+						<p style="margin:15px 0 0 0;">
+						<b>Has subclass</b>: 
+						<a class="au" href="#emotion">Music</a>,
+						<a class="au" href="#emotion">Soundscape</a>.
 						</p>						
 						</div>
 						
@@ -1635,67 +1620,20 @@ body {
 								</span>
 							</p>
 							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/genre" class="ay"><b>skos:genre</b></a></li>
+							<li><a target="_blank" href="https://schema.org/genre" class="ay"><b>skos:genre</b></a></li>
 							<li class="li"><i>"This object property relates a movie to its genre."</i></li>
 							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#movie">Movie</a>.</li>
 							<li class="li"><b>Range</b>: every value of this property is a <a target="_blank" href="https://dbpedia.org/page/Genre" class="ared">dbo:Genre</a>.</li>
 							</ul>
 							
 							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/productionCompany" class="ay"><b>skos:productionCompany</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its production company."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Production_Company" class="ared">dbo:Production_Company</a>.</li>
-							</ul>
-												
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/actor" class="ay"><b>skos:actor</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its actors."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Actor" class="ared">dbo:Actor</a>.</li>
+							<li><a class="au" id="sound_contained_in1"><b>sound_contained_in</b></a></li>
+							<li class="li"><i>""It relates a Sound, Music or Sounscape to a Sequence, Scene or Shot which contains it."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#sound">Sound</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="a" id="contains_sound">contains_sound</a>.</li>
 							</ul>
 							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/director" class="ay"><b>skos:director</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its director."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Film_director" class="ared">dbo:FilmDirector</a>.</li>
-							</ul>
-
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/musicBy" class="ay"><b>skos:musicBy</b></a></li>
-							<li class="li"><i>"This object property relates a movie to the composer of its soundtrack."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Musical_Artist" class="ared">dbo:Musical_Artist</a>.</li>
-							</ul>						
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/countryOfOrigin" class="ay"><b>skos:countryOfOrigin</b></a></li>
-							<li class="li"><i>"The link to the country of the principal offices of the production company or individual responsible for the movie."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Country" class="ared">dbo:Country</a>.</li>
-							</ul>
-							
-							<ul>
-							<li><a class="a"><b>screenplay_by</b></a></li>
-							<li class="li"><i>"This object property relates a movie to the writer of its screenplay."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Writer" class="ared">dbo:Writer</a>.</li>
-							</ul>						
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/award" class="ay"><b>skos:award</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its awards."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a class="a">Award</a>.</li>
-							</ul>
-							
-							<ul>
-							<li><a class="a"><b>nomination</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its nominations."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <a class="a">Award</a>.</li>
-							</ul>
 						</div>
 						<div style="border: solid 1px hsl(0, 0%, 70%); border-top: dashed 1px hsl(0, 0%, 70%); padding: 15px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
 							<p>
@@ -1704,59 +1642,17 @@ body {
 								</span>
 							</p>
 							<ul>
-							<li><a class="a"><b>title</b></a></li>
-							<li class="li"><i>"This data property connects the movie to its title."</i></li>
-							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:string</span>.</li>
+							<li><a class="au" id="intensity1"><b>intensity</b></a></li>
+							<li class="li"><i>"This data property allows you to define the intensity of something (e.g. an Action or a spoken dialogue of the Movie) from 0 to 10."</i></li>
+							<li class="li"><b>Domain</b>: having this property implies being a  <a class="au">owl:Thing</a>.</li>
+							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:double</span>.</li>
 							</ul>
-							
-							<ul>
-							<li><a class="a"><b>box_office</b></a></li>
-							<li class="li"><i>"The revenue of a movie due to the number of tickets sold (in dollars)."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:integer</span>.</li>
-							</ul>
-						
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/keywords" class="ay"><b>skos:keywords</b></a></li>
-							<li class="li"><i>"Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
-							</ul>
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/about" class="ay"><b>skos:about</b></a></li>
-							<li class="li"><i>"The subject matter of the content."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
-							</ul>
-							
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/runtime" class="ay"><b>skos:runtime</b></a></li>
-							<li class="li"><i>"The runtime of the movie."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:integer</span>.</li>
-							</ul>
-
-							<ul>
-							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/releasedate" class="ay"><b>skos:releasedate</b></a></li>
-							<li class="li"><i>"The release date of the movie, expressed in dd/mm/yyyy."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:date</span>.</li>
-							</ul>
-							
-							<ul>
-							<li><a class="a"><b>imdb_rating</b></a></li>
-							<li class="li"><i>"The IMDB rating of the movie."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b">xsd:double</span>.</li>
-							</ul>	
 						</div>	
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>	<!-- chiusa slide8-->
+	</div>	<!-- chiusa slide8-->	
 	
 </div>		
 </div>	
