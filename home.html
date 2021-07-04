@@ -100,36 +100,163 @@ body {
 </div>
   
 <main role="main" class="container">
-	<div class="majormono" style="margin-left:auto; margin-right: auto;">
-        <h1 style="font-size: 50px; padding:10px; margin.bottom:0px; margin-top:10px"> FOCAL  </h1>
-		<hr style="border:0.1px solid hsl(0, 0%, 35%);">
-		<div class="roboto" style="padding:10px;">
-        
-		<p>
-		This project bla bla bla 
-		</p>
-		<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada ultricies erat et sodales. Nullam molestie et magna sed vestibulum. Curabitur sem sem, faucibus et efficitur at, porttitor quis mi. Phasellus lacinia in tellus eget ornare. Fusce nisi tortor, molestie a lacus vitae, malesuada commodo tellus. Duis ac lobortis mi. Proin eu erat mauris. Aliquam hendrerit tellus id massa semper commodo. Quisque tincidunt nisi a turpis vehicula, faucibus feugiat enim varius. In sit amet commodo ante.
-</p>
-<p>
+	<div>
+		<div class="majormono" style="margin: 1rem auto;">
+			<h1 style="font-size: 50px; margin: 1rem 0; padding: 1rem 0;"> FOCAL  </h1>
+			<h1 class="majormono" style="font-size: 20px; margin: 1rem 0; padding: 0.5rem 0;"> FOrmal Cinem<b>A</b>tics ontoLogy  </h1>
+			<hr style="border:0.1px solid hsl(0, 0%, 35%);">
+			<div class="roboto" style=" margin: 0.5rem 0; padding: 0.5rem 0;">
+			
+			<p>
+			<span class="aug">FOCAL</span> (<b>FO</b>rmal <b>C</b>inem<b>A</b>tics onto<b>L</b>ogy) conceptualises and formalises <span class="aug">movies' content</span>, in a format which machines can easily understand. In order to achieve this goal, it proposes an <span class="aug">ontology</span>, an explicit specification tool that  <span class="aug">models a domain of knowledge</span> by means of its three representational primitives: classes (sets, collections, or kind of things), attributes (characteristics, aspects or parameters that things can have), and properties (relations among class members).
+			</p>
+			<p>
+			The proposed ontology is a semantically rich, machine-interoperable knowledge graph that comprehensively describes a movie in terms of its <span class="aug">content</span> (scenes) and <span class="aug">metadata</span> (description, actors, etc...). The semantic-based representation of a movie, with a vocabulary to model the overall properties of its structural and content information, is also <span class="aug">interlinked</span> with other standard and existing ontologies. Leveraging on <b> <a class="av" href="https://www.w3.org/standards/semanticweb/data">Linked Data</a> </b> best practices, it is thus possible to <span class="aug">perform queries and reasoning</span> with other ontologies in order to <span class="aug">infer new knowledge</span>. 
+			</p>
+			<p>
+			The main goal of this work is to enable the <span class="aug">interrogation of the inside of a video</span> and to provide viewers with new and <span class="aug">enhanced searching opportunities</span>, such as "find me a movie scene where there is a caucasian guy hanging onto an airplane where the movie production took place in Europe".
+			</p>
+		</div>
+		
+		<div class="roboto" style=" margin: 1rem 0; padding: 1rem 0;">
+			<p class="majormono" style="font-size: 20px;">
+			<b>W</b>hy movies?
+			</p>
+			<hr style="border:0.1px solid hsl(0, 0%, 35%);">			
+			<p>
+			As <span class="aug">an increasing number of movies</span> is being produced every year, there is an ever growing need to <span class="aug">capture the content of videos</span> in order to make them searchable and machine-readable.
+			</p>
+			<p>
+			This would potentially unlock a various set of applications from <span class="aug">automatic video summarisation</span>, to personalization systems being able to <span class="aug">recommend particular movies</span> or even movie scenes (especially from the big streaming services such as Netflix, Hulu, Amazon Prime, Disney plus etc.), to <span class="aug">exploration of objects</span> within the movies. As for the last one, given the wealth of streams available in video content and exploiting the benefits of the Web of Data, the potential for supporting such queries is very high.
+			</p>
+		</div>
+		
+		<div class="roboto" style=" margin: 1rem 0; padding: 1rem 0;">
+			<p class="majormono" style="font-size: 20px;">
+			Criteria
+			</p>
+			<hr style="border:0.1px solid hsl(0, 0%, 35%);">
+			<p>
+			In order to realise the goal of achieving a comprehensive knowledge graph that describes movies and their contents, the ontology is <span class="aug">based on the following criteria</span>:
+			</p>
+			<p>
+			<ul>
+			<li><span class="aug"><b>Extensible.</span></b> The schema should be <span class="aug">abstract</span> enough to provide margin for supporting future evolution of multimedia standards.</li>
+			<li><span class="aug"><b>Interoperable.</span></b> The schema should be defined in a standardised interoperable format, thus ensuring that the schema can be <span class="aug">used for different tasks</span>, in different systems and by multiple agents.</li>
+			<li><span class="aug"><b>Standardised.</span></b> The schema should reuse and hence <span class="aug">align</span> with various standards, ontologies or other specifications.</li>
+			<li><span class="aug"><b>Movie scene description.</span></b> The ontology should be able to <span class="aug">represent movie content</span>. In other words, it should be a bridge between the multimedia signals in movies and a higherlevel abstract semantic annotation. Therefore, the ontology should be able to make multimedia content understandable by the machine as a user might understand it. </li>
+			<li><span class="aug"><b>Metadata knowledge.</span></b> Apart from scene concepts, our schema should describe <span class="aug">movie metadata</span>, for example actors, genre, and so on.</li>
+			</ul>			
+			</p>
+		</div>
+		
+		<div class="roboto" style=" margin: 1rem 0; padding: 1rem 0;">
+			<p class="majormono" style="font-size: 20px;">
+			Interlinking 
+			</p>
+			<hr style="border:0.1px solid hsl(0, 0%, 35%);">
+			<p>
+			Many potential <b>well-known knowledge graphs</b> could be useful for Focal ontology to interlink to, hence obtaining more information on the annotated movies. Five ontologies enriched this projects linking its content to other resources on the Web of Data:			
+			</p>
+			<p>
+			<ul>
+			<li><a class="av" href="https://www.w3.org/TR/mediaont-10/" target="_blank"><b>Ontology for Media Resources</a></b>  This is an ontology for describing media resources on the web. (Namespace: http://www. w3.org/ns/ma-ont#).</li>
+			<li><b><a class="av" href="https://www.w3.org/2009/08/skos-reference/skos.html" target="_blank">Simple Knowledge Organization System (SKOS)</a></b>  This is a <a href="https://www.w3.org/TR/skos-reference/" target="_blank" class="av"><b> W3C</b></a> recommendation designed for representation of thesauri, classification schemes, taxonomies, subject-heading systems, or any other type of structured controlled vocabulary. (Namespace: http://www.w3.org/2004/02/skos/core#).</li>
+			<li><b><a class="av" href="http://xmlns.com/foaf/spec/" target="_blank">Friend of a Friend  (FOAF)</a></b>  This is a computer language defining a dictionary of people-related terms that can be used in structured data. (Namespace: http://xmlns.com/foaf/0.1/).</li>
+			<li><b><a class="av" target="_blank" href="https://dublincore.org/specifications/dublin-core/dcmi-terms/"> Dublin Core (DC) </a> </b>  It  is a set of fifteen "core" elements (properties) for describing resources, that can be digital (video, images, web pages, etc.) as well as physical such as books or works of art. (Namespace: http://purl.org/dc/elements/1.1/).</li>
+			<li><b><a class="av" href="https://www.gsi.upm.es/ontologies/onyx/#s13" target="_blank">Onyx Emotion Ontology</a> </b>  This is an ontology designed to annotate and describe the emotions expressed by user-generated content on the web or in particular Information Systems. (Namespace: http://www.gsi.dit.upm.es/ontologies/onyx/ns#).</li>
+			</ul>
+			</p>
+			<p>
+			<span class="aug">Interlinking</span> to external sources makes the knowledge graph semantically richer with external information impossible to get from the movie content or movie metadata alone. For instance, let us consider Christopher Nolan's 'Memento', where Guy Pearce plays the leading role. The movie’s metadata will only provide such link (i.e. between actor and fictional character), however, interlinking the Guy Pearce entity with its equivalent in an external source, will give <span class="aug">more information</span> such as the gender, date of birth, links to their parent’s entity, etc.
+			</p>
+		</div>
+		
+		<div class="roboto" style=" margin: 1rem 0; padding: 1rem 0;">		
 
-Ut et ullamcorper metus. Maecenas tincidunt congue tempus. Duis hendrerit quis leo cursus vehicula. Ut pulvinar at nunc nec facilisis. Ut auctor convallis bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In sit amet congue elit.
-<p>
-</p>
-Nulla sapien urna, dictum eu purus quis, tempor interdum quam. Nullam quis arcu at enim pretium pharetra. Curabitur dignissim sapien at tempus vulputate. Vivamus eget mattis ligula, nec tristique erat. Fusce convallis dignissim purus, quis semper odio sodales auctor. Praesent venenatis, lacus eu tincidunt porta, sapien enim egestas lectus, ac ornare leo tellus vel leo. Duis sit amet mollis odio, sed euismod ante. Praesent suscipit ipsum vitae suscipit euismod. Vivamus eu ultrices libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed nec lacus finibus, blandit neque quis, commodo quam. Fusce sit amet lacinia diam.
-</p>
-<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada ultricies erat et sodales. Nullam molestie et magna sed vestibulum. Curabitur sem sem, faucibus et efficitur at, porttitor quis mi. Phasellus lacinia in tellus eget ornare. Fusce nisi tortor, molestie a lacus vitae, malesuada commodo tellus. Duis ac lobortis mi. Proin eu erat mauris. Aliquam hendrerit tellus id massa semper commodo. Quisque tincidunt nisi a turpis vehicula, faucibus feugiat enim varius. In sit amet commodo ante.
-</p>
-<p>
+			<p class="majormono" style="font-size: 20px;">
+			Data
+			</p>
+			<hr style="border:0.1px solid hsl(0, 0%, 35%);">
+			<p>
+			A significant <span class="aug">challenge</span> lies in building a bridge between multimedia content and the Semantic Web: the black-box nature of the media.
+			</p>
+			<p>
+			Throughout the years, several attempts have been made in order to "unbox" it: <a href="#1" class="av">Nicolaescu and Klamma [1]</a> created a Web-based system to help user semantically annotate videos, <a href="#2" class="av"> Haas et al. [2]</a> developed a platform for the identification of intelligent media content through the engagement of the end-audience, and <a href="#3" class="av"> LinkedTV D2.2 [3]</a> provides a system that handles video analysis through interactive and informative services.
+			</p>
+			<p>
+			In this project, the <span class="aug">data (content and metadata) has been manually inserted</span>, thus there is no exploration on how to harvest it from multimedia. Other projects instead have enriched their systems with automatic extraction, such as the one by <a href="#4" class="av">Chortaras et al. [4]</a>, with state-of-the-art visual content analysis techniques,  <a href="#5" class="av">Dasiopoulou et al. [5]</a>, with F-logic rules to map video signals into ontological concepts, and <a href="#6" class="av">Orlandi et al. [6]</a> with video processing algorithms that extract multimedia content used to create a semantic knowledge graph. 
+			</p>
+		</div>
+		
 
-Ut et ullamcorper metus. Maecenas tincidunt congue tempus. Duis hendrerit quis leo cursus vehicula. Ut pulvinar at nunc nec facilisis. Ut auctor convallis bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In sit amet congue elit.
-<p>
-</p>
-Nulla sapien urna, dictum eu purus quis, tempor interdum quam. Nullam quis arcu at enim pretium pharetra. Curabitur dignissim sapien at tempus vulputate. Vivamus eget mattis ligula, nec tristique erat. Fusce convallis dignissim purus, quis semper odio sodales auctor. Praesent venenatis, lacus eu tincidunt porta, sapien enim egestas lectus, ac ornare leo tellus vel leo. Duis sit amet mollis odio, sed euismod ante. Praesent suscipit ipsum vitae suscipit euismod. Vivamus eu ultrices libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed nec lacus finibus, blandit neque quis, commodo quam. Fusce sit amet lacinia diam.
-</p>
-      </div>
+		<div class="roboto" style=" margin: 1rem 0; padding: 1rem 0;">		
 
+			<p class="majormono" style="font-size: 20px;">
+			Case study: <b>Memento</b>
+			</p>
+			<hr style="border:0.1px solid hsl(0, 0%, 35%);">
+			<p>
+			The case study for the application of Focal is <span class="aug"><i>Memento</i></span> (2001), a movie written and directed by <span class="aug">Christopher Nolan</span>.
+			</p>
+			<p>
+			In addition to having received numerous accolades, including <span class="aug">Oscar nominations for Best Original Screenplay and Best Film Editing</span>, in 2017 it was deemed by the United States Library of Congress "culturally, historically, or aesthetically significant" and selected for preservation in the <a class="av" href="https://www.loc.gov/programs/national-film-preservation-board/film-registry/complete-national-film-registry-listing/" target="_blank">National Film Registry</a>.
+			</p>
+			<p>
+			Complex and absorbing thriller, Memento has an <span class="aug">intriguing structure</span> and deep meditations on the nature of perception and life: in the case of Focal, it was a perfect application because it is presented as <span class="aug">two different sequences of scenes</span> interspersed during the film:
+			<ul>
+			<li> The first one is a <span class="aug">series in black-and-white that is shown chronologically</span>,</li>
+			<li> and the other one is a <span class="aug">series of color sequences shown in reverse order</span>. 
+			</ul>
+			Eventually, the two sequences meet at the end of the film, producing one complete and cohesive narrative.
+			</p>
+			<p>
+			Thanks to this structure, unique in the history of cinema, it was possible to overcome a great challenge in movies' content: the question <span class="aug">"what signals the start of a new scene?"</span>, since every new scene is clearly identified by a change in color. Moreover, Memento plays heavily with the <span class="aug">narrative construction</span>, i.e. the structural framework that underlies the order and manner in which a narrative is presented to a reader, listener or, in this case, viewer.</p>
+			<p>
+			Since <span class="aug">time</span> is the fundamental dimension of a film's content and Focal deals with the representation of dynamic aspects of cinema, Memento is the best case study to carry out an in-depth <span class="aug">analysis on the distinction between fabula</span> (the chronological order of the events contained in the story) <span class="aug">and syuzhet</span> (the linear progression of narrative from beginning to end), as described by the Russian Formalists Victor Shklovsky and Vladimir Propp <a href="#2" class="av">[7]</a>.
+			</p>
+			<p>
+			The guidelines and concepts that were used to create the schema can be found on the dedicated page: click on the button to start exploring it.
+			</p>
+			
+			<p class="text-right" style="margin-top: 35px;">
+			<a type="button" class="btn btn-primary btn-lg btn-focal" href="classes.html" style="margin-left: auto; margin-right: auto;">
+					&#8594; The Ontology</a>
+			</p>
+		</div>		
+		
+
+   
+
+		<div class="roboto" style=" margin: 1rem 0; padding: 1rem 0;">
+		</div>
+		
+		<div class="roboto" style=" margin: 1rem 0; padding: 1rem 0;">
+		<hr style="border:0.1px solid hsl(0, 0%, 65%);">
+			<p class="majormono" style="margin-bottom: 20px;" style="font-size: 14px;">
+			Sources
+			</p>
+			
+			<p style="font-size: 13px;">
+			<a id="1" class="av">[1]</a> Petru Nicolaescu and Ralf Klamma. <i>SeViAnno 2.0: Web-enabled collaborative semantic video annotation beyond the obvious</i>. Proceedings -International Workshop on Content-Based Multimedia Indexing, (June), 2014.
+			<br>
+			<a id="2" class="av">[2]</a> Werner Haas, Georg Thallinger, Pedro Cano, Charlie Cullen, and Tobias Brger. <i>Salero - semantic audiovisual entertainment reusable objects</i>. In Yannis S. Avrithis, Yiannis Kompatsiaris, Steffen Staab, and Noel E. O’Connor, editors, SAMT (Posters and Demos), volume 233 of CEUR Workshop Proceedings. CEUR-WS.org, 2006
+			<br>
+			<a id="3" class="av">[3]</a> Jose Luis Redondo Garcia, Raphael Troncy, and Miroslav Vacura. <i>LinkedTV D2.2 - Specification of lightweight metadata models for multimedia annotation</i>. Technical report, 10 2012.
+			<br>
+			<a id="4" class="av">[4]</a> Alexandros Chortaras, Stefanos D. Kollias, Kostas Rapantzikos, and Giorgos Stamou. <i>A semantic approach to film content analysis and retrieval</i>. In Nick Bassiliades, Antonis Bikakis, Dimitris Vrakas, Ioannis P. Vlahavas, and George A. Vouros, editors, SETN, pages 38:1–38:8. ACM, 2016
+			<br>
+			<a id="5" class="av">[5]</a> Stamatia Dasiopoulou, Vasileios Mezaris, Ioannis Kompatsiaris, V.-K. Papastathis, and Michael G. Strintzis. <i>Knowledge-assisted semantic video object detection</i>. IEEE Trans. Circuits Syst. Video Techn., 15(10):1210, 2005.
+			<br>
+			<a id="6" class="av">[6]</a> F. Orlandi et al., <i>Leveraging Knowledge Graphs of Movies and Their Content for Web-Scale Analysis</i>. 2018 14th International Conference on Signal-Image Technology & Internet-Based Systems (SITIS), 2018, pp. 609-616.
+			<br>
+			<a id="7" class="av">[7]</a> Propp, Vladimir, <i>Morphology of the Folk Tale</i>. English trans. Laurence Scott. TX: University of Texas Press (first published in Moscow in 1928; English, 1968).
+			</p>
+		</div>
+			
+		</div>
+			
+			
     </main>
 
 

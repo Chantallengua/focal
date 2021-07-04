@@ -124,6 +124,11 @@ ul {list-style-type: circle;}
   color: black;
   text-decoration: underline;
 }
+.aug {
+  background-color: #D0EDF7;
+  color: black;
+  font-weight: bold;
+}
 .ay {
   background-color: #F2F3E2;
   color: black;
@@ -146,6 +151,18 @@ ul {list-style-type: circle;}
 .i {
   background-color: #bac9f3;
   color: black;
+}
+.btn-focal {
+	background-color: rgba(0,0,0,0.7) !important;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+	border-color: #343a40;
+	color: white;
+}
+.btn-focal:hover {
+	background-color: #d0edf7 !important;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+	color: black;
+	border-color: #a4dcf0;
 }
 
 p, li {text-align: justify;}
@@ -195,7 +212,9 @@ color: white;
   width: 100%;
   text-align: center;
   overflow: hidden;
+  padding: 0px 40px;
 }
+
 
 .slides {
   display: flex;
@@ -272,6 +291,7 @@ color: white;
 }
 .sliderindividual > a:active {
   top: 1px;
+    
 }
 .sliderindividual > a:focus {
   background: #15617b;
