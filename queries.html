@@ -53,7 +53,6 @@
 
 <style>
 body {
-  font-family: 'Lora';
   background-color:#F8F9FA;
   background-attachment: fixed;
   background-position: center;
@@ -78,16 +77,16 @@ dl dd {
 }
 
 dl.faq .desc {
-  margin: 0;
+  margin: 0.5em;
   padding: 0.5em;
-  font-size: 110%;
   display: none;
-  background-color: #fffedb;
+  background-color: #D0EDF7;
+  border-radius: 5px;
 }
 
 dl.faq button:hover,
 dl.faq button:focus {
-  background-color: #eee;
+  background-color: #D0EDF7;
 }
 
 dl.faq button:focus {
@@ -135,9 +134,8 @@ dl.faq button[aria-expanded="true"]::before {
           Ontology
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="classes.html">ClAsses</a>
-          <a class="dropdown-item" href="properties.html">PRopeRties</a>
-		  <a class="dropdown-item" href="individuals.html">IndiViduAls</a>
+          <a class="dropdown-item" href="overview.html">OveRWieW</a>
+          <a class="dropdown-item" href="browse.html">BRoWse</a>		  
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="SVGG/example/examples.html"><b>V</b>isual EXAmples</a>
         </div>
@@ -168,14 +166,26 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada u
 		<dl class="faq">
   <dt>
     <button aria-expanded="false" aria-controls="faq1_desc">
-      Domanda 1
+      What says Teddy, and which are the corresponding lines?
     </button>
   </dt>
   <dd>
-    <p id="faq1_desc" class="desc">
-      Risposta
-    </p>
+    <div id="faq1_desc" class="desc">
+     <p class="sparql"> 
+	  SELECT ?Line ?x <br>
+	  WHERE  {<br>
+          ?Line focal:is_said_by focal:Teddy .<br>
+          ?Line focal:content ?x .<br>
+       }<br>
+	ORDER BY ASC(?Line)<br>
+	LIMIT 10
+	 </p>
+	  <p class="text-right result">
+	  <a class="btn btn-primary btn-focal" data-toggle="modal" href="#entity-event">Result</a>
+	  </p>
+    </div>
   </dd>
+  
   <dt>
     <button aria-expanded="false" aria-controls="faq2_desc">
       Domanda 2
@@ -186,6 +196,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada u
       Risposta
     </p>
   </dd>
+  
   <dt>
     <button aria-expanded="false" aria-controls="faq3_desc">
       Domanda 3
@@ -196,6 +207,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada u
       Risposta
     </p>
   </dd>
+  
   <dt>
     <button aria-expanded="false" aria-controls="faq4_desc">
       Domanda4
@@ -214,6 +226,62 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada u
 	  
     </main>
 
+<!--Modal entity-event-->
+  <div class="portfolio-modal modal fade" id="entity-event" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+			        <div class="modal-header">
+					<h4 class="modal-title">What says Teddy, and which are the corresponding lines?</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="modal-body">                
+			
+			<table class="table">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">First</th>
+						<th scope="col">Last</th>
+						<th scope="col">Handle</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Mark</td>
+						<td>Mein</td>
+						<td>@mdm</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Otto</td>
+						<td>Von Lar</td>
+						<td>@ottvn</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>Larry</td>
+						<td>Lobster</td>
+						<td>#</td>
+					</tr>
+				</tbody>
+			</table>										
+					<div class="modal-footer">
+						<button type="button" class="btn btn-focal" data-dismiss="modal"> <i class="fas fa-times"></i>
+						Close</button>
+						</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <footer class="footer">
       <div class="container" >

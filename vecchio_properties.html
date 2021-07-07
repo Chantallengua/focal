@@ -198,9 +198,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada u
 							
 							<ul>
 							<li><a class="au" id="contains_line"><b>contains_line</b></a></li>
-							<li class="li"><i>"It relates a Scene to the Screenplay lines spoken in it."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="classes.html#sequence">Scene</a>.</li>
-							<li class="li"><b>Range</b>: <a class="au" href="classes.html#screenplay">Screenplay</a>.</li>							
+							<li class="li"><i>"It relates a Sequence, Scene or Shot to the Screenplay lines spoken in it."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#screenplay">Screenplay</a>.</li>							
 							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#line_contained_in">line_said_in</a>.</li>
 							</ul>
 							
@@ -668,7 +668,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada u
 							<ul>
 							<li><a class="au" id="starts_at"><b>starts_at</b></a></li>
 							<li class="li"><i>"It defines the starting time ('hh:mm:ss') of a Scene, Sequence or Shot."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="classes.html#movie">Movie</a>.</li>
+							<li class="li"><b>Domain</b>: <a class="au" href="classes.html#sequence">Sequence</a>, <a class="au" href="classes.html#sequence">Scene</a>, <a class="au" href="classes.html#sequence">Shot</a>.</li>
 							<li class="li"><b>Range</b>: <a class="b">xsd:time</a>.</li>
 							</ul>	
 
@@ -698,17 +698,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada u
 
 							<ul>
 							<li><a class="au" id="flashback"><b>flashback</b></a></li>
-							<li class="li"><i>"It defines if the Sequence, Scene or Shot is a flashback. Thanks to the property <a class="a">fabula</a>, it's also chronologically reordered."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="classes.html#sequence">Sequence</a>, <a class="au" href="classes.html#sequence">Scene</a>, <a class="au" href="classes.html#sequence">Shot</a>.</li>
+							<li class="li"><i>"It defines if the Scene is a flashback. Thanks to the property <a class="a">fabula</a>, it's also chronologically reordered."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#sequence">Scene</a>.</li>
 							<li class="li"><b>Range</b>: <a class="b">xsd:boolean</a>.</li>
 							</ul>		
 
 							<ul>
 							<li><a class="au" id="flashforward"><b>flashforward</b></a></li>
-							<li class="li"><i>"It defines if the Sequence, Scene or Shot is a flashforward. Thanks to the property <a class="a">fabula</a>, it's also chronologically reordered,"</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="classes.html#sequence">Sequence</a>, <a class="au" href="classes.html#sequence">Scene</a>, <a class="au" href="classes.html#sequence">Shot</a>.</li>
+							<li class="li"><i>"It defines if the Scene is a flashforward. Thanks to the property <a class="a">fabula</a>, it's also chronologically reordered,"</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#sequence">Scene</a>.</li>
 							<li class="li"><b>Range</b>: <a class="b">xsd:boolean</a>.</li>
-							</ul>		
+							</ul>	
 
 							<ul>
 							<li><a class="au" id="temporal_manipulation"><b>temporal_manipulation</b></a></li>
@@ -761,8 +761,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada u
 
 							<ul>
 							<li><a class="au" id="mood"><b>mood</b></a></li>
-							<li class="li"><i>"It describes a Scene in a subjective manner (e.g. scary, funny)."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#scene">Scene</a>.</li>
+							<li class="li"><i>"It describes a Sequence, Scene or Shot in a subjective manner (e.g. scary, funny)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="classes.html#sequence">Sequence</a>, <a class="au" href="classes.html#sequence">Scene</a>, <a class="au" href="classes.html#sequence">Shot</a>.</li>
 							<li class="li"><b>Range</b>: <a class="b">xsd:string</a>.</li>
 							</ul>							
 
