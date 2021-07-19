@@ -396,4 +396,20 @@ font-family: 'Major Mono Display', monospace;
 	margin: 0;
 }
 
+.screenplay {
+	font-family: "Courier New";
+	background-color: white;
+	padding: 70px;
+	margin: 10px;
+	border: 1px solid black;
+}
+
+.screenplay > p {
+	margin-bottom: 1rem;
+}
+.name {text-align:center; margin-bottom: 0 !important; margin-top: 1rem;}
+.indentscreenplay {text-indent:200px; margin-bottom: 0 !important;}
+.poppy {color: black;}
+.poppy:hover {  background-color: crimson; color: white !important;}
+	
 thead {color: white; background-color: #323232;}
