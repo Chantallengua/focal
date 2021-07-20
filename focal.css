@@ -408,8 +408,12 @@ font-family: 'Major Mono Display', monospace;
 	margin-bottom: 1rem;
 }
 .name {text-align:center; margin-bottom: 0 !important; margin-top: 1rem;}
-.indentscreenplay {text-indent:200px; margin-bottom: 0 !important;}
+.indentscreenplay {text-indent:170px; margin-bottom: 0 !important;}
 .poppy {color: black;}
 .poppy:hover {  background-color: crimson; color: white !important;}
+.poppyfoaf {color: black;}
+.poppyfoaf:hover {  background-color: #FBE5EF; color: black !important;}
+.poppyskos {color: black;}
+.poppyskos:hover {  background-color: #D0EDF7; color: black !important;}
 	
 thead {color: white; background-color: #323232;}
