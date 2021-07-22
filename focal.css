@@ -444,17 +444,17 @@ dl.faq .desc {
   margin: 0.5em;
   padding: 0.5em;
   display: none;
-  background-color: #e1f3fa !important;
+  background-color: #e1f3fa;
   border-radius: 5px;
 }
 
 dl.faq button:hover,
 dl.faq button:focus {
-  background-color: #D0EDF7 !important;
+  background-color: #D0EDF7;
 }
 
 dl.faq button:focus {
-  border-color: #630 !important;
+  border-color: #630;
 }
 
 dl.faq button:hover {
@@ -462,7 +462,7 @@ dl.faq button:hover {
 }
 
 dl.faq button:active {
-  background-color: #bbb !important;
+  background-color: #bbb;
 }
 
 
