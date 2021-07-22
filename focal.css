@@ -435,17 +435,17 @@ thead {color: white; background-color: #323232;}
 
 
 dl dd {
-  margin: 0 !important;
-  padding: 0 !important;
-  margin-left: 1.5em !important;
+  margin: 0;
+  padding: 0;
+  margin-left: 1.5em;
 }
 
 dl.faq .desc {
-  margin: 0.5em !important;
-  padding: 0.5em !important;
-  display: none !important;
+  margin: 0.5em;
+  padding: 0.5em;
+  display: none;
   background-color: #e1f3fa !important;
-  border-radius: 5px !important;
+  border-radius: 5px;
 }
 
 dl.faq button:hover,
@@ -458,7 +458,7 @@ dl.faq button:focus {
 }
 
 dl.faq button:hover {
-  text-decoration: underline !important;
+  text-decoration: underline;
 }
 
 dl.faq button:active {
@@ -468,21 +468,21 @@ dl.faq button:active {
 
 
 dl.faq button {
-  margin: 0 !important;
-  padding: 8px !important;
-  margin-top: 1em !important;
-  font-size: 110% !important;
+  margin: 0;
+  padding: 8px;
+  margin-top: 1em;
+  font-size: 110%;
   background-color: rgba(0,0,0,0.7) !important;
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2) !important;
-	border-color: #343a40 !important;
-	color: white !important;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+	border-color: #343a40;
+	color: white;
 }
 
 .btn-query:hover {
 	background-color: #D0EDF7 !important;
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2) !important;
-	border-color: #aee0f1 !important;
-	color: black !important;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+	border-color: #aee0f1;
+	color: black;
 	font-weight: normal !important;
 	text-decoration: none !important;
 }
