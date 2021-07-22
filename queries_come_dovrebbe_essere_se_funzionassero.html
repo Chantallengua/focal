@@ -184,7 +184,7 @@ WHERE<br>
   
 	  <dt>
 		<button aria-expanded="false" aria-controls="faq3_desc"  class="btn btn-primary btn-query">
-		  Order the 44 sequences of the film chronologically (the "fabula")
+		  Order the 44 sequences of the film chronologically (based, therefore, on the fabula and not on the syuzhet)
 		</button>
 	  </dt>
 	  <dd>
@@ -243,14 +243,13 @@ WHERE  {<br>
 		</div>
 	  </dd>	  
 	  
-	  
 	  <dt>
-		<button aria-expanded="false" aria-controls="faq6_desc"  class="btn btn-primary btn-query">
+		<button aria-expanded="false" aria-controls="faq5_desc"  class="btn btn-primary btn-query">
 		 Which are Teddy’s last words before dying?
 		</button>
 	  </dt>
 	  <dd>
-		<div id="faq6_desc" class="desc">
+		<div id="faq5_desc" class="desc">
 		 <p class="sparql"> 
 		  SELECT ?Last_words<br>
 WHERE  {<br>
@@ -268,12 +267,12 @@ WHERE  {<br>
 	  </dd>	
 
 	  <dt>
-		<button aria-expanded="false" aria-controls="faq7_desc"  class="btn btn-primary btn-query">
+		<button aria-expanded="false" aria-controls="faq5_desc"  class="btn btn-primary btn-query">
 		  And Jimmy's?
 		</button>
 	  </dt>
 	  <dd>
-		<div id="faq7_desc" class="desc">
+		<div id="faq5_desc" class="desc">
 		 <p class="sparql"> 
 		  SELECT ?Last_words<br>
 WHERE  {<br>
@@ -292,14 +291,14 @@ WHERE  {<br>
 	  </dd>	
 
 	  <dt>
-		<button aria-expanded="false" aria-controls="faq8_desc"  class="btn btn-primary btn-query">
+		<button aria-expanded="false" aria-controls="faq5_desc"  class="btn btn-primary btn-query">
 		  Who manipulates Leonard and why?
 		</button>
 	  </dt>
 	  <dd>
-		<div id="faq8_desc" class="desc">
+		<div id="faq5_desc" class="desc">
 		 <p class="sparql"> 
-		  SELECT ?Character ?Purpose<br>
+		  SELECT ?Name ?Purpose<br>
 WHERE  {<br>
           ?Character focal:manipulates ?Leonard_Shelby .<br>
 		  focal:manipulation focal:made_by ?Character.<br>
@@ -315,12 +314,12 @@ WHERE  {<br>
 	  </dd>	
 
 	  <dt>
-		<button aria-expanded="false" aria-controls="faq9_desc"  class="btn btn-primary btn-query">
+		<button aria-expanded="false" aria-controls="faq5_desc"  class="btn btn-primary btn-query">
 		  Who has a real disease and who fakes it?
 		</button>
 	  </dt>
 	  <dd>
-		<div id="faq9_desc" class="desc">
+		<div id="faq5_desc" class="desc">
 		 <p class="sparql"> 
 		  SELECT ?Ill ?Fakers ?Disease<br>
 WHERE  {<br>
@@ -337,12 +336,12 @@ UNION {?Fakers focal:faked_disease ?Disease .}<br>
 	  </dd>	
 
 	  <dt>
-		<button aria-expanded="false" aria-controls="faq10_desc"  class="btn btn-primary btn-query">
+		<button aria-expanded="false" aria-controls="faq5_desc"  class="btn btn-primary btn-query">
 		  What does Leonard wear during the movie, and who do those clothes belong to?
 		</button>
 	  </dt>
 	  <dd>
-		<div id="faq10_desc" class="desc">
+		<div id="faq5_desc" class="desc">
 		 <p class="sparql"> 
 		  SELECT ?Clothes ?Owner ?Description<br>
 WHERE {<br>
@@ -368,417 +367,6 @@ WHERE {<br>
     </main>
 
 
-
-<!--Modal 1-->
-  <div class="portfolio-modal modal fade" id="no1" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-			        <div class="modal-header">
-					<h4 class="modal-title">Who directed “Memento” and which other movies did s/he direct?</h4>
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					</div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-10 mx-auto">
-              <div class="modal-body">                
-			 
-			<table class="table">
-				<thead>
-					<tr>
-						<th scope="col">Other_movies</th>
-						<th scope="col">Release_date</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>						
-						<td>Batman_Begins</td>
-						<td>2005-11-19</td>
-					</tr>
-					<tr>
-						<td>Dunkirk</td>
-						<td>2017-04-28</td>
-					</tr>
-					<tr>
-						<td>Man_of_Steel</td>
-						<td>2013-07-25</td>
-					</tr>
-					<tr>
-						<td>Inception</td>
-						<td> 2020-09-24</td>
-					</tr>
-					<tr>
-						<td>Insomnia</td>
-						<td>2002-01-15</td>
-					</tr>
-					<tr>
-						<td>Interstellar</td>
-						<td>2014-05-09</td>
-					</tr> 
-					<tr>
-						<td>Tenet</td>
-						<td>2020-08-12</td>
-					</tr>
-					<tr>
-						<td>The_Dark_Knight</td>
-						<td>2008-04-25</td>
-					</tr>
-					<tr>
-						<td>The_Dark_Knight_Rises</td>
-						<td>2012-08-09</td>
-					</tr>
-					<tr>
-						<td>The_Prestige</td>
-						<td>2006-12-22</td>
-					</tr>
-					<tr>
-						<td>Trascendence</td>
-						<td>2014-03-17</td>
-					</tr>
-				</tbody>
-			</table>										
-					<div class="modal-footer">
-						<button type="button" class="btn btn-focal" data-dismiss="modal"> <i class="fas fa-times"></i>
-						Close</button>
-						</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!--Modal 2-->
-  <div class="portfolio-modal modal fade" id="no2" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-			        <div class="modal-header">
-					<h4 class="modal-title">Is there a famous song in this movie and has it been used in other movies? Who composed it?</h4>
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					</div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-10 mx-auto">
-              <div class="modal-body">                
-			 
-			<table class="table">
-				<thead>
-					<tr>
-						<th scope="col">Music</th>
-						<th scope="col">Author</th>
-						<th scope="col">Other_movies</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>						
-						<td>Something in the Air</td>
-						<td>American_Psycho</td>
-						<td>David_Bowie</td>
-					</tr>
-				</tbody>
-			</table>										
-					<div class="modal-footer">
-						<button type="button" class="btn btn-focal" data-dismiss="modal"> <i class="fas fa-times"></i>
-						Close</button>
-						</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!--Modal 3-->
-  <div class="portfolio-modal modal fade" id="no3" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-			        <div class="modal-header">
-					<h4 class="modal-title">Order the 44 sequences of the film chronologically (the "fabula")</h4>
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					</div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-10 mx-auto">
-              <div class="modal-body">                
-			 
-			<table class="table">
-				<thead>
-					<tr>
-						<th scope="col">Sequence</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>						
-						<td>1</td>						
-					</tr>
-					<tr>						
-						<td>3</td>						
-					</tr>
-					<tr>						
-						<td>5</td>						
-					</tr>
-					<tr>						
-						<td>7</td>						
-					</tr>
-					<tr>						
-						<td>9</td>						
-					</tr>
-					<tr>						
-						<td>11</td>						
-					</tr>
-					<tr>						
-						<td>13</td>						
-					</tr>
-					<tr>						
-						<td>15</td>						
-					</tr>
-					<tr>						
-						<td>17</td>						
-					</tr>
-					<tr>						
-						<td>19</td>						
-					</tr>
-					<tr>						
-						<td>21</td>						
-					</tr>
-					<tr>						
-						<td>23</td>						
-					</tr>
-					<tr>						
-						<td>25</td>						
-					</tr>
-					<tr>						
-						<td>27</td>						
-					</tr>
-					<tr>						
-						<td>29</td>						
-					</tr>
-					<tr>						
-						<td>31</td>						
-					</tr>
-					<tr>						
-						<td>33</td>						
-					</tr>
-					<tr>						
-						<td>35</td>						
-					</tr>
-					<tr>						
-						<td>37</td>						
-					</tr>
-					<tr>						
-						<td>39</td>						
-					</tr>
-					<tr>						
-						<td>41</td>						
-					</tr>
-					<tr>						
-						<td>43</td>						
-					</tr>
-					<tr>						
-						<td>44</td>						
-					</tr>
-					<tr>						
-						<td>42</td>						
-					</tr>
-					<tr>						
-						<td>40</td>						
-					</tr>
-					<tr>						
-						<td>38</td>						
-					</tr>
-					<tr>						
-						<td>36</td>						
-					</tr>
-					<tr>						
-						<td>34</td>						
-					</tr>
-					<tr>						
-						<td>32</td>						
-					</tr>
-					<tr>						
-						<td>30</td>						
-					</tr>
-					<tr>						
-						<td>28</td>						
-					</tr>
-					<tr>						
-						<td>26</td>						
-					</tr>
-					<tr>						
-						<td>24</td>						
-					</tr>
-					<tr>						
-						<td>22</td>						
-					</tr>
-					<tr>						
-						<td>20</td>						
-					</tr>
-					<tr>						
-						<td>18</td>						
-					</tr>
-					<tr>						
-						<td>16</td>						
-					</tr>
-					<tr>						
-						<td>14</td>						
-					</tr>
-					<tr>						
-						<td>12</td>						
-					</tr>
-					<tr>						
-						<td>10</td>						
-					</tr>
-					<tr>						
-						<td>8</td>						
-					</tr>
-					<tr>						
-						<td>6</td>						
-					</tr>
-					<tr>						
-						<td>4</td>						
-					</tr>
-					<tr>						
-						<td>2</td>						
-					</tr>
-				</tbody>
-			</table>										
-					<div class="modal-footer">
-						<button type="button" class="btn btn-focal" data-dismiss="modal"> <i class="fas fa-times"></i>
-						Close</button>
-						</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!--Modal 4-->
-  <div class="portfolio-modal modal fade" id="no4" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-			        <div class="modal-header">
-					<h4 class="modal-title">Is the protagonist a “good man”?</h4>
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					</div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-10 mx-auto">
-              <div class="modal-body">                
-			 
-			<table class="table">
-				<thead>
-					<tr>
-						<th scope="col">Action</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>						
-						<td>Chase
-								</td>						
-					</tr>
-					<tr>						
-						<td>Driving</td>						
-					</tr>
-					<tr>						
-						<td>Kiss</td>						
-					</tr>
-					<tr>						
-						<td>Murder</td>						
-					</tr>
-					<tr>						
-						<td>Punch</td>						
-					</tr>
-					<tr>						
-						<td>Self_Tattooing</td>						
-					</tr>
-					<tr>						
-						<td>Sex</td>						
-					</tr>
-					<tr>						
-						<td>Shooting</td>						
-					</tr>
-					<tr>						
-						<td>Taking_Picture</td>						
-					</tr>
-					<tr>						
-						<td>Writing</td>						
-					</tr>
-				</tbody>
-			</table>										
-					<div class="modal-footer">
-						<button type="button" class="btn btn-focal" data-dismiss="modal"> <i class="fas fa-times"></i>
-						Close</button>
-						</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!--Modal 5-->
-  <div class="portfolio-modal modal fade" id="no5" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-			        <div class="modal-header">
-					<h4 class="modal-title">Who was killed by Leonard?</h4>
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					</div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-10 mx-auto">
-              <div class="modal-body">                
-			 
-			<table class="table">
-				<thead>
-					<tr>
-						<th scope="col">Victims</th>
-					</tr>
-				</thead>
-				<tbody>					
-					<tr>						
-						<td>Catherine_Shelby</td>						
-					</tr>
-					<tr>						
-						<td>Jimmy_Grantz</td>						
-					</tr>
-					<tr>						
-						<td>John_G.</td>						
-					</tr>
-					<tr>						
-						<td>Teddy</td>						
-					</tr>					
-				</tbody>
-			</table>										
-					<div class="modal-footer">
-						<button type="button" class="btn btn-focal" data-dismiss="modal"> <i class="fas fa-times"></i>
-						Close</button>
-						</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
 <!--Modal 6-->
   <div class="portfolio-modal modal fade" id="no6" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -797,16 +385,16 @@ WHERE {<br>
 			<table class="table">
 				<thead>
 					<tr>
-						<th scope="col">Last_words</th>
+						<th scope="col">Last words</th>
 					</tr>
 				</thead>
 				<tbody>					
 					<tr>						
-						<td>"You want to know, Lenny? Come on.
+						<td>You want to know, Lenny? Come on.
 Come on. Let's go down to the basement.
 Let's go down, you and me, together.
 Then you'll know who you really are.
-No!"
+No!
 </td>						
 					</tr>						
 				</tbody>
@@ -841,12 +429,12 @@ No!"
 			<table class="table">
 				<thead>
 					<tr>
-						<th scope="col">Last_words</th>
+						<th scope="col">Last words</th>
 					</tr>
 				</thead>
 				<tbody>					
 					<tr>						
-						<td>"Sammy..."
+						<td>Sammy...
 </td>						
 					</tr>						
 				</tbody>
@@ -915,7 +503,7 @@ No!"
   
 <!--Modal 9-->
   <div class="portfolio-modal modal fade" id="no9" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" style="min-width: 50%">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
 			        <div class="modal-header">
@@ -968,7 +556,7 @@ No!"
   
 <!--Modal 10-->
   <div class="portfolio-modal modal fade" id="no10" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" style="min-width: 50%">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
 			        <div class="modal-header">

@@ -135,10 +135,23 @@ ul {list-style-type: circle;}
   color: black;
   text-decoration: underline;
 }
+.aya {
+  background-color: #F2F3E2;
+  color: black;
+}
 .ared {
   background-color: #FBE5EF;
   color: black;
   text-decoration: underline;
+}
+.apink {
+  background-color: #FBE5EF;
+  color: black;
+}
+.awhite {
+  background-color: white;
+  color: black;
+  border: 0.1px solid black;
 }
 .av {
   background-color: #bac9f3;
@@ -417,3 +430,67 @@ font-family: 'Major Mono Display', monospace;
 .poppyskos:hover {  background-color: #D0EDF7; color: black !important;}
 	
 thead {color: white; background-color: #323232;}
+
+
+
+
+dl dd {
+  margin: 0;
+  padding: 0;
+  margin-left: 1.5em;
+}
+
+dl.faq .desc {
+  margin: 0.5em;
+  padding: 0.5em;
+  display: none;
+  background-color: #e1f3fa;
+  border-radius: 5px;
+}
+
+dl.faq button:hover,
+dl.faq button:focus {
+  background-color: #D0EDF7;
+}
+
+dl.faq button:focus {
+  border-color: #630;
+}
+
+dl.faq button:hover {
+  text-decoration: underline;
+}
+
+dl.faq button:active {
+  background-color: #bbb;
+}
+
+
+
+dl.faq button {
+  margin: 0;
+  padding: 8px;
+  margin-top: 1em;
+  font-size: 110%;
+  background-color: rgba(0,0,0,0.7) !important;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+	border-color: #343a40;
+	color: white;
+}
+
+.btn-query:hover {
+	background-color: #D0EDF7 !important;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+	border-color: #aee0f1;
+	color: black;
+	font-weight: normal !important;
+	text-decoration: none !important;
+}
+.btn-query:focus {
+  background-color: #D0EDF7 !important;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+	border-color: #aee0f1;
+	color: black;
+	font-weight: normal !important;
+	text-decoration: none !important;
+}

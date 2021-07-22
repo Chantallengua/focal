@@ -87,7 +87,7 @@ body {
           <a class="dropdown-item "  href="overview.html">OveRWieW</a>
           <a class="dropdown-item active" style="text-decoration:underline;" href="#">BRoWse<span class="sr-only">(current)</span></a>		  
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="SVGG/example/examples.html"><b>V</b>isual EXAmples</a>
+          <a class="dropdown-item" href="SVGG/example/examples.html"><b>V</b>isual EXAmple</a>
         </div>
       </li>
 	  
@@ -242,9 +242,9 @@ body {
 						</p>
 						<p style="margin:25px 0;">
 						<b>Data properties include:</b> 
-						<a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av">ma:title</a>,
-						<a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av">ma:identifier</a>,
-						<a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av">ma:language</a>, 
+						<a target="_blank" href="https://www.w3.org/TR/mediaont-10/" class="av">ma:title</a>,
+						<a target="_blank" href="https://www.w3.org/TR/mediaont-10/" class="av">ma:identifier</a>,
+						<a target="_blank" href="https://www.w3.org/TR/mediaont-10/" class="av">ma:language</a>, 
 						<a target="_blank" href="https://schema.org/isBasedOn" class="ay">skos:isBasedOn</a>,
 						<a class="au" href="#is_inspired_by">is_inspired_by</a>, 
 						<a class="au" href="#box_office">box_office</a>, 
@@ -253,7 +253,7 @@ body {
 						<a target="_blank" href="https://schema.org/runtime" class="ay">skos:runtime</a>, 
 						<a target="_blank" href="https://schema.org/releasedate" class="ay">skos:releasedate</a>, 
 						<a class="au" href="#imdb_rating">imdb_rating</a>,
-						<a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av">ma:frameSize</a>.
+						<a target="_blank" href="https://www.w3.org/TR/mediaont-10/" class="av">ma:frameSize</a>.
 						</p>
 						<p style="margin:25px 0;">
 						<b>Has subclass</b>: <a class="au" href="#action">Action</a>, <a class="au" href="#character">Character</a>, <a class="au" href="#emotion">Emotion</a>, 
@@ -338,21 +338,21 @@ body {
 								</span>
 							</p>
 							<ul>
-							<li><a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av"><b>ma:title</b></a></li>
+							<li><a target="_blank" href="https://www.w3.org/TR/mediaont-10/" class="av"><b>ma:title</b></a></li>
 							<li class="li"><i>"This data property connects the movie to its title."</i></li>
 							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#movie">Movie</a>.</li>
 							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:string</span>.</li>
 							</ul>
 							
 							<ul>
-							<li><a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av"><b>ma:identifier</b></a></li>
+							<li><a target="_blank" href="https://www.w3.org/TR/mediaont-10/" class="av"><b>ma:identifier</b></a></li>
 							<li class="li"><i>"A URI identifying a media resource."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
 							<li class="li"><b>Range</b>: <span class="b">xsd:anyURI</span>.</li>
 							</ul>		
 
 							<ul>
-							<li><a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av"><b>ma:language</b></a></li>
+							<li><a target="_blank" href="https://www.w3.org/TR/mediaont-10/" class="av"><b>ma:language</b></a></li>
 							<li class="li"><i>"The language used in the movie."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
 							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
@@ -402,7 +402,7 @@ body {
 
 							<ul>
 							<li style="margin:15px 0 0 0;"><a target="_blank" href="https://schema.org/releaseDate" class="ay"><b>skos:releaseDate</b></a></li>
-							<li class="li"><i>"The release date of the movie, expressed in dd/mm/yyyy."</i></li>
+							<li class="li"><i>"The release date of the movie, expressed in YYYY-MM-DD."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
 							<li class="li"><b>Range</b>: <span class="b">xsd:date</span>.</li>
 							</ul>
@@ -415,7 +415,7 @@ body {
 							</ul>	
 							
 							<ul>
-							<li><a target="_blank" href="http://www.w3.org/ns/ma-ont#" class="av"><b>ma:frameSize</b></a></li>
+							<li><a target="_blank" href="https://www.w3.org/TR/mediaont-10/" class="av"><b>ma:frameSize</b></a></li>
 							<li class="li"><i>"It defines the frame size of the resource (e.g., width and height of 720 and 480 units, respectively). "</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#movie">Movie</a>.</li>
 							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
@@ -628,12 +628,12 @@ body {
 							
 							<ul>
 							<li><a class="au" id="diegetic_level"><b>diegetic_level</b></a></li>
-							<li class="li"><i>"It relates a Shot, Scene or Sequence to its diegetic level. The Level of the story contained in the Movie is Level0. 
-							The Level1 means that it is a story within the movie, told by a character. 
-							If in the story, a new character starts telling another story, this latter one will have Level2, and so on.
-							In the case of a "breaking of the fourth wall", the Level shall be Level-1."</i></li>
+							<li class="li"><i>"It relates a Shot, Scene or Sequence to its diegetic level. The Level of the story contained in the Movie is 0. 
+							No. 1 means that it is a story within the movie, told by a character. 
+							If in the story, a new character starts telling another story, this latter one will have no. 2, and so on.
+							In the case of a "breaking of the fourth wall", the Level shall be -1."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
-							<li class="li"><b>Range</b>: <a class="b">{"level-1", "level0", "level1", "level2"}</a>.</li>
+							<li class="li"><b>Range</b>: <a class="b">integer</a>.</li>
 							</ul>	
 
 							<ul>
@@ -696,7 +696,7 @@ body {
 							<li><a class="au" id="type"><b>type</b></a></li>
 							<li class="li"><i>"It associates the Sequence, Scene or Shot to particular types of narration."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
-							<li class="li"><b>Range</b>: <a class="b">{"dream" , "hallucination" , "nightmare" , "story"}</a>.</li>
+							<li class="li"><b>Range</b>: <a class="b">{"dream" , "hallucination" , "nightmare" , "story", "memory"}</a>.</li>
 							</ul>	
 
 							<ul>
@@ -810,6 +810,7 @@ body {
 						<a class="au" href="#character_appears_in">character_appears_in</a>,
 						<a class="au" href="#starred_by">starred_by</a>,
 						<a class="au" href="#feels">feels</a>,
+						<a class="au" href="#character_makes_sound">character_makes_sound</a>,
 						<a class="au" href="#says">says</a>,						
 						<a target="_blank" href="http://xmlns.com/foaf/spec/#term_knows" class="ared">foaf:knows</a>, 				
 						<a class="au" href="#mentions">mentions</a>,
@@ -899,11 +900,19 @@ body {
 							
 							<ul>
 							<li><a class="au" id="feels"><b>feels</b></a></li>
-							<li class="li"><i>"It relates a Character to the emotion s/he is feeling in a given moment."</i></li>
+							<li class="li"><i>"It relates a Character to the Emotion s/he is feeling in a given moment."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#character">Character</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#emotion">Emotion</a>.</li>
 							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#felt_by">felt_by</li></a>
-							</ul>	
+							</ul>
+
+							<ul>
+							<li><a class="au" id="character_makes_sound"><b>character_makes_sound</b></a></li>
+							<li class="li"><i>"It relates a Character to a Sound s/he is making (e.g. a Whistle)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#character">Character</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#sound">Sound</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#sound_made_by">sound_made_by</li></a>
+							</ul>							
 
 							<ul>
 							<li><a class="au" id="says"><b>says</b></a></li>
@@ -1284,8 +1293,10 @@ body {
 							<li class="li"><i>"It relates the Screenplay lines to the Emotion they convey."</i></li>
 							<li class="li"><b>Domain</b>:  <a class="au" href="#screenplay">Screenplay</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#emotion">Emotion</a>.</li>
-							<li class="li"><b>Inverse Property of:</b> <a class="au" href="#emotion_conveyed_by_lines">emotion_conveyed_by_lines</a></li>
-							</ul>							
+							<li class="li"><b>Inverse Property of:</b> <a class="ared" href="https://www.gsi.upm.es/ontologies/onyx/#extractedFrom" target="_blank"><b>onyx:extractedFrom</b></a></li>
+							</ul>			
+
+							
 												
 							
 						</div>
@@ -1367,7 +1378,7 @@ body {
 				<div class="col">
 					<div class="roboto" style="padding:10px;">					
 					<div style="specchio-sx">
-					<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/drawiosequence2.svg" alt="">					
+					<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/drawiosetting2.svg" alt="">					
 					<p>
 					<!-- Setting Qui ci metto spiegazioni e motivazioni di certe scelte. Sopra l'immagine deve essere molto più allungata.-->
 					</p>
@@ -1418,14 +1429,29 @@ body {
 						<a class="au" href="#is_setting_of">is_setting_of</a>,
 						<a class="au" href="#hosts_character">hosts_character</a>,
 						<a class="au" href="#hosts_action">hosts_action</a>,
-						<a class="au" href="#is_administrated_by1">is_administrated_by</a>.					
+						<a class="au" href="#is_administrated_by1">is_administrated_by</a>,
+						<a class="au" href="#is_killed_in1">is_killed_in</a>,
+						<a class="au" href="#residence1">residence</a>.					
 						</p>
+						
 						<p style="margin:25px 0;">
 						<b>Data properties include:</b> 
 						<a class="au" href="#int_setting">int_setting</a>,
 						<a class="av" href="http://purl.org/dc/terms">dc:identifier</a>,
 						<a class="au" href="#fict_setting">fict_setting</a>,
-						<a class="au" href="#nat_setting">nat_setting</a>.
+						<a class="au" href="#nat_setting">nat_setting</a>,
+						<a class="au" href="#public_space">public_space</a>,
+						<a class="au" href="#abandoned_setting">abandoned_setting</a>,
+						<a class="au" href="#open_space">open_space</a>,
+						<a class="au" href="#contaminated_setting">contaminated_setting</a>,
+						<a class="au" href="#unexplored_setting">unexplored_setting</a>,
+						<a class="au" href="#isolated_setting">unlivable_setting</a>,
+						<a class="au" href="#isolated_setting">isolated_setting</a>,
+						<a class="au" href="#isolated_setting">isolated_setting</a>,
+						<a class="au" href="#isolated_setting">isolated_setting</a>,
+						<a class="au" href="#disreputable_setting">disreputable_setting</a>,
+						<a class="au" href="#hidden_setting">hidden_setting</a>,
+						<a class="au" href="#dangerous_setting">dangerous_setting</a>.
 						</p>					
 						</div>
 						
@@ -1448,7 +1474,7 @@ body {
 							<li><a class="au" id="hosts_character"><b>hosts_character</b></a></li>
 							<li class="li"><i>"It relates a Setting to the Character who appears in it."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#setting">Setting</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b" href="#character">Character</span>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#character">Character</a>.</li>
 							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#appears_in_setting">appears_in_setting</a>.</li>
 							</ul>
 							
@@ -1456,8 +1482,15 @@ body {
 							<li><a class="au" id="hosts_action"><b>hosts_action</b></a></li>
 							<li class="li"><i>"It relates a Setting to the Action which happens in it."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#setting">Setting</a>.</li>
-							<li class="li"><b>Range</b>: <span class="b" href="#action">Action</span>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#action">Action</a>.</li>
 							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#action_in_setting">action_in_setting</a>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="sound_heard_in_setting"><b>sound_heard_in_setting</b></a></li>
+							<li class="li"><i>"It relates a Sound to the Setting in which it is heard."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#sound">Sound</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#setting">Setting</a>.</li>							
 							</ul>
 							
 							<ul>
@@ -1467,6 +1500,22 @@ body {
 							<li class="li"><b>Range</b>: every value of this property is a <a class="au" href="#character">Character</a>.</li>
 							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#administrates">administrates</a>.</li>
 							</ul>
+							
+							<ul>
+							<li><a class="au" id="is_killed_in1"><b>is_killed_in</b></a></li>
+							<li class="li"><i>"It relates a Character to a Setting in which s/he is killed."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#character">Character</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#setting">Setting</a>.</li>							
+							</ul>	
+
+							<ul>
+							<li><a class="au" id="residence1"><b>residence</b></a></li>
+							<li class="li"><i>"It relates a Character to the Setting / place s/he is currently living in."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#character">Character</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#thing">Setting</a>.</li>							
+							</ul>	
+
+
 												
 							
 						</div>
@@ -1487,21 +1536,91 @@ body {
 							<li><a class="av" href="http://purl.org/dc/terms"><b>dc:identifier</b></a></li>
 							<li class="li"><i>"An unambiguous reference to the resource within a given context."</i></li>
 							<li class="li"><b>Domain</b>: <a class="a">owl:Thing</a>.</li>
-							<li class="li"><b>Range</b>: xsd:anyURI</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:anyURI</span>.</li>
 							</ul>
 							
 							<ul>
 							<li><a class="au" id="fict_setting"><b>fict_setting</b></a></li>
 							<li class="li"><i>"If true, this data property indicates if the Setting is a fictional location (e.g. parallel world, dreamt location, virtual reality)"</i></li>
-							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#setting">Setting</a>.</li>
-							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:boolean</span>.</li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
 							</ul>
 							
 							<ul>
 							<li><a class="au" id="nat_setting"><b>nat_setting</b></a></li>
-							<li class="li"><i>"If true, this data property indicates if the Setting is part of nature (e.g. garden, waterfalls); if false, if it is an artificial one (e.g. street, room)."</i></li>
-							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#setting">Setting</a>.</li>
-							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:boolean</span>.</li>
+							<li class="li"><i>"If true, this data property indicates if the Setting is part of nature (e.g. garden, waterfalls); if false, it shall be an artificial one (e.g. street, room)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="public_space"><b>public_space</b></a></li>
+							<li class="li"><i>"If true, this data property indicates if the Setting is a public or institutional place; if false, a private one."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="abandoned_setting"><b>abandoned_setting</b></a></li>
+							<li class="li"><i>"If true, this data property indicates if the Setting is abandoned."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="open_space"><b>open_space</b></a></li>
+							<li class="li"><i>"If true, this data property indicates if the Setting is an open space (e.g. a natural garden, but also an artificial square)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="contaminated_setting"><b>contaminated_setting</b></a></li>
+							<li class="li"><i>"If true, this data property indicates if the Setting is contaminated, and thus, could be unlivable or very dangerous (e.g. in the case of scientific-fiction settings such as nuclear power plants)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="unexplored_setting"><b>unexplored_setting</b></a></li>
+							<li class="li"><i>"If true, this data property indicates if the Setting is unexplored (e.g. a jungle)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="unlivable_setting"><b>unlivable_setting</b></a></li>
+							<li class="li"><i>"If true, this data property indicates if the Setting is unlivable due to artificial issues (e.g. a dangerous nuclear power plants), or natural conditions (e.g. an ocean, the space)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="isolated_setting"><b>isolated_setting</b></a></li>
+							<li class="li"><i>"If true, this data property indicates if the Setting is isolated (can be an island, or a house in an horror movie)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="disreputable_setting"><b>disreputable_setting</b></a></li>
+							<li class="li"><i>"If true, this data property indicates if the Setting has a bad reputation."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="hidden_setting"><b>hidden_setting</b></a></li>
+							<li class="li"><i>"If true, this data property indicates if the Setting is hidden in some ways."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="dangerous_setting"><b>dangerous_setting</b></a></li>
+							<li class="li"><i>"If true, this data property indicates if the Setting is dangerous for the characters."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#setting">Setting</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
 							</ul>
 	
 						</div>	
@@ -1519,7 +1638,7 @@ body {
 				<div class="col">
 					<div class="roboto" style="padding:10px;">					
 					<div style="specchio-sx">
-					<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/drawiosequence2.svg" alt="">					
+					<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/drawiothing2.svg" alt="">					
 					<p>
 					<!-- Thing Qui ci metto spiegazioni e motivazioni di certe scelte. Sopra l'immagine deve essere molto più allungata.-->
 					</p>
@@ -1529,7 +1648,7 @@ body {
 				<div class="col">
 					<div class="roboto" style="padding:10px; padding-top:0px;">
 						<div class="specchio-dx">
-						<p><a class="title"  id="thing"><b>significAnt thing</b></a>						</p>
+						<p><a class="title"  id="thing"><b>significAnt_thing</b></a>						</p>
 							<div style="padding:15px; border: solid 1px hsl(0, 0%, 80%); width:fit-content;">
 								<p style="margin: 0px !important;">
 									owl:Thing
@@ -1571,6 +1690,11 @@ body {
 						<a target="_blank" href="http://xmlns.com/foaf/spec/#term_depiction" class="ared">foaf:depiction</a>,
 						<a target="_blank" href="http://xmlns.com/foaf/spec/#term_depicts" class="ared">foaf:depicts</a>,
 						<a target="_blank" href="http://xmlns.com/foaf/spec/#term_made" class="ared">foaf:made</a>,
+						<a class="au" href="#obtained_after_action">obtained_after_action</a>,
+						<a class="au" href="#thing_triggers_action">thing_triggers_action</a>,
+						<a class="au" href="#thing_triggers_action">thing_involved_in_action</a>,
+						<a class="au" href="#thing_triggers_emotion">thing_triggers_emotion</a>,
+						<a class="au" href="#thing_makes_sound">thing_makes_sound</a>,
 						<a class="au" href="#miscellaneous3b">is_read_by</a>,
 						<a class="au" href="#miscellaneous3b">is_used_by</a>,
 						<a class="au" href="#miscellaneous3b">is_worn_by</a>,
@@ -1583,6 +1707,18 @@ body {
 						<b>Data properties include:</b> 
 						<a class="au" href="#has_written_on_it">has_written_on_it</a>,
 						<a class="av" href="http://purl.org/dc/terms">dc:identifier</a>,
+						<a class="au" href="#has_symbol">has_symbol</a>,
+						<a class="au" href="#provenance">provenance</a>,
+						<a class="au" href="#dangerous_for">dangerous_for</a>,
+						<a class="au" href="#broken_thing">broken_thing</a>,
+						<a class="au" href="#artisanal_thing">artisanal_thing</a>,
+						<a class="au" href="#natural_thing">natural_thing</a>,
+						<a class="au" href="#precious_thing">precious_thing</a>,
+						<a class="au" href="#value">value</a>,
+						<a class="au" href="#unfinished_thing">unfinished_thing</a>,
+						<a class="au" href="#edible_thing">edible_thing</a>,
+						<a class="au" href="#material">material</a>,
+						<a class="au" href="#purpose">purpose</a>,						
 						<a class="au" href="#filled_with">filled_with</a>.
 						</p>	
 						<p style="margin:25px 0;">
@@ -1600,42 +1736,81 @@ body {
 							<ul>
 							<li><a class="au" id="thing_shown_in1"><b>thing_shown_in</b></a></li>
 							<li class="li"><i>"It relates a Significant Thing to a Sequence, Scene or Shot in which it appears."</i></li>
-							<li class="li"><b>Domain</b>: having this property implies being a  <a class="au" href="#thing">Significant Thing</a>.</li>
+							<li class="li"><b>Domain</b>: having this property implies being a  <a class="au" href="#thing">Significant_Thing</a>.</li>
 							<li class="li"><b>Range</b>: every value of this property is a <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
-							<li class="li">> <b>Inverse of:</b> <a class="au" href="#contains_thing"><b>contains_thing</b></a></li>
+							<li class="li">> <b>Inverse of:</b> <a class="au" href="#contains_thing">contains_thing</a></li>
 							</ul>
 							
 							<ul>
 							<li><a class="au" id="is_owned_by"><b>is_owned_by</b></a></li>
 							<li class="li"><i>"It relates a Significant Thing to a Character who owns it."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant Thing</a>.</li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#character">Character</a>.</li>
 							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#owns">owns</li></a>
 							</ul>
 							
 							<ul>
-							<li><a target="_blank" href="http://xmlns.com/foaf/spec/#term_depiction" class="ared">foaf:depiction</a></li>
+							<li><a target="_blank" href="http://xmlns.com/foaf/spec/#term_depiction" class="ared"><b>foaf:depiction</b></a></li>
 							<li class="li"><i>"A depiction of a Significant Thing."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant Thing</a>.</li>
-							<li class="li"><b>Range</b>: <a class="au" href="#thing">Significant Thing</a> (this individual shall be an image or similar).</li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#thing">Significant_Thing</a> (this individual shall be an image or similar).</li>
 							<li class="li">> <b>Inverse Property of:</b> <a target="_blank" href="http://xmlns.com/foaf/spec/#term_depicts" class="ared">foaf:depicts</a></li>
 							</ul>
 							
 							<ul>
-							<li><a target="_blank" href="http://xmlns.com/foaf/spec/#term_depicts" class="ared">foaf:depicts</a></li>
+							<li><a target="_blank" href="http://xmlns.com/foaf/spec/#term_depicts" class="ared"><b>foaf:depicts</b></a></li>
 							<li class="li"><i>"A Significant Thing depicted in this representation."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant Thing</a> (this individual shall be an image or similar).</li>
-							<li class="li"><b>Range</b>: <a class="au" href="#thing">Significant Thing</a>.</li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a> (this individual shall be an image or similar).</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
 							<li class="li">> <b>Inverse Property of:</b> <a target="_blank" href="http://xmlns.com/foaf/spec/#term_depiction" class="ared">foaf:depiction</a></li>
 							</ul>
 							
 							<ul>
-							<li><a target="_blank" href="http://xmlns.com/foaf/spec/#term_made" class="ared">foaf:made</a></li>
+							<li><a target="_blank" href="http://xmlns.com/foaf/spec/#term_made" class="ared"><b>foaf:made</b></a></li>
 							<li class="li"><i>"It relates a Significant Thing to the Character who made it."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant Thing</a>.</li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#character">Character</a>.</li>
 							<li class="li">> <b>Inverse Property of:</b> <a target="_blank" href="http://xmlns.com/foaf/spec/#term_maker" class="ared">foaf:maker</a></li>
 							</ul>
+							
+							<ul>
+							<li><a class="au" id="obtained_after_action"><b>obtained_after_action</b></a></li>
+							<li class="li"><i>"Thanks to this Action, the Character(s) obtained this item (can be a Jewel after a Murder, a Medal after a Race or a lost Trophy after a dangerouse Quest in a jungle)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#action">Action</a>.</li>							
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="thing_triggers_action"><b>thing_triggers_action</b></a></li>
+							<li class="li"><i>"The Thing that triggers an action (e.g. can be a precious Jewel that triggers a Robbery)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#action">Action</a>.</li>							
+							<li class="li">> <b>Inverse Property of:</b> <a href="#action_triggered_by_thing" class="au">action_triggered_by_thing</a></li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="thing_involved_in_action"><b>thing_involved_in_action</b></a></li>
+							<li class="li"><i>"The Thing that is involved in an action (e.g. a gun or another weapon in an homicide)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#action">Action</a>.</li>							
+							<li class="li">> <b>Inverse Property of:</b> <a href="#action_involves_thing" class="au">action_involves_thing</a></li>
+							</ul>		
+
+							<ul>
+							<li><a class="au" id="thing_triggers_emotion"><b>thing_triggers_emotion</b></a></li>
+							<li class="li"><i>"The Thing that triggers an Emotion (e.g. an old photograph may trigger Sadness)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#emotion">Emotion</a>.</li>							
+							<li class="li">> <b>Inverse Property of:</b> <a href="#emotion_triggered_by_thing" class="au">emotion_triggered_by_thing</a></li>
+							</ul>	
+
+							<ul>
+							<li><a class="au" id="thing_makes_sound"><b>thing_makes_sound</b></a></li>
+							<li class="li"><i>""It relates a Sound to the Thing that makes it (e.g. a Song plaid on a Piano, or a 'Beeep' made by means of the Honk of a Car)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#sound">Sound</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" id="sound_made_by_thing">sound_made_by_thing</a>.</li>							
+							</ul>							
 							
 							<ul>
 							<li><a class="au" id="miscellaneous3b"><b>is_read_by</a>,
@@ -1648,7 +1823,7 @@ body {
 								</b>
 								</li>
 							<li class="li"><i>"These are simple relationships between a Significant Thing and a Character."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant Thing</a>.</li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#character">Character</a>.</li>		
 							<li class="li">> <b>Inverse Properties of:</b> <a class="au" href="#miscellaneous3">reads</a>,
 							<a class="au" href="#miscellaneous3">uses</a>,
@@ -1669,7 +1844,7 @@ body {
 							<ul>
 							<li><a class="a" id="has_written_on_it"><b>has_written_on_it</b></a></li>
 							<li class="li"><i>"This data property connects the Significant Thing to letters, words or sentences written on it."</i></li>
-							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#thing">Significant Thing</a>.</li>
+							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#thing">Significant_Thing</a>.</li>
 							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:string</span>.</li>
 							</ul>
 
@@ -1678,12 +1853,103 @@ body {
 							<li class="li"><i>"An unambiguous reference to the resource within a given context."</i></li>
 							<li class="li"><b>Domain</b>: <a class="a">owl:Thing</a>.</li>
 							<li class="li"><b>Range</b>: xsd:anyURI</a>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="a" id="has_symbol"><b>has_symbol</b></a></li>
+							<li class="li"><i>"This data property indicates the symbols that are written or displayed on the object."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>	
+
+							<ul>
+							<li><a class="a" id="provenance"><b>provenance</b></a></li>
+							<li class="li"><i>"This data property indicates the provenance of the object, if relevant (shop, family, country, etc.)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>	
+
+							<ul>
+							<li><a class="a" id="dangerous_for"><b>dangerous_for</b></a></li>
+							<li class="li"><i>"This data property indicates the dangers that a Character may run into using the object (e.g. poison)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>		
+
+							<ul>
+							<li><a class="a" id="broken_thing"><b>broken_thing</b></a></li>
+							<li class="li"><i>"If true, it means that the object is broken."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>		
+							
+							<ul>
+							<li><a class="a" id="artisanal_thing"><b>artisanal_thing</b></a></li>
+							<li class="li"><i>"If true, it means that the object is artisanal and not industrial."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+
+							<ul>
+							<li><a class="a" id="natural_thing"><b>natural_thing</b></a></li>
+							<li class="li"><i>"If true, it means that the object is natural (e.g. a leaf, a feather) and not made by man."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+
+							<ul>
+							<li><a class="a" id="broken_thing"><b>precious_thing</b></a></li>
+							<li class="li"><i>"If true, it means that the object is precious (e.g. a jewel, the Mona Lisa painting)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+
+							<ul>
+							<li><a class="a" id="value"><b>value</b></a></li>
+							<li class="li"><i>"This data property indicates the approximate value (in dollars) of an object."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:integer</span>.</li>
 							</ul>							
+
+							<ul>
+							<li><a class="a" id="unfinished_thing"><b>unfinished_thing</b></a></li>
+							<li class="li"><i>"If true, it means that the object is unfinished."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="a" id="edible_thing"><b>edible_thing</b></a></li>
+							<li class="li"><i>"If true, it means that the object is edible (e.g. a kind of food)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+														
+							<ul>
+							<li><a class="a" id="tech_thing "><b>tech_thing </b></a></li>
+							<li class="li"><i>"If true, it means that the object is technological (e.g. a TV, a computer)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="a" id="material"><b>material</b></a></li>
+							<li class="li"><i>"The material of which the object is made (e.g. silver, paper, etc.)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>
+
+							<ul>
+							<li><a class="a" id="purpose"><b>purpose</b></a></li>
+							<li class="li"><i>"The purpose of the object (e.g. give directions in the case of a road sign, remember the foods to buy in the case of a shopping list)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au">owl:Thing</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>
 							
 							<ul>
 							<li><a class="a" id="filled_with"><b>filled_with</b></a></li>
 							<li class="li"><i>"The liquid with which a Significant Thing (e.g. a syringe) is filled."</i></li>
-							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant Thing</a>.</li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
 							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
 							</ul>
 													
@@ -1702,7 +1968,7 @@ body {
 				<div class="col">
 					<div class="roboto" style="padding:10px;">					
 					<div style="specchio-sx">
-					<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/drawiosequence2.svg" alt="">					
+					<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/drawioaction2.svg" alt="">					
 					<p>
 					<!--Action. Qui ci metto spiegazioni e motivazioni di certe scelte. Sopra l'immagine deve essere molto più allungata.-->
 					</p>
@@ -1752,11 +2018,25 @@ body {
 							<a class="au" href="#action_happens_in1">action_happens_in</a>, 
 							<a class="au" href="#action_in_setting">action_in_setting</a>,
 							<a class="au" href="#has_agent1">has_agent</a>,
-							<a class="au" href="#has_patient1">has_patient</a>.					
+							<a class="au" href="#has_patient1">has_patient</a>,
+							<a class="au" href="#planned_by">planned_by</a>,
+							<a class="au" href="#action_triggered_by_thing">action_triggered_by_thing</a>,
+							<a class="au" href="#action_involves_thing">action_involves_thing</a>,							
+							<a class="au" href="#action_involves_emotion">action_involves_emotion</a>,
+							<a class="au" href="#triggered_by_emotion">triggered_by_emotion</a>,
+							<a class="au" href="#action_has_resulting_emotion">action_has_resulting_emotion</a>.
 						</p>
 						<p style="margin:25px 0;">
 						<b>Data properties include:</b> 
-							<a class="au" href="#intensity1">intensity</a>.	
+							<a class="au" href="#intensity1">intensity</a>,
+							<a class="au" href="#violent_action">violent_action</a>,
+							<a class="au" href="#quick_action">quick_action</a>,
+							<a class="au" href="#ordinary_action">ordinary_action</a>,
+							<a class="au" href="#heroic_action">heroic_action</a>,
+							<a class="au" href="#illegal_action">illegal_action</a>,
+							<a class="au" href="#dangerous_action">dangerous_action</a>,
+							<a class="au" href="#purpose1">purpose</a>,
+							<a class="au" href="#planned_action">planned_action</a>.	
 						</p>
 						<p style="margin:25px 0;">
 							<b>Has superclass</b>: <a class="au" href="#movie">Movie</a>.
@@ -1801,6 +2081,60 @@ body {
 							<li class="li"><b>Range</b>: <a class="au" href="#character">Character</a>.</li>
 							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#is_patient">is_patient</li></a>
 							</ul>
+							
+							<ul>
+							<li><a class="au" id="planned_by"><b>planned_by</b></a></li>
+							<li class="li"><i>"It relates an Action (e.g. murder, chasing, throwing an object) to the Character who planned it."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#action">Action</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#character">Character</a>.</li>							
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="obtained_after_action"><b>obtained_after_action</b></a></li>
+							<li class="li"><i>"Thanks to this Action, the Character(s) obtained this item (can be a Jewel after a Murder, a Medal after a Race or a lost Trophy after a dangerouse Quest in a jungle)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#action">Action</a>.</li>							
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="action_triggered_by_thing"><b>action_triggered_by_thing</b></a></li>
+							<li class="li"><i>"The Action that is triggered by a Thing (e.g. a Robbery after that a thieve saw a precious Necklace on a lady's neck)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#action">Action</a>.</li>							
+							<li class="li"><b>Range</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a href="#thing_triggers_action" class="au">thing_triggers_action</a></li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="action_involves_thing"><b>action_involves_thing</b></a></li>
+							<li class="li"><i>"The Action that involves certain things (e.g. a homicide, committed with a gun or another weapon)."</i></li>
+							<li class="li"><b>Domain</b>:  <a class="au" href="#action">Action</a>.</li>							
+							<li class="li"><b>Range</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a href="#thing_involved_in_action" class="au">thing_involved_in_action</a></li>
+							</ul>	
+							
+							<ul>
+							<li><a class="au" id="action_involves_emotion"><b>action_involves_emotion</b></a></li>
+							<li class="li"><i>"It relates an Action to the Emotion involved it (e.g. rage during a murder)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#action">Action</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#emotion">Emotion</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#emotion_involved_in_action">emotion_involved_in_action</li></a>							
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="triggered_by_emotion"><b>triggered_by_emotion</b></a></li>
+							<li class="li"><i>"It relates an Action to the Emotion that triggered it (e.g. extreme Joy to Hugging someone)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#action">Action</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#emotion">Emotion</a>.</li>							
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#emotion_triggers_action">emotion_triggers_action</li></a>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="action_has_resulting_emotion"><b>action_has_resulting_emotion</b></a></li>
+							<li class="li"><i>"It relates an Action to the Emotion that results after it (e.g. Guilt after a Murder)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#action">Action</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#emotion">Emotion</a>.</li>							
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#emotion_resulting_after_action">emotion_resulting_after_action</li></a>
+							</ul>
 
 						</div>
 						<div class="specchio-dx-3">
@@ -1815,6 +2149,62 @@ body {
 							<li class="li"><i>"This data property allows you to define the intensity of something (e.g. an Action or a spoken dialogue of the Movie) from 0 to 10."</i></li>
 							<li class="li"><b>Domain</b>: having this property implies being a  <a class="au">owl:Thing</a>.</li>
 							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:double</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="a" id="violent_action"><b>violent_action</b></a></li>
+							<li class="li"><i>"If true, this data property indicates that the Action is violent and not pacific."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#action">Action</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="a" id="quick_action"><b>quick_action</b></a></li>
+							<li class="li"><i>"If true, this data property indicates that the Action is quick and not slow."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#action">Action</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="a" id="ordinary_action"><b>ordinary_action</b></a></li>
+							<li class="li"><i>"If true, this data property indicates that the Action is ordinary and not straordinary (e.g. eating cereals Vs. committing a murder)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#action">Action</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="a" id="ordinary_action"><b>ordinary_action</b></a></li>
+							<li class="li"><i>"If true, this data property indicates that the Action is ordinary and not straordinary (e.g. eating cereals Vs. committing a murder)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#action">Action</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="a" id="heroic_action"><b>heroic_action</b></a></li>
+							<li class="li"><i>"If true, this data property indicates that the Action is heroic and not pavid."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#action">Action</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="a" id="dangerous_action"><b>dangerous_action</b></a></li>
+							<li class="li"><i>"If true, this data property indicates that the Action is dangerous."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#action">Action</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="a" id="purpose1"><b>purpose</b></a></li>
+							<li class="li"><i>"The purpose of the Action."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au">owl:Thing</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="a" id="planned_action"><b>planned_action</b></a></li>
+							<li class="li"><i>"If true, this data property indicates that the Action has been pre-planned before and, thus, is not impulsive."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#action">Action</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
 							</ul>
 								
 						</div>	
@@ -1832,7 +2222,7 @@ body {
 				<div class="col">
 					<div class="roboto" style="padding:10px;">					
 					<div style="specchio-sx">
-					<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/drawiosequence2.svg" alt="">					
+					<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/drawioemotion2.svg" alt="">					
 					<p>
 					<!--Emotion. Qui ci metto spiegazioni e motivazioni di certe scelte. Sopra l'immagine deve essere molto più allungata.-->
 					</p>
@@ -1892,12 +2282,21 @@ body {
 							<a class="ared" href="https://www.gsi.upm.es/ontologies/onyx/#extractedFrom" target="_blank"><b>onyx:extractedFrom</b></a>,							
 							<a class="au" href="#emotion_expressed_in1">emotion_expressed_in</a>,
 							<a class="au" href="#felt_by1">felt_by</a>,
-							<a class="au" href="#opposite_of">opposite_of</a>.
+							<a class="au" href="#opposite_of">opposite_of</a>,
+							<a class="au" href="#emotion_involved_in_action1">emotion_involved_in_action</a>,
+							<a class="au" href="#emotion_triggers_action2">emotion_triggers_action</a>,
+							<a class="au" href="#emotion_resulting_after_action3">emotion_resulting_after_action</a>,
+							<a class="au" href="#emotion_triggered_by_thing">emotion_triggered_by_thing</a>.
 						</p>
 						<p style="margin:25px 0;">
 						<b>Data properties include:</b> 
 						<a class="au" href="#intensity2">intensity</a>,
-						<a class="av" href="http://purl.org/dc/terms">dc:identifier</a>.
+						<a class="av" href="http://purl.org/dc/terms">dc:identifier</a>,
+						<a class="au" href="#fake_emotion">fake_emotion</a>,
+						<a class="au" href="#external_emotion">external_emotion</a>,
+						<a class="au" href="#cause">cause</a>,
+						<a class="au" href="#sudden_emotion">sudden_emotion</a>,
+						<a class="au" href="#controlled_emotion">controlled_emotion</a>.
 						</p>
 						<p style="margin:25px 0;">
 						<b>Has subclass</b>: 
@@ -1943,10 +2342,42 @@ body {
 							
 							<ul>
 							<li><a class="au" id="opposite_of"><b>opposite_of</b></a></li>
-							<li class="li"><i>"It relates an Emotion to its opposite (e.g. joy versus sadness)."</i></li>
+							<li class="li"><i>"It relates an Emotion to its opposite (e.g. Joy versus Sadness)."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#emotion">Emotion</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#emotion">Emotion</a>.</li>
-							</ul>							
+							</ul>
+
+							<ul>
+							<li><a class="au" id="emotion_involved_in_action1"><b>emotion_involved_in_action</b></a></li>
+							<li class="li"><i>"It relates an Emotion to the Action in which it's involved (e.g. Rage during a Murder)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#emotion">Emotion</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#action">Action</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#action_involves_emotion">action_involves_emotion</a></li>							
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="emotion_triggers_action2"><b>emotion_triggers_action</b></a></li>
+							<li class="li"><i>"It relates an Emotion to the Action it triggers (e.g. extreme Joy to Hugging someone)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#emotion">Emotion</a>.</li>							
+							<li class="li"><b>Range</b>: <a class="au" href="#action">Action</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#triggered_by_emotion">triggered_by_emotion</a></li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="emotion_resulting_after_action3"><b>emotion_resulting_after_action</b></a></li>
+							<li class="li"><i>"It indicates the resulting Emotion after an Action (e.g. Guilt after a Murder)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#emotion">Emotion</a>.</li>							
+							<li class="li"><b>Range</b>: <a class="au" href="#action">Action</a>.</li>							
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#action_has_resulting_emotion">action_has_resulting_emotion</a></li>
+							</ul>	
+
+							<ul>
+							<li><a class="au" id="emotion_triggered_by_thing"><b>emotion_triggered_by_thing</b></a></li>
+							<li class="li"><i>"The Emotion triggered by a Significant Thing (e.g. an old photograph may trigger Sadness)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#emotion">Emotion</a>.</li>							
+							<li class="li"><b>Range</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a href="#thing_triggers_emotion" class="au">thing_triggers_emotion</a></li>
+							</ul>								
 							
 							
 						</div>
@@ -1969,6 +2400,41 @@ body {
 							<li class="li"><b>Domain</b>: <a class="a">owl:Thing</a>.</li>
 							<li class="li"><b>Range</b>: xsd:anyURI</a>.</li>
 							</ul>
+							
+							<ul>
+							<li><a class="au" id="fake_emotion"><b>fake_emotion</b></a></li>
+							<li class="li"><i>"If true, the Emotion is faked."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#emotion">Emotion</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="external_emotion"><b>external_emotion</b></a></li>
+							<li class="li"><i>"If true, the Emotion is external (i.e. triggered by an external event: the Character has seen or experienced something that triggered that Emotion). If False, the Emotion is internal (e.g. the Emotion has been triggered to a memory, a dream, or something inside the Character's mind)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#emotion">Emotion</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="cause"><b>cause</b></a></li>
+							<li class="li"><i>"The reason why a Character is feeling that Emotion."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#emotion">Emotion</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="sudden_emotion"><b>sudden_emotion</b></a></li>
+							<li class="li"><i>"If true, the Emotion is sudden."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#emotion">Emotion</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="controlled_emotion"><b>controlled_emotion</b></a></li>
+							<li class="li"><i>"If true, the Emotion is controlled."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#emotion">Emotion</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
 																				
 							
 						</div>	
@@ -1987,7 +2453,7 @@ body {
 				<div class="col">
 					<div class="roboto" style="padding:10px;">					
 					<div style="specchio-sx">
-					<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/drawiosequence2.svg" alt="">					
+					<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/movie-Sound.svg" alt="">					
 					<p>
 					<!--Sound. Qui ci metto spiegazioni e motivazioni di certe scelte. Sopra l'immagine deve essere molto più allungata.-->
 					</p>
@@ -2025,29 +2491,43 @@ body {
 									<a class="au" href="#action">Action</a>
 								</p>
 								<p style="text-indent:100px; margin: 0px !important">
-									<a class="au" href="#emotion">Emotion</b></a>
+									<a class="au" href="#emotion">Emotion</a>
 								</p>								
 								<p style="text-indent:100px; margin: 0px !important">
 									<a class="au" href="#sound"><b>Sound</b></a> &larr;
 								</p>
 								<p style="text-indent:150px; margin: 0px !important">
-									<a class="au" href="#sound"><b><b>Music</b></a> &larr;
+									<a class="au" href="#sound"><b>Music</b></a> &larr;
 								</p>
 								<p style="text-indent:150px; margin: 0px !important">
-									<a class="au" href="#sound"><b><b>Soundscape</b></a> &larr;
+									<a class="au" href="#sound"><b>Soundscape</b></a> &larr;
 								</p>					
 									
 							</div>						
 						<p style="margin:25px 0;">
 						<b>Object properties include:</b> 
-							<a class="a" href="#"></a>, 
-							<a class="a" href="#"></a>,
-							<a class="a" href="#"></a>.
+							<a class="au" href="#composed_by">composed_by</a>, 
+							<a class="au" href="#music_in_movie">music_in_movie</a>,
+							<a class="au" href="#sound_heard_in">sound_heard_in</a>, 
+							<a class="au" href="#sound_triggers_emotion">sound_triggers_emotion</a>,
+							<a class="au" href="#sound_made_by_thing">sound_made_by_thing</a>,
+							<a class="au" href="#sound_heard_in_setting">sound_heard_in_setting</a>.							
 						</p>
 						<p style="margin:25px 0;">
 						<b>Data properties include:</b> 
-						<a class="a" href="#"></a>,
-						<a class="a" href="#"></a>.
+						<a class="au" href="#intensity4">intensity</a>,
+						<a class="au" href="#influence_on_the_viewer">influence_on_viewer</a>,
+						<a class="au" href="#high_pitched">high_pitched</a>,
+						<a class="au" href="#music_description">music_description</a>,
+						<a class="au" href="#electronic_music">electronic_music</a>,
+						<a class="au" href="#polyphonic_music">polyphonic_music</a>,
+						<a class="au" href="#distant_sound">distant_sound</a>,
+						<a class="au" href="#deafening_sound">deafening_sound</a>,
+						<a class="au" href="#classical_music">classical_music</a>,
+						<a class="au" href="#famous_music">famous_music</a>,
+						<a class="au" href="#sung_music">sung_music</a>,
+						<a class="au" href="#lyrics">lyrics</a>,
+						<a class="au" href="#ethinicity">ethinicity</a>.
 						</p>
 						<p style="margin:25px 0;">
 						<b>Has subclass</b>: 
@@ -2066,18 +2546,55 @@ body {
 								</span>
 							</p>
 							<ul>
-							<li><a target="_blank" href="https://schema.org/genre" class="ay"><b>skos:genre</b></a></li>
-							<li class="li"><i>"This object property relates a movie to its genre."</i></li>
-							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#movie">Movie</a>.</li>
-							<li class="li"><b>Range</b>: every value of this property is a <a target="_blank" href="https://dbpedia.org/page/Genre" class="ared">dbo:Genre</a>.</li>
+							<li><a class="au" id="composed_by"><b>composed_by</b></a></li>
+							<li class="li"><i>"It relates a Sound, Music or Sounscape to a Sequence, Scene or Shot which contains it."</i></li>
+							<li class="li"><b>Domain</b>: having this property implies being a <a class="au" href="#music">music</a>.</li>
+							<li class="li"><b>Range</b>: <a target="_blank" href="https://dbpedia.org/page/Musical_Artist" class="ared">dbo:Musical_Artist</a>.</li>
 							</ul>
 							
 							<ul>
+							<li><a class="au" id="music_in_movie"><b>music_in_movie</b></a></li>
+							<li class="li"><i>"It relates a Music (i.e. a song) to all the other Movies that may contain it."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#music">Music</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#movie">Movie</a></a>.</li>
+							</ul>
+														
+							<ul>
 							<li><a class="au" id="sound_heard_in"><b>sound_heard_in</b></a></li>
-							<li class="li"><i>""It relates a Sound, Music or Sounscape to a Sequence, Scene or Shot which contains it."</i></li>
+							<li class="li"><i>"It relates a Sound, Music or Sounscape to a Sequence, Scene or Shot which contains it."</i></li>
 							<li class="li"><b>Domain</b>: <a class="au" href="#sound">Sound</a>.</li>
 							<li class="li"><b>Range</b>: <a class="au" href="#sequence">Sequence</a>, <a class="au" href="#sequence">Scene</a>, <a class="au" href="#sequence">Shot</a>.</li>
-							<li class="li">> <b>Inverse Property of:</b> <a class="a" id="contains_sound">contains_sound</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#contains_sound">contains_sound</a>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="sound_triggers_emotion"><b>sound_triggers_emotion</b></a></li>
+							<li class="li"><i>"It relates a Sound to the Emotion that it triggers on one or more Character(s) (e.g. a Lullaby can trigger the emotion Serenity)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#sound">Sound</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#emotion">Emotion</a>.</li>							
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="sound_made_by_thing"><b>sound_made_by_thing</b></a></li>
+							<li class="li"><i>"It relates a Sound to the Thing that makes it (e.g. a Song plaid on a Piano, or a 'Beeep' made by means of the Honk of a Car)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#sound">Sound</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#thing">Significant_Thing</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#thing_makes_sound">thing_makes_sound</a>.</li>							
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="sound_heard_in_setting"><b>sound_heard_in_setting</b></a></li>
+							<li class="li"><i>"It relates a Sound to the Setting in which it is heard."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#sound">Sound</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#setting">Setting</a>.</li>							
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="sound_made_by"><b>sound_made_by</b></a></li>
+							<li class="li"><i>"It relates a Sound to the Character who made it (e.g. a Whistle)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#sound">Sound</a>.</li>
+							<li class="li"><b>Range</b>: <a class="au" href="#character">Character</a>.</li>
+							<li class="li">> <b>Inverse Property of:</b> <a class="au" href="#character_makes_sound">character_makes_sound</li></a>
 							</ul>
 							
 						</div>
@@ -2088,11 +2605,96 @@ body {
 								</span>
 							</p>
 							<ul>
-							<li><a class="au" id="intensity1"><b>intensity</b></a></li>
+							<li><a class="au" id="intensity4"><b>intensity</b></a></li>
 							<li class="li"><i>"This data property allows you to define the intensity of something (e.g. an Action or a spoken dialogue of the Movie) from 0 to 10."</i></li>
 							<li class="li"><b>Domain</b>: having this property implies being a  <a class="au">owl:Thing</a>.</li>
 							<li class="li"><b>Range</b>: every value of this property shall be a <span class="b">xsd:double</span>.</li>
 							</ul>
+							
+							<ul>
+							<li><a class="au" id="influence_on_viewer"><b>influence_on_viewer</b></a></li>
+							<li class="li"><i>"This data property allows you to define the influence on the viewer of this Sound (e.g. the viewer can be scared, alarmed, intrigued, etc.)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#sound">Sound</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="high_pitched"><b>high_pitched</b></a></li>
+							<li class="li"><i>"This data property allows you to define if the Sound is high-pitched (true) or low-pitched (false)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#sound">Sound</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="music_description"><b>music_description</b></a></li>
+							<li class="li"><i>"This data property allows you to define a brief music description (e.g. if the music is solemn, sacred, alarming, frightening, etc.)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#music">Music</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="high_pitched"><b>electronic_music</b></a></li>
+							<li class="li"><i>"If true, it means that the Music is electronic and not orchestral or made by human voice, etc."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#music">Music</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="polyphonic_music"><b>polyphonic_music</b></a></li>
+							<li class="li"><i>"If true, it means that the Music is polyphonic."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#music">Music</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="distant_sound"><b>distant_sound</b></a></li>
+							<li class="li"><i>"If true, it means that the Music is distant, and not near."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#sound">Sound</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="deafening_sound"><b>deafening_sound</b></a></li>
+							<li class="li"><i>"If true, it means that the Music is deafening (e.g. the shot of a gun)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#sound">Sound</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="classical_music"><b>classical_music</b></a></li>
+							<li class="li"><i>"If true, it means that the Music is classical."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#music">Music</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="famous_music"><b>famous_music</b></a></li>
+							<li class="li"><i>"If true, it means that the Music is famous in the real world (e.g. a Led Zeppelin's song)."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#music">Music</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="sung_music"><b>sung_music</b></a></li>
+							<li class="li"><i>"If true, it means that the Music is sung by human beings. It may or may not contain words."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#music">Music</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:boolean</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="lyrics"><b>lyrics</b></a></li>
+							<li class="li"><i>"The entire lyrics of the Music."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#music">Music</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>
+							
+							<ul>
+							<li><a class="au" id="ethinicity"><b>ethinicity</b></a></li>
+							<li class="li"><i>"This data property allows you to indicate if the music belongs to a certain ethnic group."</i></li>
+							<li class="li"><b>Domain</b>: <a class="au" href="#music">Music</a>.</li>
+							<li class="li"><b>Range</b>: <span class="b">xsd:string</span>.</li>
+							</ul>
+							
 						</div>	
 					</div>
 				</div>

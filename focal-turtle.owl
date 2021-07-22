@@ -1,0 +1,3869 @@
+@prefix : <http://www.semanticweb.org/ontologies/2021/focal#> .
+@prefix fci: <http://www.semanticweb.org/ontologies/2021/5/fci#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl1: <http://www.w3.org/2002/07/owl#owl:> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ma-ont: <http://www.w3.org/ns/ma-ont#> .
+@prefix movieontology: <http://www.movieontology.org/2009/11/09/movieontology.owl#> .
+@base <http://www.semanticweb.org/ontologies/2021/focal> .
+
+<http://www.semanticweb.org/ontologies/2021/focal> rdf:type owl:Ontology ;
+                                                    rdfs:comment "FOrmal CinemAtics ontoLogy" .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#time
+xsd:time rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.gsi.dit.upm.es/ontologies/onyx/ns#extractedFrom
+<http://www.gsi.dit.upm.es/ontologies/onyx/ns#extractedFrom> rdf:type owl:ObjectProperty ;
+                                                             owl:inverseOf :conveys_emotion ;
+                                                             rdfs:domain :Emotion ;
+                                                             rdfs:range :Screenplay .
+
+
+###  http://www.movieontology.org/2009/11/09/movieontology.owl#has_producer
+movieontology:has_producer rdf:type owl:ObjectProperty ;
+                           rdfs:domain :Movie .
+
+
+###  http://www.movieontology.org/2009/11/09/movieontology.owl#nominated_for
+movieontology:nominated_for rdf:type owl:ObjectProperty ;
+                            rdfs:domain :Movie ;
+                            rdfs:range :Award .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#action_happens_in
+:action_happens_in rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :contains_action ;
+                   rdfs:domain :Action ;
+                   rdfs:range :Sequence .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#action_in_setting
+:action_in_setting rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :hosts_action ;
+                   rdfs:domain :Action ;
+                   rdfs:range :Setting .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#administrates
+:administrates rdf:type owl:ObjectProperty ;
+               owl:inverseOf :is_administrated_by ;
+               rdfs:domain :Character ;
+               rdfs:range :Setting .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#appears_in_setting
+:appears_in_setting rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :hosts_character ;
+                    rdfs:domain :Character ;
+                    rdfs:range :Setting .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#are_worn_by
+:are_worn_by rdf:type owl:ObjectProperty ;
+             owl:inverseOf :wears ;
+             rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#avenges
+:avenges rdf:type owl:ObjectProperty ;
+         rdfs:domain :Character ;
+         rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#burns
+:burns rdf:type owl:ObjectProperty ;
+       owl:inverseOf :is_burnt_by ;
+       rdfs:domain :Character ;
+       rdfs:range :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#character_appears_in
+:character_appears_in rdf:type owl:ObjectProperty ;
+                      owl:inverseOf :contains_character ;
+                      rdfs:domain :Character ;
+                      rdfs:range :Movie .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#contains
+:contains rdf:type owl:ObjectProperty ;
+          rdfs:domain owl:Thing ;
+          rdfs:range owl:Thing ;
+          rdfs:comment """e.g. paper bag contains pen
+e.g. a Scene contains an Emotion
+e.g. a Scene contains a Significant_Thing""" .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#contains_action
+:contains_action rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Sequence ;
+                 rdfs:range :Action ;
+                 rdfs:comment "This object property allows you to link a Scene to an Action that happens in it."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#contains_character
+:contains_character rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Movie ;
+                    rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#contains_line
+:contains_line rdf:type owl:ObjectProperty ;
+               owl:inverseOf :line_said_in ;
+               rdfs:domain :Sequence ;
+               rdfs:range :Screenplay .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#contains_sound
+:contains_sound rdf:type owl:ObjectProperty ;
+                owl:inverseOf :sound_heard_in ;
+                rdfs:domain :Sequence ;
+                rdfs:range :Sound .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#contains_thing
+:contains_thing rdf:type owl:ObjectProperty ;
+                owl:inverseOf :thing_shown_in ;
+                rdfs:domain :Sequence ;
+                rdfs:range :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#conveys_emotion
+:conveys_emotion rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Screenplay ;
+                 rdfs:range :Emotion .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#drives
+:drives rdf:type owl:ObjectProperty ;
+        rdfs:domain :Character ;
+        rdfs:range :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#emotion_expressed_in
+:emotion_expressed_in rdf:type owl:ObjectProperty ;
+                      owl:inverseOf :has_emotion ;
+                      rdfs:domain :Emotion ;
+                      rdfs:range :Sequence .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#feels
+:feels rdf:type owl:ObjectProperty ;
+       owl:inverseOf :is_felt_by ;
+       rdfs:domain :Character ;
+       rdfs:range :Emotion .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#has_agent
+:has_agent rdf:type owl:ObjectProperty ;
+           owl:inverseOf :is_agent ;
+           rdfs:domain :Action ;
+           rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#has_emotion
+:has_emotion rdf:type owl:ObjectProperty ;
+             rdfs:domain :Sequence ;
+             rdfs:range :Emotion .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#has_father
+:has_father rdf:type owl:ObjectProperty ;
+            owl:inverseOf :is_father_of ;
+            rdfs:domain :Character ;
+            rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#has_mother
+:has_mother rdf:type owl:ObjectProperty ;
+            owl:inverseOf :is_mother_of ;
+            rdfs:domain :Character ;
+            rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#has_patient
+:has_patient rdf:type owl:ObjectProperty ;
+             owl:inverseOf :is_patient ;
+             rdfs:domain :Action ;
+             rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#has_sexual_intercourse
+:has_sexual_intercourse rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Character ;
+                        rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#has_sibling
+:has_sibling rdf:type owl:ObjectProperty ,
+                      owl:SymmetricProperty ;
+             rdfs:domain :Character ;
+             rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#hosts_action
+:hosts_action rdf:type owl:ObjectProperty ;
+              rdfs:domain :Setting ;
+              rdfs:range :Action .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#hosts_character
+:hosts_character rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Setting ;
+                 rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#imagines
+:imagines rdf:type owl:ObjectProperty ;
+          owl:inverseOf :is_imagined_by ;
+          rdfs:domain :Character ;
+          rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_administrated_by
+:is_administrated_by rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Setting ;
+                     rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_agent
+:is_agent rdf:type owl:ObjectProperty ;
+          rdfs:domain :Character ;
+          rdfs:range :Action .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_burnt_by
+:is_burnt_by rdf:type owl:ObjectProperty ;
+             rdfs:domain :Significant_Thing ;
+             rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_father_of
+:is_father_of rdf:type owl:ObjectProperty ;
+              rdfs:domain :Character ;
+              rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_felt_by
+:is_felt_by rdf:type owl:ObjectProperty ;
+            rdfs:domain :Emotion ;
+            rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_imagined_by
+:is_imagined_by rdf:type owl:ObjectProperty ;
+                rdfs:domain :Character ;
+                rdfs:range :Character ;
+                rdfs:comment "es. Mrs. Jankis is imagined by Lenny" .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_insulted_by
+:is_insulted_by rdf:type owl:ObjectProperty ;
+                rdfs:domain :Character ;
+                rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_killed_by
+:is_killed_by rdf:type owl:ObjectProperty ;
+              owl:inverseOf :kills ;
+              rdfs:domain :Character ;
+              rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_killed_in
+:is_killed_in rdf:type owl:ObjectProperty ;
+              rdfs:domain :Character ;
+              rdfs:range :Scene ;
+              rdfs:comment "This object property allows you to link the killed Character to the Scene in which s/he is killed."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_manipulated_by
+:is_manipulated_by rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :manipulates ;
+                   rdfs:domain :Character ;
+                   rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_married_to
+:is_married_to rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ,
+                        owl:SymmetricProperty ;
+               rdfs:domain :Character ;
+               rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_mother_of
+:is_mother_of rdf:type owl:ObjectProperty ;
+              rdfs:domain :Character ;
+              rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_owned_by
+:is_owned_by rdf:type owl:ObjectProperty ;
+             owl:inverseOf :owns ;
+             rdfs:domain :Significant_Thing ;
+             rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_partner_of
+:is_partner_of rdf:type owl:ObjectProperty ,
+                        owl:SymmetricProperty ;
+               rdfs:domain :Character ;
+               rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_patient
+:is_patient rdf:type owl:ObjectProperty ;
+            rdfs:domain :Character ;
+            rdfs:range :Action .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_punched_by
+:is_punched_by rdf:type owl:ObjectProperty ;
+               owl:inverseOf :punches ;
+               rdfs:domain :Character ;
+               rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_read_by
+:is_read_by rdf:type owl:ObjectProperty ;
+            owl:inverseOf :reads ;
+            rdfs:domain :Significant_Thing ;
+            rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_said_by
+:is_said_by rdf:type owl:ObjectProperty ;
+            owl:inverseOf :says ;
+            rdfs:domain :Screenplay ;
+            rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_said_to
+:is_said_to rdf:type owl:ObjectProperty ;
+            rdfs:domain :Screenplay ;
+            rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_setting_of
+:is_setting_of rdf:type owl:ObjectProperty ;
+               owl:inverseOf :sets_in ;
+               rdfs:domain :Setting ;
+               rdfs:range :Sequence .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_used_by
+:is_used_by rdf:type owl:ObjectProperty ;
+            owl:inverseOf :uses ;
+            rdfs:domain :Significant_Thing ;
+            rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_written_by
+:is_written_by rdf:type owl:ObjectProperty ;
+               owl:inverseOf :writes ;
+               rdfs:domain :Significant_Thing ;
+               rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#killed_by
+:killed_by rdf:type owl:ObjectProperty ;
+           rdfs:domain :Character ;
+           rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#kills
+:kills rdf:type owl:ObjectProperty ;
+       rdfs:domain :Character ;
+       rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#kisses
+:kisses rdf:type owl:ObjectProperty ;
+        rdfs:domain :Character ;
+        rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#line_said_in
+:line_said_in rdf:type owl:ObjectProperty ;
+              rdfs:domain :Screenplay ;
+              rdfs:range :Screenplay .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#manipulates
+:manipulates rdf:type owl:ObjectProperty ;
+             rdfs:domain :Character ;
+             rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#marries
+:marries rdf:type owl:ObjectProperty ,
+                  owl:SymmetricProperty ;
+         rdfs:domain :Character ;
+         rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#mentions
+:mentions rdf:type owl:ObjectProperty ;
+          rdfs:domain :Character ;
+          rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#opposite_of
+:opposite_of rdf:type owl:ObjectProperty ;
+             rdfs:domain :Emotion ;
+             rdfs:range :Emotion .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#owns
+:owns rdf:type owl:ObjectProperty ;
+      rdfs:domain :Character ;
+      rdfs:range :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#punches
+:punches rdf:type owl:ObjectProperty ;
+         rdfs:domain :Character ;
+         rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#reads
+:reads rdf:type owl:ObjectProperty ;
+       rdfs:domain :Character ;
+       rdfs:range :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#represents
+:represents rdf:type owl:ObjectProperty ;
+            owl:inverseOf foaf:img ;
+            rdfs:range :Character ;
+            rdfs:comment "This object property is a relationship between an image and someone that the image depicts. It is the inverse of the object property 'foaf:img'."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#says
+:says rdf:type owl:ObjectProperty ;
+      rdfs:domain :Character ;
+      rdfs:range :Screenplay .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#screenplay_by
+:screenplay_by rdf:type owl:ObjectProperty ;
+               rdfs:domain :Movie ;
+               rdfs:range <http://dbpedia.org/ontology/Writer> .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#sets_in
+:sets_in rdf:type owl:ObjectProperty ;
+         rdfs:domain :Sequence ;
+         rdfs:range :Setting .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#shoots_with
+:shoots_with rdf:type owl:ObjectProperty ;
+             rdfs:domain :Character ;
+             rdfs:range :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#sound_heard_in
+:sound_heard_in rdf:type owl:ObjectProperty ;
+                rdfs:domain :Sound ;
+                rdfs:range :Sequence .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#starred_by
+:starred_by rdf:type owl:ObjectProperty ;
+            owl:inverseOf :stars ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Character ;
+            rdfs:range <http://dbpedia.org/ontology#dbo:Actor> .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#stars
+:stars rdf:type owl:ObjectProperty ,
+                owl:FunctionalProperty ;
+       rdfs:domain <http://dbpedia.org/ontology#dbo:Actor> ;
+       rdfs:range :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#thing_shown_in
+:thing_shown_in rdf:type owl:ObjectProperty ;
+                rdfs:domain :Significant_Thing ;
+                rdfs:range :Sequence .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#throws
+:throws rdf:type owl:ObjectProperty ;
+        rdfs:domain :Character ;
+        rdfs:range :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#uses
+:uses rdf:type owl:ObjectProperty ;
+      rdfs:domain :Character ;
+      rdfs:range :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#wears
+:wears rdf:type owl:ObjectProperty ;
+       rdfs:domain :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#writes
+:writes rdf:type owl:ObjectProperty ;
+        rdfs:domain :Character ;
+        rdfs:range :Significant_Thing .
+
+
+###  http://www.w3.org/2002/07/owl#sameAs
+owl:sameAs rdf:type owl:ObjectProperty ;
+           rdfs:domain owl:Thing ;
+           rdfs:range owl:Thing ;
+           rdfs:comment "The property that determines that two given individuals are equal." ;
+           rdfs:isDefinedBy "http://www.w3.org/2002/07/owl#" .
+
+
+###  http://www.w3.org/2004/02/skos/core#actor
+<http://www.w3.org/2004/02/skos/core#actor> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain :Movie ;
+                                            rdfs:range <http://dbpedia.org/ontology#dbo:Actor> .
+
+
+###  http://www.w3.org/2004/02/skos/core#award
+<http://www.w3.org/2004/02/skos/core#award> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain :Movie ;
+                                            rdfs:range :Award .
+
+
+###  http://www.w3.org/2004/02/skos/core#countryOfOrigin
+<http://www.w3.org/2004/02/skos/core#countryOfOrigin> rdf:type owl:ObjectProperty ;
+                                                      rdfs:domain :Movie ;
+                                                      rdfs:range <http://dbpedia.org/ontology#dbo:Country> ;
+                                                      rdfs:comment "The country of the principal offices of the production company or individual responsible for the movie or program." .
+
+
+###  http://www.w3.org/2004/02/skos/core#director
+<http://www.w3.org/2004/02/skos/core#director> rdf:type owl:ObjectProperty ;
+                                               rdfs:domain :Movie ;
+                                               rdfs:range <http://dbpedia.org/ontology/FilmDirector> .
+
+
+###  http://www.w3.org/2004/02/skos/core#genre
+<http://www.w3.org/2004/02/skos/core#genre> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain :Movie ;
+                                            rdfs:range <http://dbpedia.org/ontology#dbo:Genre> ;
+                                            rdfs:comment "Genre of the creative work, broadcast channel or group." .
+
+
+###  http://www.w3.org/2004/02/skos/core#musicBy
+<http://www.w3.org/2004/02/skos/core#musicBy> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain :Movie ;
+                                              rdfs:range <http://dbpedia.org/ontology/Musical_Artist> .
+
+
+###  http://www.w3.org/2004/02/skos/core#productionCompany
+<http://www.w3.org/2004/02/skos/core#productionCompany> rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain :Movie ;
+                                                        rdfs:range <http://dbpedia.org/ontology#dbo:Production_Company> ;
+                                                        rdfs:comment "The production company or studio responsible for the item e.g. series, video game, episode etc." .
+
+
+###  http://xmlns.com/foaf/0.1/depiction
+foaf:depiction rdf:type owl:ObjectProperty ;
+               owl:inverseOf foaf:depicts ;
+               rdfs:domain :Significant_Thing ;
+               rdfs:range :Significant_Thing ;
+               rdfs:comment "This obejct property allows you to link a thing to the image where it is depicted."^^xsd:string .
+
+
+###  http://xmlns.com/foaf/0.1/depicts
+foaf:depicts rdf:type owl:ObjectProperty ;
+             rdfs:domain :Significant_Thing ;
+             rdfs:range :Significant_Thing ;
+             rdfs:comment "This object property is a relationship between an image and something that the image depicts."^^xsd:string .
+
+
+###  http://xmlns.com/foaf/0.1/img
+foaf:img rdf:type owl:ObjectProperty ;
+         rdfs:domain :Character ;
+         rdfs:comment "This object property relates a person to an image that represents them. It is the inverse of the object property 'represents'."^^xsd:string .
+
+
+###  http://xmlns.com/foaf/0.1/knows
+foaf:knows rdf:type owl:ObjectProperty ;
+           rdfs:domain :Character ;
+           rdfs:range :Character ;
+           rdfs:comment "A person known by this person (indicating some level of reciprocated interaction between the parties)."^^xsd:string ;
+           rdfs:isDefinedBy "http://xmlns.com/foaf/0.1/" .
+
+
+###  http://xmlns.com/foaf/0.1/made
+foaf:made rdf:type owl:ObjectProperty ;
+          owl:inverseOf foaf:maker ;
+          rdfs:domain :Significant_Thing ;
+          rdfs:range :Character ;
+          rdfs:comment "Something that was made by this agent."^^xsd:string .
+
+
+###  http://xmlns.com/foaf/0.1/maker
+foaf:maker rdf:type owl:ObjectProperty ;
+           rdfs:domain :Character ;
+           rdfs:range :Significant_Thing .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/identifier
+<http://purl.org/dc/elements/1.1/identifier> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain owl:Thing ;
+                                             rdfs:range xsd:anyURI .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#alive
+:alive rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Character ;
+       rdfs:range xsd:boolean ;
+       rdfs:comment "A Character can have both focal:alive and focal:deceased TRUE, if during the movie s/he is killed." .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#closing_credits
+:closing_credits rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Sequence ;
+                 rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#color
+:color rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty ;
+       rdfs:domain :Sequence ;
+       rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#contains_swearword
+:contains_swearword rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Screenplay ;
+                    rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#content
+:content rdf:type owl:DatatypeProperty ;
+         rdfs:domain owl:Thing ;
+         rdfs:range xsd:string ;
+         rdfs:comment "This data property allows you to define the written content of a Line of the script, or the written content of a Significant Thing (e.g. the content of a Document, a Note, a Tattoo)."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#deceased
+:deceased rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Character ;
+          rdfs:range xsd:boolean ;
+          rdfs:comment "A Character can have both focal:alive and focal:deceased TRUE, if during the movie s/he is killed." .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#dialog_style
+:dialog_style rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Screenplay ;
+              rdfs:range [ rdf:type rdfs:Datatype ;
+                           owl:oneOf [ rdf:type rdf:List ;
+                                       rdf:first "at the phone" ;
+                                       rdf:rest [ rdf:type rdf:List ;
+                                                  rdf:first "inner thought" ;
+                                                  rdf:rest [ rdf:type rdf:List ;
+                                                             rdf:first "normal" ;
+                                                             rdf:rest [ rdf:type rdf:List ;
+                                                                        rdf:first "on TV" ;
+                                                                        rdf:rest [ rdf:type rdf:List ;
+                                                                                   rdf:first "on radio" ;
+                                                                                   rdf:rest [ rdf:type rdf:List ;
+                                                                                              rdf:first "out of screen" ;
+                                                                                              rdf:rest [ rdf:type rdf:List ;
+                                                                                                         rdf:first "pre lap" ;
+                                                                                                         rdf:rest [ rdf:type rdf:List ;
+                                                                                                                    rdf:first "voice over" ;
+                                                                                                                    rdf:rest rdf:nil
+                                                                                                                  ]
+                                                                                                       ]
+                                                                                            ]
+                                                                                 ]
+                                                                      ]
+                                                           ]
+                                                ]
+                                     ]
+                         ] ;
+              rdfs:comment "This data property indicates the style of the dialogue, in relation to the character (e.g. \"off screen\" is used when the character is in the scene location, but not currently on screen, \"voice over\" is used when the speaker is not physically in the scene)." .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#diegetic_level
+:diegetic_level rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Sequence ;
+                rdfs:range [ rdf:type rdfs:Datatype ;
+                             owl:oneOf [ rdf:type rdf:List ;
+                                         rdf:first "level-1" ;
+                                         rdf:rest [ rdf:type rdf:List ;
+                                                    rdf:first "level0" ;
+                                                    rdf:rest [ rdf:type rdf:List ;
+                                                               rdf:first "level1" ;
+                                                               rdf:rest [ rdf:type rdf:List ;
+                                                                          rdf:first "level2" ;
+                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                     rdf:first "level3" ;
+                                                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                                                rdf:first "level4" ;
+                                                                                                rdf:rest rdf:nil
+                                                                                              ]
+                                                                                   ]
+                                                                        ]
+                                                             ]
+                                                  ]
+                                       ]
+                           ] ;
+                rdfs:comment """This data property allows you to link a Shot, Scene or Sequence to its diegetic level. The Level of the story contained in the Movie is Level0. 
+The Level1 means that it is a story within the movie, told by a character. 
+If in the story, a new character starts telling another story, this latter one will have Level2, and so on.
+However, in the case of a \"breaking of the fourth wall\", the Level shall be Level-1."""^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#disease
+:disease rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Character ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#ends_at
+:ends_at rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Sequence ;
+         rdfs:range xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#fabula
+:fabula rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Sequence ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#faked_disease
+:faked_disease rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Character ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#filled_with
+:filled_with rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Significant_Thing ;
+             rdfs:range xsd:string ;
+             rdfs:comment "e.g. syringe -- insulin"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#flashback
+:flashback rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Sequence ;
+           rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#flashforward
+:flashforward rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Sequence ;
+              rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#framing
+:framing rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Shot ;
+         rdfs:range [ rdf:type rdfs:Datatype ;
+                      owl:oneOf [ rdf:type rdf:List ;
+                                  rdf:first "group shot" ;
+                                  rdf:rest [ rdf:type rdf:List ;
+                                             rdf:first "insert shot" ;
+                                             rdf:rest [ rdf:type rdf:List ;
+                                                        rdf:first "over-the-hip shot" ;
+                                                        rdf:rest [ rdf:type rdf:List ;
+                                                                   rdf:first "over-the-shoulder shot" ;
+                                                                   rdf:rest [ rdf:type rdf:List ;
+                                                                              rdf:first "point-of-view shot" ;
+                                                                              rdf:rest [ rdf:type rdf:List ;
+                                                                                         rdf:first "single shot" ;
+                                                                                         rdf:rest [ rdf:type rdf:List ;
+                                                                                                    rdf:first "two shot" ;
+                                                                                                    rdf:rest rdf:nil
+                                                                                                  ]
+                                                                                       ]
+                                                                            ]
+                                                                 ]
+                                                      ]
+                                           ]
+                                ]
+                    ] ;
+         rdfs:comment "It is the placement and position of the subjects in a Shot." .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#has_goal
+:has_goal rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Character ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#has_written_on_it
+:has_written_on_it rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Significant_Thing ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#imdb_rating
+:imdb_rating rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Movie ;
+             rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#informal_clothes
+:informal_clothes rdf:type owl:DatatypeProperty ;
+                  rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#int_setting
+:int_setting rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Setting ;
+             rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#intensity
+:intensity rdf:type owl:DatatypeProperty ;
+           rdfs:domain owl:Thing ;
+           rdfs:range xsd:double ;
+           rdfs:comment "This data property allows you to define the intensity of something (e.g. a Shoto, a Scene or a Sequence, or an Action, or a spoken dialogue of the Movie) from 0 to 10."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_a_joke
+:is_a_joke rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Screenplay ;
+           rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_a_lie
+:is_a_lie rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Screenplay ;
+          rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_imaginary
+:is_imaginary rdf:type owl:DatatypeProperty ;
+              rdfs:domain owl:Thing ;
+              rdfs:range xsd:boolean ;
+              rdfs:comment "This data property allows you to express if something in the Movie (e.g. Character, Setting) is imaginary (value: true) or real (value: false)."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_ironic
+:is_ironic rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Screenplay ;
+           rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_main_protagonist
+:is_main_protagonist rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain :Character ;
+                     rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_metaphor_for
+:is_metaphor_for rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Screenplay ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#is_trustable
+:is_trustable rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Character ;
+              rdfs:range xsd:boolean ;
+              rdfs:comment "This data property allows you to define if something is trustable. It can be a Character or a Written thing (e.g. a sentence under a photograph)."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#knows_interlocutor
+:knows_interlocutor rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Character ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:comment "This data property is used when a Character doesn't know who s/he is talking to: there can be an unknown interlocutor at the phone, or someone covered by a mask."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#mood
+:mood rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Sequence ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#nat_setting
+:nat_setting rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Setting ;
+             rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#opening_credits
+:opening_credits rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Sequence ;
+                 rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#release_date
+:release_date rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Movie ;
+              rdfs:range xsd:date .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#runtime
+:runtime rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Movie ;
+         rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#sets_during
+:sets_during rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Sequence ;
+             rdfs:range [ rdf:type rdfs:Datatype ;
+                          owl:oneOf [ rdf:type rdf:List ;
+                                      rdf:first "dawn" ;
+                                      rdf:rest [ rdf:type rdf:List ;
+                                                 rdf:first "day" ;
+                                                 rdf:rest [ rdf:type rdf:List ;
+                                                            rdf:first "dusk" ;
+                                                            rdf:rest [ rdf:type rdf:List ;
+                                                                       rdf:first "evening" ;
+                                                                       rdf:rest [ rdf:type rdf:List ;
+                                                                                  rdf:first "morning" ;
+                                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                                             rdf:first "night" ;
+                                                                                             rdf:rest rdf:nil
+                                                                                           ]
+                                                                                ]
+                                                                     ]
+                                                          ]
+                                               ]
+                                    ]
+                        ] .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#size
+:size rdf:type owl:DatatypeProperty ,
+               owl:FunctionalProperty ;
+      rdfs:domain :Shot ;
+      rdfs:range [ rdf:type rdfs:Datatype ;
+                   owl:oneOf [ rdf:type rdf:List ;
+                               rdf:first "close-up" ;
+                               rdf:rest [ rdf:type rdf:List ;
+                                          rdf:first "extreme close-up" ;
+                                          rdf:rest [ rdf:type rdf:List ;
+                                                     rdf:first "full shot" ;
+                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                rdf:first "long shot" ;
+                                                                rdf:rest [ rdf:type rdf:List ;
+                                                                           rdf:first "medium shot" ;
+                                                                           rdf:rest rdf:nil
+                                                                         ]
+                                                              ]
+                                                   ]
+                                        ]
+                             ]
+                 ] ;
+      rdfs:comment "It is how much of the setting or subject is displayed within a given frame of a shot."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#special_effects
+:special_effects rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Sequence ;
+                 rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#starts_at
+:starts_at rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Sequence ;
+           rdfs:range xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#temporal_manipulation
+:temporal_manipulation rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Sequence ;
+                       rdfs:range [ rdf:type rdfs:Datatype ;
+                                    owl:oneOf [ rdf:type rdf:List ;
+                                                rdf:first "fast motion" ;
+                                                rdf:rest [ rdf:type rdf:List ;
+                                                           rdf:first "freeze" ;
+                                                           rdf:rest [ rdf:type rdf:List ;
+                                                                      rdf:first "loop" ;
+                                                                      rdf:rest [ rdf:type rdf:List ;
+                                                                                 rdf:first "reverse motion" ;
+                                                                                 rdf:rest [ rdf:type rdf:List ;
+                                                                                            rdf:first "slow motion" ;
+                                                                                            rdf:rest rdf:nil
+                                                                                          ]
+                                                                               ]
+                                                                    ]
+                                                         ]
+                                              ]
+                                  ] .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#transition
+:transition rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Shot ;
+            rdfs:range [ rdf:type rdfs:Datatype ;
+                         owl:oneOf [ rdf:type rdf:List ;
+                                     rdf:first "cut to" ;
+                                     rdf:rest [ rdf:type rdf:List ;
+                                                rdf:first "dissolve to" ;
+                                                rdf:rest [ rdf:type rdf:List ;
+                                                           rdf:first "fade to" ;
+                                                           rdf:rest [ rdf:type rdf:List ;
+                                                                      rdf:first "jump cut to" ;
+                                                                      rdf:rest [ rdf:type rdf:List ;
+                                                                                 rdf:first "match cut to" ;
+                                                                                 rdf:rest [ rdf:type rdf:List ;
+                                                                                            rdf:first "smash cut to" ;
+                                                                                            rdf:rest [ rdf:type rdf:List ;
+                                                                                                       rdf:first "wipe to" ;
+                                                                                                       rdf:rest rdf:nil
+                                                                                                     ]
+                                                                                          ]
+                                                                               ]
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                       ] ;
+            rdfs:comment "The technique used in the post-production process of film editing by which Shots are combined." .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#type
+:type rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Sequence ;
+      rdfs:range [ rdf:type rdfs:Datatype ;
+                   owl:oneOf [ rdf:type rdf:List ;
+                               rdf:first "dream" ;
+                               rdf:rest [ rdf:type rdf:List ;
+                                          rdf:first "hallucination" ;
+                                          rdf:rest [ rdf:type rdf:List ;
+                                                     rdf:first "nightmare" ;
+                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                rdf:first "story" ;
+                                                                rdf:rest rdf:nil
+                                                              ]
+                                                   ]
+                                        ]
+                             ]
+                 ] ;
+      rdfs:comment "This object property allows you to link a Shot, Scene or Sequence to its type."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#weather
+:weather rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Sequence ;
+         rdfs:range [ rdf:type rdfs:Datatype ;
+                      owl:oneOf [ rdf:type rdf:List ;
+                                  rdf:first "cloudy" ;
+                                  rdf:rest [ rdf:type rdf:List ;
+                                             rdf:first "rainy" ;
+                                             rdf:rest [ rdf:type rdf:List ;
+                                                        rdf:first "snowy" ;
+                                                        rdf:rest [ rdf:type rdf:List ;
+                                                                   rdf:first "stormy" ;
+                                                                   rdf:rest [ rdf:type rdf:List ;
+                                                                              rdf:first "sunny" ;
+                                                                              rdf:rest [ rdf:type rdf:List ;
+                                                                                         rdf:first "windy" ;
+                                                                                         rdf:rest rdf:nil
+                                                                                       ]
+                                                                            ]
+                                                                 ]
+                                                      ]
+                                           ]
+                                ]
+                    ] .
+
+
+###  http://www.w3.org/2004/02/skos/core#about
+<http://www.w3.org/2004/02/skos/core#about> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain :Movie ;
+                                            rdfs:range xsd:string ;
+                                            rdfs:comment """potrei fare plot
+ma anche il contenuto di un Note? Tattoo? boh""" .
+
+
+###  http://www.w3.org/2004/02/skos/core#alternateName
+<http://www.w3.org/2004/02/skos/core#alternateName> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain :Character ;
+                                                    rdfs:range xsd:string ;
+                                                    rdfs:comment "A Character's alias." .
+
+
+###  http://www.w3.org/2004/02/skos/core#isBasedOn
+<http://www.w3.org/2004/02/skos/core#isBasedOn> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain :Movie ;
+                                                rdfs:range xsd:string ;
+                                                rdfs:comment "A resource from which this work is derived or from which it is a modification or adaption." .
+
+
+###  http://www.w3.org/2004/02/skos/core#keywords
+<http://www.w3.org/2004/02/skos/core#keywords> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain :Movie ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas." .
+
+
+###  http://www.w3.org/2004/02/skos/core#mentions
+<http://www.w3.org/2004/02/skos/core#mentions> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain :Movie ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "Indicates that the CreativeWork (here, a Movie or a Significant Thing) contains a reference to, but is not necessarily about a concept." .
+
+
+###  http://www.w3.org/ns/ma-ont#frameSize
+ma-ont:frameSize rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Movie ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "It defines the frame size of the resource (e.g., width and height of 720 and 480 units, respectively)." .
+
+
+###  http://www.w3.org/ns/ma-ont#identifier
+ma-ont:identifier rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Movie ;
+                  rdfs:range xsd:anyURI .
+
+
+###  http://www.w3.org/ns/ma-ont#language
+ma-ont:language rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Movie ;
+                rdfs:range xsd:string .
+
+
+###  http://www.w3.org/ns/ma-ont#title
+ma-ont:title rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Movie ;
+             rdfs:range xsd:string .
+
+
+###  http://xmlns.com/foaf/0.1/phone
+foaf:phone rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Character ;
+           rdfs:range xsd:int ;
+           rdfs:comment "A character's fictitious phone number."^^xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://dbpedia.org/ontology#dbo:Actor
+<http://dbpedia.org/ontology#dbo:Actor> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://dbpedia.org/ontology/Person> .
+
+
+###  http://dbpedia.org/ontology#dbo:Country
+<http://dbpedia.org/ontology#dbo:Country> rdf:type owl:Class ;
+                                          rdfs:subClassOf owl:Thing .
+
+
+###  http://dbpedia.org/ontology#dbo:Genre
+<http://dbpedia.org/ontology#dbo:Genre> rdf:type owl:Class ;
+                                        rdfs:subClassOf owl:Thing .
+
+
+###  http://dbpedia.org/ontology#dbo:Production_Company
+<http://dbpedia.org/ontology#dbo:Production_Company> rdf:type owl:Class ;
+                                                     rdfs:subClassOf owl:Thing .
+
+
+###  http://dbpedia.org/ontology/FilmDirector
+<http://dbpedia.org/ontology/FilmDirector> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://dbpedia.org/ontology/Person> .
+
+
+###  http://dbpedia.org/ontology/Musical_Artist
+<http://dbpedia.org/ontology/Musical_Artist> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://dbpedia.org/ontology/Person> .
+
+
+###  http://dbpedia.org/ontology/Person
+<http://dbpedia.org/ontology/Person> rdf:type owl:Class ;
+                                     rdfs:subClassOf owl:Thing .
+
+
+###  http://dbpedia.org/ontology/Writer
+<http://dbpedia.org/ontology/Writer> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://dbpedia.org/ontology/Person> ;
+                                     rdfs:comment "A screenplay writer (also called screenwriter for short), scriptwriter or scenarist, is a writer who practices the craft of screenwriting, writing screenplays on which mass media, such as films, television programs and video games, are based."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Action
+:Action rdf:type owl:Class ;
+        rdfs:subClassOf :Movie .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Action_Movie
+:Action_Movie rdf:type owl:Class ;
+              rdfs:subClassOf <http://dbpedia.org/ontology#dbo:Genre> .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Adventure
+:Adventure rdf:type owl:Class ;
+           rdfs:subClassOf <http://dbpedia.org/ontology#dbo:Genre> .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Award
+:Award rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Background_character
+:Background_character rdf:type owl:Class ;
+                      rdfs:subClassOf :Character ;
+                      owl:disjointWith :Protagonist .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Basic_Emotion
+:Basic_Emotion rdf:type owl:Class ;
+               rdfs:subClassOf :Emotion .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Character
+:Character rdf:type owl:Class ;
+           rdfs:subClassOf :Movie ;
+           owl:disjointWith :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Comedy
+:Comedy rdf:type owl:Class ;
+        rdfs:subClassOf <http://dbpedia.org/ontology#dbo:Genre> .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Drama
+:Drama rdf:type owl:Class ;
+       rdfs:subClassOf <http://dbpedia.org/ontology#dbo:Genre> .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Emotion
+:Emotion rdf:type owl:Class ;
+         rdfs:subClassOf :Movie .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Fantasy
+:Fantasy rdf:type owl:Class ;
+         rdfs:subClassOf <http://dbpedia.org/ontology#dbo:Genre> .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Historical
+:Historical rdf:type owl:Class ;
+            rdfs:subClassOf <http://dbpedia.org/ontology#dbo:Genre> .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Horror
+:Horror rdf:type owl:Class ;
+        rdfs:subClassOf <http://dbpedia.org/ontology#dbo:Genre> .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Intense_Emotion
+:Intense_Emotion rdf:type owl:Class ;
+                 rdfs:subClassOf :Emotion .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Mild_Emotion
+:Mild_Emotion rdf:type owl:Class ;
+              rdfs:subClassOf :Emotion .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Mistery
+:Mistery rdf:type owl:Class ;
+         rdfs:subClassOf <http://dbpedia.org/ontology#dbo:Genre> .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Movie
+:Movie rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Music
+:Music rdf:type owl:Class ;
+       rdfs:subClassOf :Sound .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Protagonist
+:Protagonist rdf:type owl:Class ;
+             rdfs:subClassOf :Character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Romance
+:Romance rdf:type owl:Class ;
+         rdfs:subClassOf <http://dbpedia.org/ontology#dbo:Genre> .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene
+:Scene rdf:type owl:Class ;
+       rdfs:subClassOf :Sequence .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sci-Fi
+:Sci-Fi rdf:type owl:Class ;
+        rdfs:subClassOf <http://dbpedia.org/ontology#dbo:Genre> .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Screenplay
+:Screenplay rdf:type owl:Class ;
+            rdfs:subClassOf :Movie .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence
+:Sequence rdf:type owl:Class ;
+          rdfs:subClassOf :Movie .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Setting
+:Setting rdf:type owl:Class ;
+         rdfs:subClassOf :Movie .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Shot
+:Shot rdf:type owl:Class ;
+      rdfs:subClassOf :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Significant_Thing
+:Significant_Thing rdf:type owl:Class ;
+                   rdfs:subClassOf :Movie .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sound
+:Sound rdf:type owl:Class ;
+       rdfs:subClassOf :Movie .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Soundscape
+:Soundscape rdf:type owl:Class ;
+            rdfs:subClassOf :Sound .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Thriller
+:Thriller rdf:type owl:Class ;
+          rdfs:subClassOf <http://dbpedia.org/ontology#dbo:Genre> .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Western
+:Western rdf:type owl:Class ;
+         rdfs:subClassOf <http://dbpedia.org/ontology#dbo:Genre> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.movieontology.org/2009/11/09/movieontology.owl#BAFTA_Film_Award
+movieontology:BAFTA_Film_Award rdf:type owl:NamedIndividual ,
+                                        :Award .
+
+
+###  http://www.movieontology.org/2009/11/09/movieontology.owl#Golden_Globe_Award
+movieontology:Golden_Globe_Award rdf:type owl:NamedIndividual ,
+                                          :Award .
+
+
+###  http://www.movieontology.org/2009/11/09/movieontology.owl#Miscellaneous_Award
+movieontology:Miscellaneous_Award rdf:type owl:NamedIndividual ,
+                                           :Award .
+
+
+###  http://www.movieontology.org/2009/11/09/movieontology.owl#Oscar_Award
+movieontology:Oscar_Award rdf:type owl:NamedIndividual ,
+                                   :Award .
+
+
+###  http://www.movieontology.org/2009/11/09/movieontology.owl#Primetime_Emmy_Award
+movieontology:Primetime_Emmy_Award rdf:type owl:NamedIndividual ,
+                                            :Award .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#A_doctor_s_Office
+:A_doctor_s_Office rdf:type owl:NamedIndividual ,
+                            :Setting .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Acceptance
+:Acceptance rdf:type owl:NamedIndividual ,
+                     :Mild_Emotion ;
+            :opposite_of :Boredom .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Admiration
+:Admiration rdf:type owl:NamedIndividual ,
+                     :Intense_Emotion ;
+            :opposite_of :Loathing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Adventure_Fiction
+:Adventure_Fiction rdf:type owl:NamedIndividual ,
+                            :Adventure .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Alternate_History
+:Alternate_History rdf:type owl:NamedIndividual ,
+                            :Historical .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Amazement
+:Amazement rdf:type owl:NamedIndividual ,
+                    :Intense_Emotion ;
+           :opposite_of :Vigilance .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Anger
+:Anger rdf:type owl:NamedIndividual ,
+                :Basic_Emotion ;
+       :opposite_of :Fear .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Annoyance
+:Annoyance rdf:type owl:NamedIndividual ,
+                    :Mild_Emotion ;
+           :opposite_of :Apprehension .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Anticipation
+:Anticipation rdf:type owl:NamedIndividual ,
+                       :Basic_Emotion ;
+              :opposite_of :Surprise .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Apocalyptic_and_Post-apocalyptic_Fiction
+:Apocalyptic_and_Post-apocalyptic_Fiction rdf:type owl:NamedIndividual ,
+                                                   :Sci-Fi .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Apprehension
+:Apprehension rdf:type owl:NamedIndividual ,
+                       :Mild_Emotion ;
+              :opposite_of :Annoyance .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Bible
+:Bible rdf:type owl:NamedIndividual ,
+                :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Biography
+:Biography rdf:type owl:NamedIndividual ,
+                    :Historical .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Black_Comedy
+:Black_Comedy rdf:type owl:NamedIndividual ,
+                       :Comedy .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Boredom
+:Boredom rdf:type owl:NamedIndividual ,
+                  :Mild_Emotion ;
+         :opposite_of :Acceptance .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Burt
+:Burt rdf:type owl:NamedIndividual ,
+               :Background_character ;
+      foaf:knows :Leonard_Shelby ;
+      :is_trustable "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Callum_Keith_Rennie
+:Callum_Keith_Rennie rdf:type owl:NamedIndividual ,
+                              <http://dbpedia.org/ontology#dbo:Actor> .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Car
+:Car rdf:type owl:NamedIndividual ,
+              :Setting ;
+     :int_setting "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Carrie-Anne_Moss
+:Carrie-Anne_Moss rdf:type owl:NamedIndividual ,
+                           <http://dbpedia.org/ontology#dbo:Actor> ;
+                  :stars :Natalie .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Catherine_Shelby
+:Catherine_Shelby rdf:type owl:NamedIndividual ,
+                           :Protagonist ;
+                  :is_married_to :Leonard_Shelby ;
+                  foaf:knows :Leonard_Shelby ;
+                  :deceased "true"^^xsd:boolean ;
+                  :disease "diabetes"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#City_Grill_Ext
+:City_Grill_Ext rdf:type owl:NamedIndividual ,
+                         :Setting .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#City_Grill_Int
+:City_Grill_Int rdf:type owl:NamedIndividual ,
+                         :Setting .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Classic_Western
+:Classic_Western rdf:type owl:NamedIndividual ,
+                          :Western .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Conspiracy_Thriller
+:Conspiracy_Thriller rdf:type owl:NamedIndividual ,
+                              :Thriller .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Contemporary_Fantasy
+:Contemporary_Fantasy rdf:type owl:NamedIndividual ,
+                               :Fantasy .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Contemporary_Western
+:Contemporary_Western rdf:type owl:NamedIndividual ,
+                               :Western .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Crime_Thriller
+:Crime_Thriller rdf:type owl:NamedIndividual ,
+                         :Mistery ,
+                         :Thriller .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Cyberpunk
+:Cyberpunk rdf:type owl:NamedIndividual ,
+                    :Sci-Fi .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Dark_Fantasy
+:Dark_Fantasy rdf:type owl:NamedIndividual ,
+                       :Fantasy .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Derelict_Building_Ext
+:Derelict_Building_Ext rdf:type owl:NamedIndividual ,
+                                :Setting ;
+                       :int_setting "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Derelict_Building_Int
+:Derelict_Building_Int rdf:type owl:NamedIndividual ,
+                                :Setting ;
+                       :int_setting "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Detective_Story
+:Detective_Story rdf:type owl:NamedIndividual ,
+                          :Mistery .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Disaster_Thriller
+:Disaster_Thriller rdf:type owl:NamedIndividual ,
+                            :Thriller .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Disaster_and_Alien_Invasion
+:Disaster_and_Alien_Invasion rdf:type owl:NamedIndividual ,
+                                      :Sci-Fi .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Discount_Inn_Ext
+:Discount_Inn_Ext rdf:type owl:NamedIndividual ,
+                           :Setting ;
+                  :is_administrated_by :Burt ;
+                  :int_setting "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Discount_Inn_Office
+:Discount_Inn_Office rdf:type owl:NamedIndividual ,
+                              :Setting ;
+                     :is_administrated_by :Burt ;
+                     :int_setting "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Discount_Inn_sign
+:Discount_Inn_sign rdf:type owl:NamedIndividual ,
+                            :Significant_Thing ;
+                   foaf:depiction :Polaroid03 .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Disgust
+:Disgust rdf:type owl:NamedIndividual ,
+                  :Basic_Emotion ;
+         :opposite_of :Trust .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Distraction
+:Distraction rdf:type owl:NamedIndividual ,
+                      :Mild_Emotion ;
+             :opposite_of :Interest .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Dodd
+:Dodd rdf:type owl:NamedIndividual ,
+               :Protagonist ;
+      :is_patient :murder .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Ectasy
+:Ectasy rdf:type owl:NamedIndividual ,
+                 :Intense_Emotion ;
+        :opposite_of :Grief .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Epic_Fantasy
+:Epic_Fantasy rdf:type owl:NamedIndividual ,
+                       :Fantasy .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Fantasy_and_Space_Western
+:Fantasy_and_Space_Western rdf:type owl:NamedIndividual ,
+                                    :Western .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Fear
+:Fear rdf:type owl:NamedIndividual ,
+               :Basic_Emotion ;
+      :opposite_of :Anger .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Ferdy_s_Bar_Ext
+:Ferdy_s_Bar_Ext rdf:type owl:NamedIndividual ,
+                          :Setting .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Ferdy_s_Bar_Int
+:Ferdy_s_Bar_Int rdf:type owl:NamedIndividual ,
+                          :Setting .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Found_Footage_Horror
+:Found_Footage_Horror rdf:type owl:NamedIndividual ,
+                               :Horror .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Gentleman_Thief
+:Gentleman_Thief rdf:type owl:NamedIndividual ,
+                          :Mistery .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Ghost_Story
+:Ghost_Story rdf:type owl:NamedIndividual ,
+                      :Horror .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Grief
+:Grief rdf:type owl:NamedIndividual ,
+                :Intense_Emotion ;
+       :opposite_of :Ectasy .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Guy_Pearce
+:Guy_Pearce rdf:type owl:NamedIndividual ,
+                     <http://dbpedia.org/ontology#dbo:Actor> ;
+            :stars :Leonard_Shelby .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Harriet_Sansom_Harris
+:Harriet_Sansom_Harris rdf:type owl:NamedIndividual ,
+                                <http://dbpedia.org/ontology#dbo:Actor> ;
+                       :stars :Mrs._Jankis .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Heroic_Fantasy
+:Heroic_Fantasy rdf:type owl:NamedIndividual ,
+                         :Fantasy .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Historical_Fantasy
+:Historical_Fantasy rdf:type owl:NamedIndividual ,
+                             :Fantasy .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Historical_Romance
+:Historical_Romance rdf:type owl:NamedIndividual ,
+                             :Romance .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Interest
+:Interest rdf:type owl:NamedIndividual ,
+                   :Mild_Emotion ;
+          :opposite_of :Distraction .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Jaguar_car
+:Jaguar_car rdf:type owl:NamedIndividual ,
+                     :Significant_Thing ;
+            :is_owned_by :Jimmy_Grantz ,
+                         :Leonard_Shelby ;
+            rdfs:comment "Jaguar is not CAR, which is a Setting for all the different cars that can be found in the movie"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Jimmy_Grantz
+:Jimmy_Grantz rdf:type owl:NamedIndividual ,
+                       :Protagonist ;
+              :is_killed_by :Leonard_Shelby ;
+              :is_partner_of :Natalie ;
+              foaf:knows :Dodd ,
+                         :Leonard_Shelby ,
+                         :Natalie ,
+                         :Teddy ;
+              :deceased "true"^^xsd:boolean ;
+              :has_goal "to make a drug deal with Teddy"^^xsd:string ;
+              :is_trustable "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Joe_Pantoliano
+:Joe_Pantoliano rdf:type owl:NamedIndividual ,
+                         <http://dbpedia.org/ontology#dbo:Actor> ;
+                :stars :Teddy .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#John_G.
+<http://www.semanticweb.org/ontologies/2021/focal#John_G.> rdf:type owl:NamedIndividual ,
+                                                                    :Protagonist ;
+                                                           :is_killed_by :Leonard_Shelby ;
+                                                           :is_patient :murder ;
+                                                           :deceased "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Jorja_Fox
+:Jorja_Fox rdf:type owl:NamedIndividual ,
+                    <http://dbpedia.org/ontology#dbo:Actor> ;
+           :stars :Catherine_Shelby .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Joy
+:Joy rdf:type owl:NamedIndividual ,
+              :Basic_Emotion ;
+     :opposite_of :Sadness .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Kimberly_Campbell
+:Kimberly_Campbell rdf:type owl:NamedIndividual ,
+                            <http://dbpedia.org/ontology#dbo:Actor> ;
+                   :stars :blonde_woman .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Larry_Holden
+:Larry_Holden rdf:type owl:NamedIndividual ,
+                       <http://dbpedia.org/ontology#dbo:Actor> ;
+              :stars :Jimmy_Grantz .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Legal_Drama
+:Legal_Drama rdf:type owl:NamedIndividual ,
+                      :Drama .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Legal_Thriller
+:Legal_Thriller rdf:type owl:NamedIndividual ,
+                         :Thriller .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Leonard_Shelby
+:Leonard_Shelby rdf:type owl:NamedIndividual ,
+                         :Protagonist ;
+                :imagines :Mrs._Jankis ;
+                :is_agent :murder ;
+                :kills :Catherine_Shelby ,
+                       :Jimmy_Grantz ,
+                       <http://www.semanticweb.org/ontologies/2021/focal#John_G.> ,
+                       :Teddy ;
+                :punches :Natalie ;
+                foaf:knows :Burt ,
+                           :Catherine_Shelby ,
+                           :Jimmy_Grantz ,
+                           :Mrs._Jankis ,
+                           :Natalie ,
+                           :Sammy_Jankis ,
+                           :Teddy ,
+                           :doctor ;
+                :disease "anterograde_amnesia"^^xsd:string ;
+                :has_goal "to avenge his dead wife"^^xsd:string ;
+                :is_main_protagonist "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Leonard_s_House
+:Leonard_s_House rdf:type owl:NamedIndividual ,
+                          :Setting .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Leonard_s_Office
+:Leonard_s_Office rdf:type owl:NamedIndividual ,
+                           :Setting .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Line01
+:Line01 rdf:type owl:NamedIndividual ,
+                 :Screenplay ;
+        :is_said_by :Leonard_Shelby ;
+        :content """So where are you?
+You're in some motel room.
+You just wake up, and you're in a motel room.
+There's the key. It feels like maybe it's just the first time you've been there... but... perhaps you've been there for a week... three months.
+It's kind of hard to say.
+I don't know.
+It's just an anonymous room."""^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Line02
+:Line02 rdf:type owl:NamedIndividual ,
+                 :Screenplay ;
+        :is_said_by :Burt ;
+        :content "This guy. He's here already."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Line03
+:Line03 rdf:type owl:NamedIndividual ,
+                 :Screenplay ;
+        :is_said_by :Teddy ;
+        :content "Lenny!"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Line04
+:Line04 rdf:type owl:NamedIndividual ,
+                 :Screenplay ;
+        :is_said_by :Leonard_Shelby ;
+        :content "It's Leonard... like I told you before."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Line05
+:Line05 rdf:type owl:NamedIndividual ,
+                 :Screenplay ;
+        :is_said_by :Teddy ;
+        :content "Did you? I must have forgot."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Line06
+:Line06 rdf:type owl:NamedIndividual ,
+                 :Screenplay ;
+        :is_said_by :Leonard_Shelby ;
+        :content "I guess I've already told you about my condition."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Line07
+:Line07 rdf:type owl:NamedIndividual ,
+                 :Screenplay ;
+        :is_said_by :Teddy ;
+        :content "Only every time I see you."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Line08
+:Line08 rdf:type owl:NamedIndividual ,
+                 :Screenplay ;
+        :is_said_by :Teddy ;
+        :content "My car."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Line09
+:Line09 rdf:type owl:NamedIndividual ,
+                 :Screenplay ;
+        :is_said_by :Leonard_Shelby ;
+        :content """This is your car. 
+You're in a playful mood. 
+It's not good to make fun of someone's handicap."""^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Line10
+:Line10 rdf:type owl:NamedIndividual ,
+                 :Screenplay ;
+        :is_said_by :Teddy ;
+        :content "Just trying to have a little fun."^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Loathing
+:Loathing rdf:type owl:NamedIndividual ,
+                   :Intense_Emotion ;
+          :opposite_of :Admiration .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Main_Street
+:Main_Street rdf:type owl:NamedIndividual ,
+                      :Setting .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Mark_Boone_Junior
+:Mark_Boone_Junior rdf:type owl:NamedIndividual ,
+                            <http://dbpedia.org/ontology#dbo:Actor> ;
+                   :stars :Burt .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Martial_Arts_Action
+:Martial_Arts_Action rdf:type owl:NamedIndividual ,
+                              :Action_Movie .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Medical_Drama
+:Medical_Drama rdf:type owl:NamedIndividual ,
+                        :Drama .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Memento
+:Memento rdf:type owl:NamedIndividual ,
+                  :Movie ;
+         ma-ont:title "Memento"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Military_Action
+:Military_Action rdf:type owl:NamedIndividual ,
+                          :Action_Movie .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Monster_Horror
+:Monster_Horror rdf:type owl:NamedIndividual ,
+                         :Horror .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Motel_Room_21
+:Motel_Room_21 rdf:type owl:NamedIndividual ,
+                        :Setting ;
+               :int_setting "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Motel_Room_21_Bathroom
+:Motel_Room_21_Bathroom rdf:type owl:NamedIndividual ,
+                                 :Setting ;
+                        :int_setting "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Motel_Room_304
+:Motel_Room_304 rdf:type owl:NamedIndividual ,
+                         :Setting ;
+                :int_setting "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Mrs._Jankis
+:Mrs._Jankis rdf:type owl:NamedIndividual ,
+                      :Protagonist ;
+             :is_imagined_by :Leonard_Shelby ;
+             :is_married_to :Sammy_Jankis ;
+             foaf:knows :Leonard_Shelby ,
+                        :Sammy_Jankis ,
+                        :doctor ;
+             :has_goal "to heal her husband"^^xsd:string ;
+             :is_imaginary "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Murder_Mistery
+:Murder_Mistery rdf:type owl:NamedIndividual ,
+                         :Mistery .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Musical
+:Musical rdf:type owl:NamedIndividual ,
+                  :Drama .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Mythic_Fiction
+:Mythic_Fiction rdf:type owl:NamedIndividual ,
+                         :Fantasy .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Natalie
+:Natalie rdf:type owl:NamedIndividual ,
+                  :Protagonist ;
+         :is_agent :murder ;
+         :is_partner_of :Jimmy_Grantz ;
+         :is_punched_by :Leonard_Shelby ;
+         foaf:knows :Dodd ,
+                    :Jimmy_Grantz ,
+                    :Teddy ;
+         :has_goal "to avenger her dead partner"^^xsd:string ;
+         :is_main_protagonist "true"^^xsd:boolean ;
+         :is_trustable "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Natalie_s_House
+:Natalie_s_House rdf:type owl:NamedIndividual ,
+                          :Setting ;
+                 :is_administrated_by :Natalie ;
+                 :int_setting "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Neo-noir
+:Neo-noir rdf:type owl:NamedIndividual ,
+                   :Mistery .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Noir
+:Noir rdf:type owl:NamedIndividual ,
+               :Mistery .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Paranormal_Romance
+:Paranormal_Romance rdf:type owl:NamedIndividual ,
+                             :Romance .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Parody_Comedy
+:Parody_Comedy rdf:type owl:NamedIndividual ,
+                        :Comedy .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Pensiveness
+:Pensiveness rdf:type owl:NamedIndividual ,
+                      :Mild_Emotion ;
+             :opposite_of :Serenity .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Polaroid01
+:Polaroid01 rdf:type owl:NamedIndividual ,
+                     :Significant_Thing ;
+            foaf:made :Leonard_Shelby .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Polaroid02
+:Polaroid02 rdf:type owl:NamedIndividual ,
+                     :Significant_Thing ;
+            :represents :Teddy ;
+            foaf:made :Leonard_Shelby .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Polaroid03
+:Polaroid03 rdf:type owl:NamedIndividual ,
+                     :Significant_Thing ;
+            foaf:depicts :Discount_Inn_sign ;
+            foaf:made :Leonard_Shelby .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Polaroid04
+:Polaroid04 rdf:type owl:NamedIndividual ,
+                     :Significant_Thing ;
+            foaf:made :Leonard_Shelby .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Polaroid05
+:Polaroid05 rdf:type owl:NamedIndividual ,
+                     :Significant_Thing ;
+            foaf:made :Leonard_Shelby .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Psychological_Thriller
+:Psychological_Thriller rdf:type owl:NamedIndividual ,
+                                 :Thriller .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Rage
+:Rage rdf:type owl:NamedIndividual ,
+               :Intense_Emotion ;
+      :opposite_of :Terror .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Restaurant
+:Restaurant rdf:type owl:NamedIndividual ,
+                     :Setting ;
+            :int_setting "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Restaurant_Bathroom
+:Restaurant_Bathroom rdf:type owl:NamedIndividual ,
+                              :Setting ;
+                     :int_setting "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Revenge_Thriller
+:Revenge_Thriller rdf:type owl:NamedIndividual ,
+                           :Thriller .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Road_Movie
+:Road_Movie rdf:type owl:NamedIndividual ,
+                     :Drama .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Robot_Movie
+:Robot_Movie rdf:type owl:NamedIndividual ,
+                      :Sci-Fi .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Romantic_Comedy
+:Romantic_Comedy rdf:type owl:NamedIndividual ,
+                          :Romance .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Romantic_Drama
+:Romantic_Drama rdf:type owl:NamedIndividual ,
+                         :Drama ,
+                         :Romance .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sadness
+:Sadness rdf:type owl:NamedIndividual ,
+                  :Basic_Emotion ;
+         :opposite_of :Joy .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sammy_Jankis
+:Sammy_Jankis rdf:type owl:NamedIndividual ,
+                       :Protagonist ;
+              foaf:knows :Leonard_Shelby ,
+                         :Mrs._Jankis ,
+                         :doctor .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Satire
+:Satire rdf:type owl:NamedIndividual ,
+                 :Comedy .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene000
+:Scene000 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene001
+:Scene001 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene002
+:Scene002 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene003
+:Scene003 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene004
+:Scene004 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene005
+:Scene005 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene006
+:Scene006 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene007
+:Scene007 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene008
+:Scene008 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene009
+:Scene009 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene010
+:Scene010 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene011
+:Scene011 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene012
+:Scene012 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene013
+:Scene013 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene014
+:Scene014 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene015
+:Scene015 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :Restaurant_Bathroom .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene016
+:Scene016 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :Restaurant .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene017
+:Scene017 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :Car .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene018
+:Scene018 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :Discount_Inn_Ext .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene019
+:Scene019 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :Motel_Room_304 .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene020
+:Scene020 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :Motel_Room_21 .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene021
+:Scene021 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :City_Grill_Ext .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene022
+:Scene022 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :City_Grill_Int .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene023
+:Scene023 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :Leonard_s_House .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene024
+:Scene024 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :City_Grill_Int .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene025
+:Scene025 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :Restaurant_Bathroom .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene026
+:Scene026 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :Motel_Room_21 .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene027
+:Scene027 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :Leonard_s_Office .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene028
+:Scene028 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :Motel_Room_21 .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene029
+:Scene029 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :Main_Street .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene030
+:Scene030 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :Discount_Inn_Ext .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene031
+:Scene031 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :Discount_Inn_Office .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene032
+:Scene032 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :Motel_Room_21 .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene033
+:Scene033 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene034
+:Scene034 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene035
+:Scene035 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :City_Grill_Int .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene036
+:Scene036 rdf:type owl:NamedIndividual ,
+                   :Scene ;
+          :sets_in :Motel_Room_21 .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene037
+:Scene037 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene038
+:Scene038 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene039
+:Scene039 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene040
+:Scene040 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene041
+:Scene041 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene042
+:Scene042 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene043
+:Scene043 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene044
+:Scene044 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene045
+:Scene045 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene046
+:Scene046 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene047
+:Scene047 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene048
+:Scene048 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene049
+:Scene049 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene050
+:Scene050 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene051
+:Scene051 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene052
+:Scene052 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene053
+:Scene053 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene054
+:Scene054 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene055
+:Scene055 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene056
+:Scene056 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene057
+:Scene057 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene058
+:Scene058 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene059
+:Scene059 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene060
+:Scene060 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene061
+:Scene061 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene062
+:Scene062 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene063
+:Scene063 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene064
+:Scene064 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene065
+:Scene065 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene066
+:Scene066 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene067
+:Scene067 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene068
+:Scene068 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene069
+:Scene069 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene070
+:Scene070 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene071
+:Scene071 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene072
+:Scene072 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene073
+:Scene073 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene074
+:Scene074 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene075
+:Scene075 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene076
+:Scene076 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene077
+:Scene077 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene078
+:Scene078 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene079
+:Scene079 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene080
+:Scene080 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene081
+:Scene081 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene082
+:Scene082 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene083
+:Scene083 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene084
+:Scene084 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene085
+:Scene085 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene086
+:Scene086 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene087
+:Scene087 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene088
+:Scene088 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene089
+:Scene089 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene090
+:Scene090 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene091
+:Scene091 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene092
+:Scene092 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene093
+:Scene093 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene094
+:Scene094 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene095
+:Scene095 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene096
+:Scene096 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene097
+:Scene097 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene098
+:Scene098 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene099
+:Scene099 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene100
+:Scene100 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene101
+:Scene101 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene102
+:Scene102 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene103
+:Scene103 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene104
+:Scene104 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene105
+:Scene105 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene106
+:Scene106 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene107
+:Scene107 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene108
+:Scene108 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene109
+:Scene109 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene110
+:Scene110 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene111
+:Scene111 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene112
+:Scene112 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene113
+:Scene113 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene114
+:Scene114 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene115
+:Scene115 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene116
+:Scene116 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene117
+:Scene117 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene118
+:Scene118 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene119
+:Scene119 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene120
+:Scene120 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene121
+:Scene121 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene122
+:Scene122 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene123
+:Scene123 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene124
+:Scene124 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene125
+:Scene125 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene126
+:Scene126 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene127
+:Scene127 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene128
+:Scene128 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene129
+:Scene129 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene130
+:Scene130 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene131
+:Scene131 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene132
+:Scene132 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene133
+:Scene133 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene134
+:Scene134 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene135
+:Scene135 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene136
+:Scene136 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene137
+:Scene137 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene138
+:Scene138 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene139
+:Scene139 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene140
+:Scene140 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene141
+:Scene141 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene142
+:Scene142 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene143
+:Scene143 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene144
+:Scene144 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene145
+:Scene145 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene146
+:Scene146 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene147
+:Scene147 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene148
+:Scene148 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene149
+:Scene149 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene150
+:Scene150 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene151
+:Scene151 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene152
+:Scene152 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene153
+:Scene153 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene154
+:Scene154 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene155
+:Scene155 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene156
+:Scene156 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene157
+:Scene157 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene158
+:Scene158 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene159
+:Scene159 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene160
+:Scene160 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene161
+:Scene161 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene162
+:Scene162 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene163
+:Scene163 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene164
+:Scene164 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene165
+:Scene165 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene166
+:Scene166 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene167
+:Scene167 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene168
+:Scene168 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene169
+:Scene169 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene170
+:Scene170 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene171
+:Scene171 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene172
+:Scene172 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene173
+:Scene173 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene174
+:Scene174 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene175
+:Scene175 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene176
+:Scene176 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene177
+:Scene177 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene178
+:Scene178 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene179
+:Scene179 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene180
+:Scene180 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene181
+:Scene181 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene182
+:Scene182 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene183
+:Scene183 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene184
+:Scene184 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene185
+:Scene185 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene186
+:Scene186 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene187
+:Scene187 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene188
+:Scene188 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene189
+:Scene189 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene190
+:Scene190 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene191
+:Scene191 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene192
+:Scene192 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene193
+:Scene193 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene194
+:Scene194 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene195
+:Scene195 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene196
+:Scene196 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene197
+:Scene197 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene198
+:Scene198 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Scene199
+:Scene199 rdf:type owl:NamedIndividual ,
+                   :Scene .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Science_Fantasy
+:Science_Fantasy rdf:type owl:NamedIndividual ,
+                          :Fantasy .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence00
+:Sequence00 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:00:43"^^xsd:time ;
+            :starts_at "00:00:00"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence01
+:Sequence01 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :color "true"^^xsd:boolean ;
+            :ends_at "00:02:35"^^xsd:time ;
+            :starts_at "00:00:44"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence02
+:Sequence02 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :color "false"^^xsd:boolean ;
+            :ends_at "00:02:58"^^xsd:time ;
+            :starts_at "00:02:36"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence03
+:Sequence03 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :color "true"^^xsd:boolean ;
+            :ends_at "00:06:25"^^xsd:time ;
+            :starts_at "00:2:59"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence04
+:Sequence04 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :color "false"^^xsd:boolean ;
+            :ends_at "00:07:01"^^xsd:time ;
+            :starts_at "00:06:26"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence05
+:Sequence05 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :color "true"^^xsd:boolean ;
+            :ends_at "00:10:12"^^xsd:time ;
+            :starts_at "00:07:02"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence06
+:Sequence06 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :color "false"^^xsd:boolean ;
+            :ends_at "00:11:06"^^xsd:time ;
+            :starts_at "00:10:13"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence07
+:Sequence07 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :color "true"^^xsd:boolean ;
+            :ends_at "00:16:12"^^xsd:time ;
+            :starts_at "00:11:07"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence08
+:Sequence08 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :color "false"^^xsd:boolean ;
+            :ends_at "00:16:58"^^xsd:time ;
+            :starts_at "00:16:13"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence09
+:Sequence09 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:22:17"^^xsd:time ;
+            :starts_at "00:16:59"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence10
+:Sequence10 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:22:56"^^xsd:time ;
+            :starts_at "00:22:18"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence11
+:Sequence11 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:26:45"^^xsd:time ;
+            :starts_at "00:22:57"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence12
+:Sequence12 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:28:30"^^xsd:time ;
+            :starts_at "00:26:46"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence13
+:Sequence13 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:31:43"^^xsd:time ;
+            :starts_at "00:28:31"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence14
+:Sequence14 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:32:34"^^xsd:time ;
+            :starts_at "00:31:44"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence15
+:Sequence15 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:39:26"^^xsd:time ;
+            :starts_at "00:32:36"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence16
+:Sequence16 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:40:14"^^xsd:time ;
+            :starts_at "00:39:27"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence17
+:Sequence17 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:45:02"^^xsd:time ;
+            :starts_at "00:40:15"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence18
+:Sequence18 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:46:04"^^xsd:time ;
+            :starts_at "00:45:03"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence19
+:Sequence19 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:48:56"^^xsd:time ;
+            :starts_at "00:46:05"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence20
+:Sequence20 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:49:25"^^xsd:time ;
+            :starts_at "00:48:57"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence21
+:Sequence21 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:52:05"^^xsd:time ;
+            :starts_at "00:49:26"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence22
+:Sequence22 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:52:19"^^xsd:time ;
+            :starts_at "00:52:06"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence23
+:Sequence23 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:53:34"^^xsd:time ;
+            :starts_at "00:52:20"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence24
+:Sequence24 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:53:46"^^xsd:time ;
+            :starts_at "00:53:35"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence25
+:Sequence25 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:56:38"^^xsd:time ;
+            :starts_at "00:53:57"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence26
+:Sequence26 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:57:29"^^xsd:time ;
+            :starts_at "00:56:39"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence27
+:Sequence27 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "00:59:31"^^xsd:time ;
+            :starts_at "00:57:30"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence28
+:Sequence28 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:00:11"^^xsd:time ;
+            :starts_at "00:58:36"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence29
+:Sequence29 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:02:41"^^xsd:time ;
+            :starts_at "01:00:00"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence30
+:Sequence30 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:04:57"^^xsd:time ;
+            :starts_at "01:02:42"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence31
+:Sequence31 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:09:23"^^xsd:time ;
+            :starts_at "01:04:58"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence32
+:Sequence32 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:09:56"^^xsd:time ;
+            :starts_at "01:09:24"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence33
+:Sequence33 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:13:01"^^xsd:time ;
+            :starts_at "01:09:57"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence34
+:Sequence34 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:13:25"^^xsd:time ;
+            :starts_at "01:13:02"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence35
+:Sequence35 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:17:18"^^xsd:time ;
+            :starts_at "01:13:24"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence36
+:Sequence36 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:17:52"^^xsd:time ;
+            :starts_at "01:17:19"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence37
+:Sequence37 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:21:44"^^xsd:time ;
+            :starts_at "01:17:53"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence38
+:Sequence38 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:22:30"^^xsd:time ;
+            :starts_at "01:21:45"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence39
+:Sequence39 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:23:17"^^xsd:time ;
+            :starts_at "01:22:31"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence40
+:Sequence40 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:23:40"^^xsd:time ;
+            :starts_at "01:23:18"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence41
+:Sequence41 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:26:33"^^xsd:time ;
+            :starts_at "01:23:41"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence42
+:Sequence42 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:30:09"^^xsd:time ;
+            :starts_at "01:26:34"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence43
+:Sequence43 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:33:58"^^xsd:time ;
+            :starts_at "01:30:10"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Sequence44
+:Sequence44 rdf:type owl:NamedIndividual ,
+                     :Sequence ;
+            :ends_at "01:50:00"^^xsd:time ;
+            :starts_at "01:33:59"^^xsd:time .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Serenity
+:Serenity rdf:type owl:NamedIndividual ,
+                   :Mild_Emotion ;
+          :opposite_of :Pensiveness .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Shot01
+:Shot01 rdf:type owl:NamedIndividual ,
+                 :Shot ;
+        :framing "group shot"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Shot02
+:Shot02 rdf:type owl:NamedIndividual ,
+                 :Shot ;
+        :framing "single shot"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Shot03
+:Shot03 rdf:type owl:NamedIndividual ,
+                 :Shot ;
+        :framing "group shot"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Shot04
+:Shot04 rdf:type owl:NamedIndividual ,
+                 :Shot ;
+        :framing "single shot"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Shot05
+:Shot05 rdf:type owl:NamedIndividual ,
+                 :Shot ;
+        :framing "group shot"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Shot06
+:Shot06 rdf:type owl:NamedIndividual ,
+                 :Shot ;
+        :framing "two shot"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Shot07
+:Shot07 rdf:type owl:NamedIndividual ,
+                 :Shot ;
+        :framing "over-the-shoulder shot"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Shot08
+:Shot08 rdf:type owl:NamedIndividual ,
+                 :Shot ;
+        :framing "two shot"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Shot09
+:Shot09 rdf:type owl:NamedIndividual ,
+                 :Shot ;
+        :framing "over-the-shoulder shot"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Slapstick_Comedy
+:Slapstick_Comedy rdf:type owl:NamedIndividual ,
+                           :Comedy .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Space_Travel
+:Space_Travel rdf:type owl:NamedIndividual ,
+                       :Sci-Fi .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Spy_Action
+:Spy_Action rdf:type owl:NamedIndividual ,
+                     :Action_Movie .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Spy_Thriller
+:Spy_Thriller rdf:type owl:NamedIndividual ,
+                       :Thriller .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Stephen_Tobolowsky
+:Stephen_Tobolowsky rdf:type owl:NamedIndividual ,
+                             <http://dbpedia.org/ontology#dbo:Actor> ;
+                    :stars :Sammy_Jankis .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Superhero_Fiction
+:Superhero_Fiction rdf:type owl:NamedIndividual ,
+                            :Adventure .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Supernatural_Thriller
+:Supernatural_Thriller rdf:type owl:NamedIndividual ,
+                                :Thriller .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Surprise
+:Surprise rdf:type owl:NamedIndividual ,
+                   :Basic_Emotion ;
+          :opposite_of :Anticipation .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Survival_Horror
+:Survival_Horror rdf:type owl:NamedIndividual ,
+                          :Horror .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Swashbuckler
+:Swashbuckler rdf:type owl:NamedIndividual ,
+                       :Adventure .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Techno_Thriller
+:Techno_Thriller rdf:type owl:NamedIndividual ,
+                          :Thriller .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Teddy
+:Teddy rdf:type owl:NamedIndividual ,
+                :Protagonist ;
+       :is_killed_by :Leonard_Shelby ;
+       :is_patient :murder ;
+       foaf:knows :Jimmy_Grantz ,
+                  :Leonard_Shelby ,
+                  :Natalie ;
+       :has_goal "to manipulate Leonard into committing murders"^^xsd:string ,
+                 "to take dead drug dealers' money"^^xsd:string ;
+       :is_main_protagonist "true"^^xsd:boolean ;
+       :is_trustable "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Terror
+:Terror rdf:type owl:NamedIndividual ,
+                 :Intense_Emotion ;
+        :opposite_of :Rage .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Thomas_Lennon
+:Thomas_Lennon rdf:type owl:NamedIndividual ,
+                        <http://dbpedia.org/ontology#dbo:Actor> ;
+               :stars :doctor .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Time_Travel
+:Time_Travel rdf:type owl:NamedIndividual ,
+                      :Sci-Fi .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Tragedy
+:Tragedy rdf:type owl:NamedIndividual ,
+                  :Drama .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Trust
+:Trust rdf:type owl:NamedIndividual ,
+                :Basic_Emotion ;
+       :opposite_of :Disgust .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#Vigilance
+:Vigilance rdf:type owl:NamedIndividual ,
+                    :Intense_Emotion ;
+           :opposite_of :Amazement .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#blonde_woman
+:blonde_woman rdf:type owl:NamedIndividual ,
+                       :Background_character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#book
+:book rdf:type owl:NamedIndividual ,
+               :Significant_Thing ;
+      :is_read_by :Catherine_Shelby .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#bottle
+:bottle rdf:type owl:NamedIndividual ,
+                 :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#bra
+:bra rdf:type owl:NamedIndividual ,
+              :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#brush
+:brush rdf:type owl:NamedIndividual ,
+                :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#car_crash
+:car_crash rdf:type owl:NamedIndividual ,
+                    :Action .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#chase
+:chase rdf:type owl:NamedIndividual ,
+                :Action .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#chirping_birds
+:chirping_birds rdf:type owl:NamedIndividual ,
+                         :Soundscape .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#cleaning_lady
+:cleaning_lady rdf:type owl:NamedIndividual ,
+                        :Background_character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#coaster
+:coaster rdf:type owl:NamedIndividual ,
+                  :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#death
+:death rdf:type owl:NamedIndividual ,
+                :Action .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#doctor
+:doctor rdf:type owl:NamedIndividual ,
+                 :Background_character ;
+        foaf:knows :Mrs._Jankis ,
+                   :Sammy_Jankis .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#fire
+:fire rdf:type owl:NamedIndividual ,
+               :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#gun
+:gun rdf:type owl:NamedIndividual ,
+              :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#key_021
+:key_021 rdf:type owl:NamedIndividual ,
+                  :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#key_304
+:key_304 rdf:type owl:NamedIndividual ,
+                  :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#making_a_tattoo
+:making_a_tattoo rdf:type owl:NamedIndividual ,
+                          :Action .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#map
+:map rdf:type owl:NamedIndividual ,
+              :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#murder
+:murder rdf:type owl:NamedIndividual ,
+                 :Action ;
+        :has_agent :Leonard_Shelby ;
+        :has_patient :Jimmy_Grantz ,
+                     <http://www.semanticweb.org/ontologies/2021/focal#John_G.> ,
+                     :Teddy .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#natural_death
+:natural_death rdf:type owl:NamedIndividual ,
+                        :Action .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#note
+:note rdf:type owl:NamedIndividual ,
+               :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#old_man
+:old_man rdf:type owl:NamedIndividual ,
+                  :Background_character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#paper_bag
+:paper_bag rdf:type owl:NamedIndividual ,
+                    :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#pen
+:pen rdf:type owl:NamedIndividual ,
+              :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#photograph
+:photograph rdf:type owl:NamedIndividual ,
+                     :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#pint_of_beer
+:pint_of_beer rdf:type owl:NamedIndividual ,
+                       :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#punch
+:punch rdf:type owl:NamedIndividual ,
+                :Action ;
+       :has_agent :Leonard_Shelby ;
+       :has_patient :Natalie .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#rape
+:rape rdf:type owl:NamedIndividual ,
+               :Action .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#syringe
+:syringe rdf:type owl:NamedIndividual ,
+                  :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#taking_photo
+:taking_photo rdf:type owl:NamedIndividual ,
+                       :Action .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#tattoo01
+:tattoo01 rdf:type owl:NamedIndividual ,
+                   :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#tattoo02
+:tattoo02 rdf:type owl:NamedIndividual ,
+                   :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#tattoo03
+:tattoo03 rdf:type owl:NamedIndividual ,
+                   :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#tattoo04
+:tattoo04 rdf:type owl:NamedIndividual ,
+                   :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#tattoo05
+:tattoo05 rdf:type owl:NamedIndividual ,
+                   :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#tattoo06
+:tattoo06 rdf:type owl:NamedIndividual ,
+                   :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#tattoo07
+:tattoo07 rdf:type owl:NamedIndividual ,
+                   :Significant_Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#tattoo_artist
+:tattoo_artist rdf:type owl:NamedIndividual ,
+                        :Background_character .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#wedding
+:wedding rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://www.semanticweb.org/ontologies/2021/focal#writing
+:writing rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Basic_Emotion
+                :Intense_Emotion
+                :Mild_Emotion
+              )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :murder
+                        :natural_death
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

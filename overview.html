@@ -43,7 +43,7 @@
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
-
+<script src="queries.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
@@ -87,7 +87,7 @@ body {
           <a class="dropdown-item active" style="text-decoration:underline;" href="#">OveRWieW<span class="sr-only">(current)</span></a>
           <a class="dropdown-item" href="browse.html">BRoWse</a>		  
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="SVGG/example/examples.html"><b>V</b>isual EXAmples</a>
+          <a class="dropdown-item" href="SVGG/example/examples.html"><b>V</b>isual EXAmple</a>
         </div>
       </li>
 	  
@@ -106,26 +106,19 @@ body {
         <h1 style="font-size: 50px; padding:10px; margin.bottom:0px; margin-top:10px">OveRWieW</h1>
 		<hr style="border:0.1px solid hsl(0, 0%, 35%);">
 		<div class="roboto" style="padding:10px;">      
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada ultricies erat et sodales. Nullam molestie et magna sed vestibulum. Curabitur sem sem, faucibus et efficitur at, porttitor quis mi. Phasellus lacinia in tellus eget ornare. Fusce nisi tortor, molestie a lacus vitae, malesuada commodo tellus. Duis ac lobortis mi. Proin eu erat mauris. Aliquam hendrerit tellus id massa semper commodo. Quisque tincidunt nisi a turpis vehicula, faucibus feugiat enim varius. In sit amet commodo ante.
-		</p>
-		<p>
-			Ut et ullamcorper metus. Maecenas tincidunt congue tempus. Duis hendrerit quis leo cursus vehicula. Ut pulvinar at nunc nec facilisis. Ut auctor convallis bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In sit amet congue elit.
-		</p>
+		<p> Focal ontology aims to <span class="a">semantically crystallize the dynamic content of a movie</span>, interlinking its components in a dense web of meanings and relationships. Following the guidelines of Protégé ontology software, I analyzed all the main ways in which a Movie can be described, by providing categories (<span class="a">classes</span>) and binary relations between objects of the categories (<span class="a">individuals</span>) or between an object and a data value (<span class="a">literals</span>). In the first case the relationships are called <span class="a">object properties</span> and in the second case they are known as <span class="a">data properties</span>.</p>
+<p> The ontology can be downloaded in three formats: <a class="av" href="focal-xml.owl" target="_blank">RDF/XML</a>, <a class="av" href="focal-json.owl" target="_blank">JSON</a>, or <a class="av" href="focal-turtle.owl" target="_blank">Turtle</a> syntax.
+<p> Since Focal not only aims to investigate the film content, but also the <span class="a">metadata of the film itself</span> (i.e. the data providing information about one or more aspects of the data), <span class="a">two major areas of entities</span> have been identified to describe the main class <span class="a">Movie</span>: </p>
+<ul>
+<li>relations between the Movie <span class="apink">and the real world</span>;</li>
+<li>relations between the Movie and its <span class="a">content</span>;</li>
+<li>(and, of course, the <span class="awhite">metadata</span> of the movie);</li>
+</ul>
+
 		</div>
     </div>
 </main>
 
-<main role="main" class="container" style="margin-top: 10px !important; margin-bottom:20px !important">	
-		<div class="roboto" style="padding:10px;">      
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada ultricies erat et sodales. Nullam molestie et magna sed vestibulum. Curabitur sem sem, faucibus et efficitur at, porttitor quis mi. Phasellus lacinia in tellus eget ornare. Fusce nisi tortor, molestie a lacus vitae, malesuada commodo tellus. Duis ac lobortis mi. Proin eu erat mauris. Aliquam hendrerit tellus id massa semper commodo. Quisque tincidunt nisi a turpis vehicula, faucibus feugiat enim varius. In sit amet commodo ante.
-		</p>
-		<p>
-			Ut et ullamcorper metus. Maecenas tincidunt congue tempus. Duis hendrerit quis leo cursus vehicula. Ut pulvinar at nunc nec facilisis. Ut auctor convallis bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In sit amet congue elit.
-		</p>
-		</div>
-</main>
 
 <div class="containerimg" style="margin-left:auto; margin-right: auto;">
 <a href="img/drawiomovie.svg" target="_blank">
@@ -134,19 +127,48 @@ body {
 </div>
 
 
+
 <!-- Movie metadata -->
 
 
 <div class="container">
 	<div class="roboto" style=" margin: 1rem 0; padding: 1rem 0;">
 			<p class="majormono" style="font-size: 20px;">
-			Movie metadata
+			Between Movie and real world
 			</p>
 			<hr style="border:0.1px solid hsl(0, 0%, 35%);">			
-			<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada ultricies erat et sodales. Nullam molestie et magna sed vestibulum. Curabitur sem sem, faucibus et efficitur at, porttitor quis mi. Phasellus lacinia in tellus eget ornare. Fusce nisi tortor, molestie a lacus vitae, malesuada commodo tellus. Duis ac lobortis mi. Proin eu erat mauris. Aliquam hendrerit tellus id massa semper commodo. Quisque tincidunt nisi a turpis vehicula, faucibus feugiat enim varius. In sit amet commodo ante.
-			</p>
+			<p>Relations with the outside world have been designed to connect the Movie with cardinal classes:</p>
+<ul>
+<li>the place where the film was produced, described by means of DBPedia, with the class <span class="apink">dbo:Country</span>;</li>
+<li>the awards the film has won or was nominated for (Oscar, Golden Globe, Academy Awards, BAFTA, etc.), with <span class="apink">focal:Award</span>; </li>
+<li>the production company of the movie (e.g. Universal Pictures, Paramount, etc.), with <span class="apink">dbo:Production_Company</span></li>
+<li>the production company of the movie (e.g. Universal Pictures, Paramount, etc.), with <span class="apink">dbo:Production_Company</span></li>
+<li>the main people who contributed to the making of the film, with <span class="apink">dbo: Person</span> containing the following subclasses: <span class="apink">dbo:Film_Director</span>, <span class="apink">dbo:Musical_Artist</span>, <span class="apink">dbo:Actor</span>, <span class="apink">dbo:Writer</span>;</li>
+<li>the genre of the movie, described by means of 68 different categories, with <span class="apink">dbo:Genre</span>. Take a look at them by clicking on the button below: </li>
+</ul>
+ <p class="text-center" style="margin-top: 18px;">
+	  <a class="btn btn-primary btn-focal" data-toggle="modal" href="#entity-event" style="font-size: 14px;">Genres</a>
+	  </p>
+<p>
+Moreover, <span class="awhite">data properties</span> belonging to focal, to <a class="apink" href="https://www.w3.org/2009/08/skos-reference/skos.html" target="_blank">skos</a> and to <a class="apink" href="https://www.w3.org/TR/mediaont-10/" target="_blank">ma</a> describe the metadata of the Movie and further connections between it and the real world:
+</p>
+<ul>
+<li><a target="_blank" href="https://www.w3.org/TR/mediaont-10/" class=" awhite">&nbsp;ma:title&nbsp;</a>, a data property that connects the movie to its title and allows a <span class="apink">xsd:string</span> literal;</li>
+<li><a target="_blank" href="https://www.w3.org/TR/mediaont-10/" class=" awhite">&nbsp;ma:identifier&nbsp;</a>, a URI identifying a media resource. It allows a <span class="apink">xsd:anyURI</span> literal;</li>
+<li><a target="_blank" href="https://www.w3.org/TR/mediaont-10/" class=" awhite">&nbsp;ma:language&nbsp;</a>, a data property that connects the movie to its language and allows a <span class="apink">xsd:string</span> literal;</li>
+<li> <a target="_blank" href="https://schema.org/isBasedOn" class="awhite">&nbsp;skos:isBasedOn&nbsp;</a>, a resource from which this movie is derived (can be a book, a tale, a novel etc.). It allows a <span class="apink">xsd:string</span> literal;</li>
+<li> <a target="_blank" class="awhite">&nbsp;focal:is_inspired_by&nbsp;</a>, a resource from which this movie is inspired (can be a book, a tale, a novel etc.). It allows a <span class="apink">xsd:string</span> literal;</li>
+<li><span class="awhite">&nbsp;focal:box_office&nbsp;</span>, that allows a <span class="apink">xsd:integer</span> literal;</li>
+<li><a target="_blank" href="https://schema.org/keywords" class="awhite">&nbsp;skos:keywords&nbsp;</a>, a data property that connects the movie to a list of keywords, separated by comma, which describe the content of the movie. It allows a <span class="apink">xsd:string</span> literal;</li>
+<li><a target="_blank" href="https://schema.org/about" class="awhite">&nbsp;skos:about&nbsp;</a>, similar to the previous one, but this refers to the content / plot of the movie. It allows a <span class="apink">xsd:string</span> literal;</li>
+<li><a target="_blank" href="https://schema.org/runtime" class="awhite">&nbsp;skos:runtime&nbsp;</a>, that allows a <span class="apink">xsd:integer</span> literal;</li>
+<li><a target="_blank" href="https://schema.org/releaseDate" class="awhite">&nbsp;skos:releaseDate&nbsp;</a>, a data property that connects the movie to its release date, expressed in YYYY-MM-DD. It allows a <span class="apink">xsd:date</span> literal;</li>
+<li><span class="awhite">&nbsp;focal:imdb_rating&nbsp;</span>, that allows a <span class="apink">xsd:double</span> literal;</li>
+<li><a target="_blank" href="https://www.w3.org/TR/mediaont-10/" class=" awhite">&nbsp;ma:frameSize&nbsp;</a>, a data property that defines the frame size of the resource (e.g., width and height of 720 and 480 units, respectively). It allows a <span class="apink">xsd:string</span> literal;</li>
+</ul>
+
 	</div>
+</div>
 </div>
 
 <div class="containerimg" style="margin-left:auto; margin-right: auto;">
@@ -162,12 +184,27 @@ body {
 <div class="container">
 	<div class="roboto" style=" margin: 1rem 0; padding: 1rem 0;">
 			<p class="majormono" style="font-size: 20px;">
-			Movie content
+			Between Movie and its content
 			</p>
 			<hr style="border:0.1px solid hsl(0, 0%, 35%);">			
-			<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada ultricies erat et sodales. Nullam molestie et magna sed vestibulum. Curabitur sem sem, faucibus et efficitur at, porttitor quis mi. Phasellus lacinia in tellus eget ornare. Fusce nisi tortor, molestie a lacus vitae, malesuada commodo tellus. Duis ac lobortis mi. Proin eu erat mauris. Aliquam hendrerit tellus id massa semper commodo. Quisque tincidunt nisi a turpis vehicula, faucibus feugiat enim varius. In sit amet commodo ante.
-			</p>
+			<p>As may be seen, many of the classes that have been used for real-world entities connected to movies (e.g. <span class="apink">dbo:Production_Company</span>, <span class="apink">dbo:Genre</span>) come from important and already established ontologies. In fact, the purpose of Focal is mainly concentrated in the content of the films, where almost all the classes and properties have been thought of <i>ex novo</i>.</p>
+<ul>
+<li><span class="a">focal:Sequence</span>: the most important subclass of ‘Movie’, divided in <span class="a">focal:Scene</span> and <span class="a">focal:Shot</span>, where Sequence is a number of scenes connected through a common storyline, Scene is a unit of story that takes place at a specific location and time, and Shot is the most basic unit of a film, a single continuous angle of view taken by a camera;</li>
+<li><span class="a">focal:Setting</span>: the locations, the settings of the happenings in the Movie;</li>
+<li><span class="a">focal:Character</span>: the characters in the Movie through which the story is conveyed, divided in <span class="a">Background_Character</span> and <span class="a">Protagonist</span>;</li>
+<li><span class="a">focal:Screenplay</span>: every instance of this class is a Line from the script of the Movie. This line is connected to the character who says it, to the one who hears it and it’s described with several metadata to enrich its meaning and scope, such as <span class="awhite"> &nbsp;focal:dialog_style&nbsp;</span> (that can be, among the others, “voice_over", “pre_lap", “on_radio", etc.) or <span class="awhite"> &nbsp;focal:is_a_lie&nbsp;</span>, <span class="awhite"> &nbsp;focal:is_ironic&nbsp;</span>,  <span class="awhite"> &nbsp;focal:is_metaphor_for&nbsp;</span>, etc.;</li>
+<li><span class="a">focal:Significant_Thing</span>: key objects which form an important part of the story, e.g. a gun, a car, a clock; </li>
+<li><span class="a">focal:Action</span>: actions and states which set the base for the progress of the story in a movie like death, murder, chase, etc.</li>
+<li><span class="a">focal:Emotion</span>: the emotions felt by the characters, divided in <span class="a">focal:Basic_Emotion</span> (anger, anticipation, disgust, fear, joy, sadness, surprise, trust), <span class="a">focal:Mild_Emotion</span> (acceptance, annoyance, apprehension, boredom, distraction, interest, pensiveness, serenity) and <span class="a">focal:Intense_Emotion</span> (admiration, amazement, ectasy, grief, loathing, rage, terror, vigilance), according to Robert Plutchik's wheel of emotions in <a href=" https://www.sciencedirect.com/science/article/pii/B9780125587013500077" target="_blank" class="av"><i>“A general psychoevolutionary theory of emotion"</i></a>, 1980;</li>
+</ul>
+ <p class="text-center" style="margin-top: 18px;">
+	  
+<a class="btn btn-primary btn-focal" target="_blank" href="img/wheel.png" style="font-size: 14px;">Wheel of emotions</a>
+	  </p>
+	  <ul>
+<li><span class="a">focal:Sound</span>: what can be heard during the vision of the Movie, divided in <span class="a">focal:Music</span>, the tracks and soundtrack, and <span class="a">focal:Soundscape</span>, the "noise", sound or combination of sounds that forms or arises from an immersive environment (chirping of birds, cars, barking of dogs, etc.).</li>
+</ul>
+
 	</div>
 </div>
 
@@ -178,19 +215,64 @@ body {
 </div>
 
 
+<main role="main" class="container">
+	<div class="majormono" style="margin-left:auto; margin-right: auto;">        
+		<div class="roboto" >      
+<p> Through Focal ontology, each of the aforementioned classes is connected to its sisters in a <span class="a">dense network of relationships</span> that ensure that every moment of the film the viewer knows exactly what is happening, at what time of day, in a real or fictional, natural or artificial setting, who are the characters involved, what emotions are they feeling and with what intensity, what music is used to convey those emotions and actions, what words are they saying and with what meaning (for example, of manipulation, incitement to a victory, love courtship) , what objects appear and to whom they belong, who created them or what their purpose is, etc. </p>
+<p> Among this information, the most interesting is that that can be deduced from the classification of <span class="a">Sequence</span>, <span class="a">Scene</span> and <span class="a">Shot</span>.</p>
+		</div>
+    </div>
+</main>
+
 <!-- Sequence, Scene, Shot -->
 
 
 	  
-<div class="container">
+<div class="container" style="margin-top:38px;">
 	<div class="roboto" style=" margin: 1rem 0; padding: 1rem 0;">
 			<p class="majormono" style="font-size: 20px;">
 			Sequence, Scene, Shot
 			</p>
 			<hr style="border:0.1px solid hsl(0, 0%, 35%);">			
 			<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada ultricies erat et sodales. Nullam molestie et magna sed vestibulum. Curabitur sem sem, faucibus et efficitur at, porttitor quis mi. Phasellus lacinia in tellus eget ornare. Fusce nisi tortor, molestie a lacus vitae, malesuada commodo tellus. Duis ac lobortis mi. Proin eu erat mauris. Aliquam hendrerit tellus id massa semper commodo. Quisque tincidunt nisi a turpis vehicula, faucibus feugiat enim varius. In sit amet commodo ante.
-			</p>
+			When it comes to the content of movies, apart from the aforementioned eight ontological categories (<span class="a">Sequence</span>, <span class="a">Character</span>, <span class="a">Screenplay</span>, <span class="a">Setting</span>, <span class="a">Significant_Thing</span>, <span class="a">Action</span>, <span class="a">Emotion</span>, <span class="a">Sound</span>) there are many other characteristics speciﬁc to a movie like cinematography, editing, background music, special effects, etc. which form the expressive and aesthetic content of a movie. These characteristics are manifested through a <span class="a">Sequence</span>, <span class="a">Scene</span> or <span class="a">Shot</span> and thus are modeled as their attributes. Below, there is the complete list of these 'data properties':
+
+<ul>
+<li><span class="awhite"> &nbsp;focal:starts_at&nbsp;</span>: it defines the starting time ('hh:mm:ss') of a Scene, Sequence or Shot. It allows a <span class="apink">xsd:time</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:ends_at&nbsp;</span>: it defines the ending time ('hh:mm:ss') of a Scene, Sequence or Shot. It allows a <span class="apink">xsd:time</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:diegetic_level&nbsp;</span>: it relates a Shot, Scene or Sequence to its diegetic level. See more details about <i>what</i> actually is a diegetic level in the panel below, <a class="av" href="#time">An ontology about TIME</a>. The Level of the story contained in the Movie is 0. No. 1 means that it is a story within the movie, told by a character. If in the story, a new character starts telling another story, this latter one will have no. 2, and so on. In the case of a "breaking of the fourth wall", the Level shall be -1. It allows a <span class="apink">xsd:integer</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:temporal_manipulation&nbsp;</span>: It relates the Sequence, Scene or Shot to its temporal manipulation, or retiming effect. It allows a <span class="apink">xsd:{"fast motion" , "freeze" , "loop" , "reverse motion" , "slow motion"}</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:opening_credits&nbsp;</span>: it indicates if the Sequence contains opening credits (true / false). It allows a <span class="apink">xsd:boolean</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:closing_credits&nbsp;</span>: it indicates if the Sequence contains opening credits (true / false). It allows a <span class="apink">xsd:boolean</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:special_effects&nbsp;</span>: it indicates if the Sequence, Scene or Shot contains special effects. It allows a <span class="apink">xsd:boolean</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:intensity&nbsp;</span>: it indicates the intensity of the Sequence, Scene or Shot, from 1 to 10. It allows a <span class="apink">xsd:double</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:color&nbsp;</span>: this data property allows you to define if a Sequence, Scene or Shot is in color (if True) or black and white (if False). It allows a <span class="apink">xsd:boolean</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:type&nbsp;</span>: it associates the Sequence, Scene or Shot to particular types of narration. It allows a <span class="apink">xsd:{"dream" , "hallucination" , "nightmare" , "story", "memory"}</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:sets_during&nbsp;</span>: it relates the Sequence, Scene or Shot to the moment of the day in which it is set. It allows a <span class="apink">xsd:{"dawn" , "day" , "dusk" , "evening" , "morning" , "night"}</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:&nbsp;</span>: it relates the Sequence, Scene or Shot to the moment of the day in which it is set. It allows a <span class="apink">xsd:{"dawn" , "day" , "dusk" , "evening" , "morning" , "night"}</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:weather&nbsp;</span>: it relates the Sequence, Scene or Shot to its weather. It allows a <span class="apink">xsd:{"cloudy" , "rainy" , "snowy" , "stormy" , "sunny" , "windy"}</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:mood&nbsp;</span>: it describes a Sequence, Scene or Shot in a subjective manner (e.g. scary, funny). It allows a <span class="apink">xsd:string</span> literal;</li>
+</ul>
+
+<p>
+Some properties belong exclusively to the class <span class="a">Scene</span>:
+</p>
+<ul>
+<li><a class="av" href="http://www.w3.org/2002/07/owl#">owl:sameAs</a>: this is an object proerty, not a data property. When used for Scene, it means that there is a Scene that has been shown before or will be shown after: this is frequent in the case of the movie <i>Memento</i>, where there are scenes that are shown one time to the viewer (cue scenes) and then again (key scene) to help him memorize and reconstruct the flow of the story. Basically, these scenes are exactly the same ones, just shown two times. Its Range is <span class="a">Scene</a>;</li> 
+<li><span class="awhite"> &nbsp;focal:fabula&nbsp;</span>: it associates the Scene to an integer > 0, according to its chronological position in the order the movie. See more details in the panel below, <a class="av" href="#time">An ontology about TIME</a>. This property allows a <span class="apink">xsd:integer</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:flashback&nbsp;</span>: it defines if the Scene is a flashback. Thanks to the property fabula, it's also chronologically reordered inside the story. It allows a <span class="apink">xsd:boolean</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:flashforward&nbsp;</span>: it defines if the Scene is a flashforward. Thanks to the property fabula, it's also chronologically reordered inside the story. It allows a <span class="apink">xsd:boolean</span> literal;</li> 
+</ul>
+
+<p>
+Some properties belong exclusively to the class <span class="a">Shot</span>:
+</p>
+<ul>
+ 
+<li><span class="awhite"> &nbsp;focal:framing&nbsp;</span>: it is the placement and position of the subjects in a Shot. It allows a <span class="apink">xsd:{"group shot" , "insert shot" , "over-the-hip shot" , "over-the-shoulder shot" , "point-of-view shot" , "single shot" , "two shot"}</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:size&nbsp;</span>: it is how much of the setting or subject is displayed within a given frame of a Shot. It allows a <span class="apink">xsd:{"close-up" , "extreme close-up" , "full shot" , "long shot" , "medium shot"}</span> literal;</li> 
+<li><span class="awhite"> &nbsp;focal:transition&nbsp;</span>: the technique used in the post-production process of film editing by which Shots are combined. It allows a <span class="apink">xsd:{"cut to" , "dissolve to" , "fade to" , "jump cut to" , "match cut to" , "smash cut to" , "wipe to"}</span> literal;</li> 
+</ul>
 	</div>
 </div>	  
 
@@ -201,18 +283,179 @@ body {
 </div>
 
 
+
+
 <!-- General introduction to end of section -->
 
 
-	  
-<div class="container">
-	<div class="roboto" style=" margin: 1rem 0; padding: 1rem 0;">
+<div class="container" style="margin-top:38px;">
+	<div class="roboto" style=" margin: 1rem 0; padding: 1rem 0;" id="time">
 			<p class="majormono" style="font-size: 20px;">
-			Explore
+			<b>A</b>n ontology About <b>Time</b>
 			</p>
 			<hr style="border:0.1px solid hsl(0, 0%, 35%);">			
 			<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada ultricies erat et sodales. Nullam molestie et magna sed vestibulum. Curabitur sem sem, faucibus et efficitur at, porttitor quis mi. Phasellus lacinia in tellus eget ornare. Fusce nisi tortor, molestie a lacus vitae, malesuada commodo tellus. Duis ac lobortis mi. Proin eu erat mauris. Aliquam hendrerit tellus id massa semper commodo. Quisque tincidunt nisi a turpis vehicula, faucibus feugiat enim varius. In sit amet commodo ante.
+Time passing is an opportune way to enhance the film’s wow-factor and showcase the creativity of the director or the editor during post-production; there are myriad ways in which films do, in fact, represent <span class="a">time</span>. this is due to the fact that films (along with books, oral stories and other storytelling methods) are perfect ways to employ <span class="a">non-linear narrative</span>. Known also as disjointed narrative or disrupted narrative, the non-linear narrative is a <span class="a">narrative technique where events are portrayed out of chronological order</span> or in other ways where <span class="a">the narrative does not follow the direct causality pattern of the events featured</span>, such as parallel distinctive plot lines, dream immersions or narrating another story inside the main plot-line.
+</p>
+<p>
+Which are the reasons why non-linear narrative is employed? Some television series use nonlinear narrative in the beginning of a season or episode as a <span class="a">narrative hook</span>, showing an intense or shocking event, and then extensively explore the past and the reasons that lead that event to happen. However, we must remember that humans are naturally and irresistibly drawn to narrative and to attract attention and create expectation in their audience: this is why non-linear narrative is something <span class="a">deeply rooted inside our communication skill</span>.
+</p>
+<p>
+Films such as Memento are commonly referred to as popular, successful examples of non-linear screen storytelling. In fact, the story in the movie is quite strongly linear; each scene contains information that adds to what has previously been revealed to the audience. However, <span class="a">many sequences of the movie are shown in a non-chronological way</span>. Director Christopher Nolan chose this fashion to invite the public to empathize with the movie and its protagonist, allowing the viewers to <span class="a">experience what it feels to have a retrograde amnesia</span> – to know only what is in the present without a past to account for.
+</p>
+<p>
+The protagonist, Leonard Shelby, in fact, suffers from this condition that incapacitates him to form new memories after a terrible incident where his wife was raped by an unknown assailant. The narrative of the film is thus largely predicated on the medical condition of Leonard and his (and our, as viewers) inability to discern and judge aptly.
+</p>
+<p>
+In the film, color sequences are alternated with black and white sequences. 
+</p>
+<ul>
+<li>black and white sequences are put together in <span class="a">chronological order</span>;</li>
+<li>color sequences are shown in <span class="a">reverse order</span>.</li>
+</ul>
+Interestingly, Nolan beautifully weaved <span class="a">a story that goes back as it develops</span>. The black and white sequences are very objective, while the color sequences are subjective. The color sequences always start with Leonard’s rationalizing of the situation that he found his self in. The fragmented and almost montage-like quality of the film allegorizes the nature of Leonard’s mental condition.</p>
+</p>
+
+			<div class="containerimg" style="margin-left:auto; margin-right: auto; min-width: 100%; margin-bottom: 0px !important;">
+			<a href="img/struttura.png" target="_blank">
+			<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/struttura.png" alt="">
+			</a>
+			</div>
+	</div>
+</div>
+
+
+
+
+<main role="main" class="container">
+	<div class="majormono" style="margin-left:auto; margin-right: auto; margin-top: 0px !important;">        
+		<div class="roboto" >      
+<p>
+Regarding Focal ontology, the non-linear narrative is encoded by means of the data property <span class="awhite"> &nbsp;focal:fabula&nbsp;</span>. This term comes from the Russian Formalists Victor Shklovsky and Vladimir Propp, who were the first ones to carry an in-depth analysis on the distinction between:
+</p>
+<ul>
+<li><span class="a">fabula</span>: the chronological order of the events contained in the story,</li>
+<li><span class="a">syuzhet</span>: the linear progression of narrative from beginning to end.</li>
+</ul>
+<p>
+The concept of <span class="a">syuzhet</span> is pretty easy. Memento has 44 Sequences, 198 Scenes and a countless amount of Shots. In Focal, every individual belonging to the classes of <span class="a">Sequence</span>, <span class="a">Scene</span> and <span class="a">Shot</span> are encoded with the chronological number as shown to the audience. This may sound difficult, but is very easy: e.g. the first scene is <span class="aya"> &#9830;Scene000</span>, the last one is <span class="aya"> &#9830;Scene198</span>. In the middle there will be, for example, a <span class="aya"> &#9830;Scene076</span>, and after that a <span class="aya"> &#9830;Scene077</span>, and after that a <span class="aya"> &#9830;Scene078</span>, and so on. The number of each Scene represents its position inside the <span class="a">syuzhet</span> of the movie.
+</p>
+<p>
+Things get complicated when we start considering the <span class="a">fabula</span>: not only Memento contains 18 flashbacks, embedded in the sequences, but also the color sequences, as written above, are shown in reverse order.
+By means of the data property <span class="awhite"> &nbsp;focal:fabula&nbsp;</span>, it is possible to associate the Scene to an integer > 0, according to its chronological position in the order the movie. 
+</p>
+<p>
+For example: we have a chronologically ordered story of a girl who wakes up and goes to school, made of 5 Scenes with one Scene (no.4) being a flashback. The individuals and their data properties will be:
+</p>
+
+<table class="table" style="border: 0.5px solid hsl(0, 0%, 50%)">
+				<thead>
+					<tr>
+						<th scope="col">Scene#</th>
+						<th scope="col"><span class="awhite"> &nbsp;focal:fabula&nbsp;</span></th>
+						<th scope="col"><span class="awhite"> &nbsp;focal:content&nbsp;</span></th>
+						<th scope="col"><span class="awhite"> &nbsp;focal:flashback&nbsp;</span></th>
+						<th scope="col"><span class="awhite"> &nbsp;focal:diegetic_level&nbsp;</span></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">Scene01</th>
+						<td class="text-center">2</td>
+						<td class="text-center">"the girl wakes up"</td>
+						<td class="text-center">False</td>
+						<td class="text-center">0</td>
+					</tr>
+					<tr>
+						<th scope="row">Scene02</th>
+						<td class="text-center">3</td>
+						<td class="text-center">"the girl eats milk and cereal"</td>
+						<td class="text-center">False</td>
+						<td class="text-center">0</td>
+					</tr>
+					<tr>
+						<th scope="row">Scene03</th>
+						<td class="text-center">4</td>
+						<td class="text-center">"the girl takes the bus"</td>
+						<td class="text-center">False</td>
+						<td class="text-center">0</td>
+					</tr>
+					<tr>
+						<th scope="row">Scene04</th>
+						<td class="text-center">1</td>
+						<td class="text-center">"on the bus, the girl remembers when she was a child"</td>
+						<td class="text-center">True</td>
+						<td class="text-center">1</td>
+					</tr>
+					<tr>
+						<th scope="row">Scene05</th>
+						<td class="text-center">5</td>
+						<td class="text-center">"the girl arrives at school"</td>
+						<td class="text-center">False</td>
+						<td class="text-center">0</td>
+					</tr>
+				</tbody>
+			</table>	
+			
+<p>
+While the syuzhet is obviously 1, 2, 3, 4, 5, the fabula will be 2, 3, 4, 1, 5.</p>
+	</div>
+</div>
+</main>
+
+
+<main role="main" class="container">
+	<div class="majormono" style="margin-left:auto; margin-right: auto; margin-top: 0px !important;">        
+		<div class="roboto" > 
+			<i>Memento</i> contains <span class="a">22 color Sequences</span> (red bars with numbers 1–22) and <span class="a">22 black-and-white Sequences</span> (unlabelled grey bars) with 15 short clips (encoded in focal as <span class="a">Scenes</span>; blue and green lines respectively for cue and key-frames) that are pairwise audiovisually identical. In the image below, the first horizontal bar denotes the timeline of the original (i.e. the <span class="a">syuzhet</span>) version of <i>Memento</i> and the second one the chronological one (i.e. the <span class="a">fabula</span>).
+</p>
+<p>
+Note that the chronological version (the second one) is shorter than the original due to lack of redundant scene repeats and title credits (magenta bar).
+</p>
+
+			<div class="containerimg" style="margin-left:auto; margin-right: auto; min-width: 100%;">
+<a href="img/struttura2.png" target="_blank">
+<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/struttura2.png" alt="">
+</a>
+</div>
+	</div>
+</div>
+</main>
+
+
+<main role="main" class="container">
+	<div class="majormono" style="margin-left:auto; margin-right: auto; margin-top: 0px !important;">        
+		<div class="roboto" > 
+<p>
+In the table, before, the notion of <span class="a">diegetic level</span> has been introduced by means of the data property <span class="awhite"> &nbsp;focal:diegetic_level&nbsp;</span>.
+Narrative levels (also referred to as diegetic levels) is an analytic notion whose purpose is to describe the relations among the plurality of narrating instances within a narrative, and more specifically the vertical relations between narrating instances/characters. 
+ <span class="a">In diegesis, the narrator tells the story</span>. The narrator presents the actions (and sometimes <span class="a">thoughts</span>, like in the aforementioned case of the little girl going to school) of the characters to the readers or audience.
+</p>
+<p>
+The basic level of the Story contained in the Movie is 0. Level no. 1 means that it is a story within the movie, told by a character. If in the story, a new character starts telling another story, this latter one will have no. 2, and so on. In the case of a "breaking of the fourth wall", the level shall be -1. 
+</p>
+
+
+
+		</div>
+    </div>
+</main>
+
+
+
+
+
+
+	  
+<div class="container" style="margin-top: 38px;"> <!-- lascia a 19 se sopra c'è solo testo, metti a 40 o 38px se sopra c'è un'immagine-->
+	<div class="roboto" style=" margin: 1rem 0; padding: 1rem 0;">
+			<p class="majormono" style="font-size: 20px;">
+			BRoWse the ontology
+			</p>
+			<hr style="border:0.1px solid hsl(0, 0%, 35%);">			
+			<p>
+			This site contains a <span class="a">browsable version</span> of the entire ontology, complete with all classes, all properties, and some pivotal examples of individuals selected from the movie used as a case study, <span class="a">Memento</span>. </p>
+			<p>Click on the button below to explore it.
 			</p>
 			
 			<p class="text-right" style="margin-top: 35px;">
@@ -226,7 +469,144 @@ body {
 
 
 
+<!--Modal entity-event-->
+  <div class="portfolio-modal modal fade" id="entity-event" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+			        <div class="modal-header">
+					<h4 class="modal-title roboto">Genres</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="modal-body roboto">                
+			
+			<p style="margin-bottom: 0;">Action </p>
+	<p style="text-indent:50px; margin-bottom: 0;"> Military Action</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Spy Action</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Martial Arts Action</p>
+<p style="margin-bottom: 0;">Adventure</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Superhero Fiction</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Swashbuckler	</p>
+<p style="margin-bottom: 0;">Comedy</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Slapstick Comedy </p>
+	<p style="text-indent:50px; margin-bottom: 0;">Parody Comedy</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Black Comedy	</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Satire</p>
+<p style="margin-bottom: 0;">Drama</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Tragedy</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Medical Drama</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Legal Drama</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Musical</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Road Movie</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Romantic Drama</p>
+<p style="margin-bottom: 0;">Fantasy</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Contemporary Fantasy</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Dark Fantasy</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Epic Fantasy</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Heroic Fantasy</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Historical Fantasy</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Mythic Fiction</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Science Fantasy </p>
+<p style="margin-bottom: 0;">Sci-Fi</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Apocalyptic and Post-apocalyptic Fiction</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Space Travel</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Time Travel</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Cerebral Science</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Robot Films</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Disaster and Alien Invasion</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Cyberpunk</p>
+<p style="margin-bottom: 0;">Historical</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Biography</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Alternate History</p>
+<p style="margin-bottom: 0;">Horror</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Ghost Story</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Monster Horror </p>
+	<p style="text-indent:50px; margin-bottom: 0;">Survival Horror</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Found Footage Horror</p>
+<p style="margin-bottom: 0;">Mystery</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Detective Story</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Crime Thriller</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Gentleman thief</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Murder Mistery</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Noir</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Neo-noir</p>
+<p style="margin-bottom: 0;">Romance</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Historical Romance</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Romantic Drama</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Romantic Comedy</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Paranormal Romance</p>
+<p style="margin-bottom: 0;">Thriller</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Conspiracy Thriller</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Crime Thriller</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Disaster Thriller</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Legal Thriller</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Psychological Thriller</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Techno Thriller</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Spy Thriller</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Supernatural Thriller</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Revenge Thriller</p>
+<p style="margin-bottom: 0;">Western</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Classic Western</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Contemporary Western</p>
+	<p style="text-indent:50px; margin-bottom: 0;">Fantasy and Space Western</p>
 
+</p>			
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-focal" data-dismiss="modal"> <i class="fas fa-times"></i>
+						Close</button>
+						</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!--Modal entity-event-->
+  <div class="portfolio-modal modal fade" id="emotionswheel" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+			        <div class="modal-header">
+					<h4 class="modal-title roboto">Wheel of emotions</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="modal-body roboto">                
+			
+			<p style="margin-bottom: 0;">
+			</p>
+			
+			<div class="containerimg" style="margin-left:auto; margin-right: auto;">
+<img class="img-fluid mb-3 mb-lg-0 rounded" src="img/wheel.png" alt="">
+
+</p>			
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-focal" data-dismiss="modal"> <i class="fas fa-times"></i>
+						Close</button>
+						</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  
+  
 <footer class="footer">
       <div class="container" >
         <p style="text-align:center; font-size: 12px;" class="text-white">Copyright - Chantal Lengua 2021</p>
